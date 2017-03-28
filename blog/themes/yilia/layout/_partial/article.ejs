@@ -81,7 +81,15 @@
 <%- partial('post/share_addthis') %>
 <% } %>
 
-<% if (!index){ %>
+<% if (!index && theme.youyan){ %>
+<!--<%- partial('post/share_addthis') %>-->
+<!-- UY BEGIN -->
+    <div id="uyan_frame" style="margin: 0 30px;"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%= theme.youyan%>"></script>
+<!-- UY END -->
+<% } %>
+
+<!--<% if (!index){ %>
   <% if (theme.duoshuo && post.comments){ %>
   <%- partial('post/duoshuo', {
       key: post.slug,
@@ -91,7 +99,7 @@
   <% } else { %>
     <div class="duoshuo"></div>
   <% } %>
-<% } %>
+<% } %>-->
 
 <% if (!index && post.comments && config.disqus_shortname){ %>
 <section id="comments">
