@@ -3,7 +3,7 @@
 menu:
   主页: /
   技术: /tags/技术/
-  随笔: /tags/心情/
+  随笔: /tags/随笔/
 
 # SubNav
 subnav:
@@ -48,11 +48,11 @@ open_in_new: false
 # 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
 reward_type: 2
 # 打赏wording
-reward_wording: '非常感谢'
+reward_wording:
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: 
+alipay: /zhifubao.png
 # 微信二维码图片地址
-weixin: 
+weixin: /weixin.png
 
 # Miscellaneous
 baidu_analytics: ''
