@@ -91,10 +91,10 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '所有文章'
-#  friends: '友链'
+  friends: '友链'
   aboutme: '关于我'
 
-#friends:
-#  阮一峰: http://www.ruanyifeng.com/home.html
+friends:
+  阮一峰: http://www.ruanyifeng.com/home.html
 
 aboutme: 倾听，世界的声音

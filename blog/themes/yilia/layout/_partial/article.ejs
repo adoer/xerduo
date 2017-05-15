@@ -79,16 +79,35 @@
   <%- partial('post/nav') %>
 <% } %>
 
-<% if (!index && theme.share_addthis){ %>
-<%- partial('post/share_addthis') %>
-<% } %>
+<!--<% if (!index && theme.share_addthis){ %>-->
+<!--<%- partial('post/share_addthis') %>-->
+<!--<% } %>-->
 
 <% if (!index && theme.youyan){ %>
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" style="margin: 0 30px;" data-id="city" data-uid="MTAyMC8yODY2OS81MjQw">
+    <script type="text/javascript">
+        (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') { return; }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+    </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
 <!--<%- partial('post/share_addthis') %>-->
-<!-- UY BEGIN -->
-    <div id="uyan_frame" style="margin: 0 30px;"></div>
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%= theme.youyan%>"></script>
-<!-- UY END -->
+<!--&lt;!&ndash; UY BEGIN &ndash;&gt;-->
+    <!--<div id="uyan_frame" style="margin: 0 30px;"></div>-->
+    <!--<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%= theme.youyan%>"></script>-->
+<!--&lt;!&ndash; UY END &ndash;&gt;-->
 <% } %>
 
 <!--<% if (!index){ %>
