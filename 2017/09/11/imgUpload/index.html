@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://xerduo.com">
   <title>imgUpload | 小耳朵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="imgUpload                          鼠标滚动可放大缩小图片">
+  <meta name="description" content="#imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user-select: none;       -ms-use">
+<meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="imgUpload">
 <meta property="og:url" content="http://xerduo.com/2017/09/11/imgUpload/index.html">
 <meta property="og:site_name" content="小耳朵">
-<meta property="og:description" content="imgUpload                          鼠标滚动可放大缩小图片">
-<meta property="og:updated_time" content="2017-09-10T17:23:29.240Z">
+<meta property="og:description" content="#imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user-select: none;       -ms-use">
+<meta property="og:updated_time" content="2017-09-10T17:28:54.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="imgUpload">
-<meta name="twitter:description" content="imgUpload                          鼠标滚动可放大缩小图片">
+<meta name="twitter:description" content="#imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user-select: none;       -ms-use">
   
     <link rel="alternative" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -184,6 +185,26 @@
     <div class="article-entry" itemprop="articleBody">
       
         
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<style>
+    #imgBox {
+      position: relative;
+      cursor: move;
+      -moz-user-select: none;
+      -o-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      canvas{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+      }
+    }
+</style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -271,6 +292,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
