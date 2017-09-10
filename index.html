@@ -171,7 +171,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/imgUpload/">图片剪裁上传</a>
+      <a class="article-title" href="/2017/09/11/imgUpload/">图片剪裁上传 imgUpload</a>
     </h1>
   
 
@@ -249,6 +249,7 @@
     },saveCallBack);
 </script>
 
+<h1 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">saveCallBack</span>(<span class="params">base64</span>)</span>&#123;</div><div class="line">        $(<span class="string">"#base64 img"</span>).attr(<span class="string">"src"</span>,base64);</div><div class="line">        <span class="comment">//最终把此base64传给后端</span></div><div class="line">        <span class="comment">/**</span></div><div class="line"><span class="comment">         $.ajax(&#123;</span></div><div class="line"><span class="comment">				data: &#123;</span></div><div class="line"><span class="comment">					base64: base64</span></div><div class="line"><span class="comment">				&#125;</span></div><div class="line"><span class="comment">			&#125;)</span></div><div class="line"><span class="comment">         **/</span></div><div class="line">    &#125;</div><div class="line"><span class="comment">//    初始化</span></div><div class="line">    <span class="keyword">var</span> imgupload=<span class="keyword">new</span> Imgupload(&#123;</div><div class="line">        uploadInputBtn:<span class="string">"#inputBtn"</span>,</div><div class="line">        previewBox:<span class="string">"#previewImgBox"</span>,</div><div class="line">        imgBox:<span class="string">"#imgBox"</span>,</div><div class="line">        <span class="comment">//容纳图片的容器大小设置</span></div><div class="line">        imgBoxSize:<span class="number">350</span>,</div><div class="line">        <span class="comment">//图片剪裁区域大小校设置</span></div><div class="line">        imgCropSize:<span class="number">200</span>,</div><div class="line">        <span class="comment">//剪裁图片预览容器大小</span></div><div class="line">        previewBoxSize:<span class="number">200</span></div><div class="line">    &#125;,saveCallBack);</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 
       
 
