@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://xerduo.com">
   <title>图片剪裁上传 imgUpload | 小耳朵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片   Github地址         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -">
+  <meta name="description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片剪裁上传 imgUpload">
 <meta property="og:url" content="http://xerduo.com/2017/09/11/imgUpload/index.html">
 <meta property="og:site_name" content="小耳朵">
-<meta property="og:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片   Github地址         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -">
-<meta property="og:updated_time" content="2017-09-10T17:57:51.494Z">
+<meta property="og:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
+<meta property="og:updated_time" content="2017-09-10T18:14:37.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片剪裁上传 imgUpload">
-<meta name="twitter:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片   Github地址         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -">
+<meta name="twitter:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
   
     <link rel="alternative" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -187,9 +187,7 @@
         <blockquote>
 <p>图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片</p>
 </blockquote>
-<p> <a href="https://github.com/adoer/imgUpload" target="_blank" rel="external">Github地址</a></p>
 
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <style>
     #imgBox {
@@ -208,34 +206,54 @@
             left: 50%;
             transform:translate(-50%,-50%);
     }
+    .myBtn{
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+    }
+    .myBtn:hover{
+        color: #333;
+        background-color: #d4d4d4;
+        border-color: #8c8c8c;
+    }
 </style>
-<input id="inputBtn" type="file" class="btn btn-default" style="margin:10px 0; ">
+<input id="inputBtn" type="file" class="myBtn" style="margin:10px 0; ">
 <div class="wrap clearfix">
-    <div class="left pull-left" style="margin-right: 10px;margin-bottom: 10px;">
+    <div class="left" style="margin-right: 10px;margin-bottom: 10px;float:left;">
         <div id="imgBox">
         </div>
     </div>
-    <div class="right pull-left" id="previewImgBox" style="width: 50%;">
+    <div class="right" id="previewImgBox" style="width: 50%;float:left;">
     </div>
 </div>
-<button id="save" class="btn btn-default" style="margin: 10px 0;">保存预览</button>
-<div id="base64">
+<button id="save" class="myBtn" style="margin: 10px 0;">保存预览</button>
+<div id="base64" style="margin-bottom:20px;">
     <img src="" alt="">
 </div>
 <script src="http://onix7zh9h.bkt.clouddn.com/js/imgupload.js"></script>
 <script>
     function saveCallBack(base64){
-        $("#base64 img").attr("src",base64);
-        //最终把此base64传给后端
-        /**
-         $.ajax({
-				data: {
-					base64: base64
-				}
-			})
-         **/
+            $("#base64 img").attr("src",base64);
     }
-//    初始化
     var imgupload=new Imgupload({
         uploadInputBtn:"#inputBtn",
         previewBox:"#previewImgBox",
@@ -249,6 +267,7 @@
     },saveCallBack);
 </script>
 
+<p><a href="https://github.com/adoer/imgUpload" target="_blank" rel="external">Github地址</a></p>
 
       
 
