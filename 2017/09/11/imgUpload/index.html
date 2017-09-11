@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xerduo.com">
-  <title>图片剪裁上传 imgUpload | 小耳朵</title>
+  <title>图片剪裁上传 | 小耳朵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
+  <meta name="description" content="基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图片剪裁上传 imgUpload">
+<meta property="og:title" content="图片剪裁上传">
 <meta property="og:url" content="http://xerduo.com/2017/09/11/imgUpload/index.html">
 <meta property="og:site_name" content="小耳朵">
-<meta property="og:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
-<meta property="og:updated_time" content="2017-09-10T18:14:37.265Z">
+<meta property="og:description" content="基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;">
+<meta property="og:updated_time" content="2017-09-11T12:56:54.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图片剪裁上传 imgUpload">
-<meta name="twitter:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
+<meta name="twitter:title" content="图片剪裁上传">
+<meta name="twitter:description" content="基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;">
   
     <link rel="alternative" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -171,7 +171,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      图片剪裁上传 imgUpload
+      图片剪裁上传
     </h1>
   
 
@@ -185,7 +185,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片</p>
+<p>基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。</p>
 </blockquote>
 
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -259,16 +259,16 @@
         previewBox:"#previewImgBox",
         imgBox:"#imgBox",
         //容纳图片的容器大小设置
-        imgBoxSize:350,
+        imgBoxSize:320,
         //图片剪裁区域大小校设置
-        imgCropSize:200,
+        imgCropSize:150,
         //剪裁图片预览容器大小
-        previewBoxSize:200
+        previewBoxSize:150
     },saveCallBack);
 </script>
 
-<p><a href="https://github.com/adoer/imgUpload" target="_blank" rel="external">Github地址</a></p>
-
+<p><a href="https://github.com/adoer/imgUpload" target="_blank" rel="external">Github地址</a><br><a id="more"></a></p>
+<h1 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveCallBack</span>(<span class="params">base64</span>)</span>&#123;</div><div class="line">        $(<span class="string">"#base64 img"</span>).attr(<span class="string">"src"</span>,base64);</div><div class="line">        <span class="comment">//最终把此base64传给后端</span></div><div class="line">        <span class="comment">/**</span></div><div class="line"><span class="comment">         $.ajax(&#123;</span></div><div class="line"><span class="comment">				data: &#123;</span></div><div class="line"><span class="comment">					base64: base64</span></div><div class="line"><span class="comment">				&#125;</span></div><div class="line"><span class="comment">			&#125;)</span></div><div class="line"><span class="comment">         **/</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">//    初始化</span></div><div class="line">    <span class="keyword">var</span> imgupload=<span class="keyword">new</span> Imgupload(&#123;</div><div class="line">        <span class="comment">//选择文件按钮id</span></div><div class="line">        uploadInputBtn:<span class="string">"#inputBtn"</span>,</div><div class="line">        <span class="comment">//预览容器id</span></div><div class="line">        previewBox:<span class="string">"#previewImgBox"</span>,</div><div class="line">        <span class="comment">//容纳图片的容器id</span></div><div class="line">        imgBox:<span class="string">"#imgBox"</span>,</div><div class="line">        <span class="comment">//容纳图片的容器大小设置</span></div><div class="line">        imgBoxSize:<span class="number">350</span>,</div><div class="line">        <span class="comment">//图片剪裁区域大小校设置</span></div><div class="line">        imgCropSize:<span class="number">200</span>,</div><div class="line">        <span class="comment">//剪裁图片预览容器大小</span></div><div class="line">        previewBoxSize:<span class="number">200</span></div><div class="line">    &#125;,saveCallBack);</div></pre></td></tr></table></figure>
       
 
       
