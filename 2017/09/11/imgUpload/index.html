@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xerduo.com">
-  <title>图片剪裁上传 | 小耳朵</title>
+  <title>图片剪裁上传 imgUpload | 小耳朵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;">
+  <meta name="description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图片剪裁上传">
+<meta property="og:title" content="图片剪裁上传 imgUpload">
 <meta property="og:url" content="http://xerduo.com/2017/09/11/imgUpload/index.html">
 <meta property="og:site_name" content="小耳朵">
-<meta property="og:description" content="基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;">
-<meta property="og:updated_time" content="2017-09-11T14:06:55.426Z">
+<meta property="og:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
+<meta property="og:updated_time" content="2017-11-08T14:42:30.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图片剪裁上传">
-<meta name="twitter:description" content="基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;">
+<meta name="twitter:title" content="图片剪裁上传 imgUpload">
+<meta name="twitter:description" content="图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片         #imgBox {       position: relative;       cursor: move;       -moz-user-select: none;       -o-user-select: none;       -khtml-user-select: none;       -webkit-user">
   
     <link rel="alternative" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -171,7 +171,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      图片剪裁上传
+      图片剪裁上传 imgUpload
     </h1>
   
 
@@ -185,7 +185,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。</p>
+<p>图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片</p>
 </blockquote>
 
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -249,7 +249,7 @@
 <div id="base64" style="margin-bottom:20px;">
     <img src="" alt="">
 </div>
-<script src="http://onix7zh9h.bkt.clouddn.com/imgupload.js"></script>
+<script src="http://onix7zh9h.bkt.clouddn.com/js/imgupload.js"></script>
 <script>
     function saveCallBack(base64){
             $("#base64 img").attr("src",base64);
@@ -259,11 +259,11 @@
         previewBox:"#previewImgBox",
         imgBox:"#imgBox",
         //容纳图片的容器大小设置
-        imgBoxSize:320,
+        imgBoxSize:350,
         //图片剪裁区域大小校设置
-        imgCropSize:150,
+        imgCropSize:200,
         //剪裁图片预览容器大小
-        previewBoxSize:150
+        previewBoxSize:200
     },saveCallBack);
 </script>
 
@@ -392,32 +392,23 @@
 
 
 
-<!---->
 
-
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" style="margin: 0 30px;" data-id="city" data-uid="MTAyMC8yODY2OS81MjQw">
+<!-- youyan安装代码 -->
+<div id="lv-container" style="margin: 0 30px;">
+    <div id="SOHUCS" sid="1510246787000" ></div>
     <script type="text/javascript">
-        (function(d, s) {
-            var j, e = d.getElementsByTagName(s)[0];
-
-            if (typeof LivereTower === 'function') { return; }
-
-            j = d.createElement(s);
-            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-            j.async = true;
-
-            e.parentNode.insertBefore(j, e);
-        })(document, 'script');
-    </script>
-    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+        (function(){
+            var appid = 'cytipdyyz';
+            var conf = 'prod_5137275b2043f6fa6ea2af2e0087000a';
+            var width = window.innerWidth || document.documentElement.clientWidth;
+            if (width < 960) {
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
 </div>
-<!-- City版安装代码已完成 -->
+<!-- youyan安装代码已完成 -->
 
-<!---->
 <!--&lt;!&ndash; UY BEGIN &ndash;&gt;-->
     <!--<div id="uyan_frame" style="margin: 0 30px;"></div>-->
-    <!--<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2129045"></script>-->
+    <!--<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=undefined"></script>-->
 <!--&lt;!&ndash; UY END &ndash;&gt;-->
 
 

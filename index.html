@@ -171,7 +171,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/imgUpload/">图片剪裁上传</a>
+      <a class="article-title" href="/2017/09/11/imgUpload/">图片剪裁上传 imgUpload</a>
     </h1>
   
 
@@ -185,7 +185,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。</p>
+<p>图片剪裁上传，可移动图片位置，鼠标滚动可放大缩小图片</p>
 </blockquote>
 
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -249,7 +249,7 @@
 <div id="base64" style="margin-bottom:20px;">
     <img src="" alt="">
 </div>
-<script src="http://onix7zh9h.bkt.clouddn.com/imgupload.js"></script>
+<script src="http://onix7zh9h.bkt.clouddn.com/js/imgupload.js"></script>
 <script>
     function saveCallBack(base64){
             $("#base64 img").attr("src",base64);
@@ -259,11 +259,11 @@
         previewBox:"#previewImgBox",
         imgBox:"#imgBox",
         //容纳图片的容器大小设置
-        imgBoxSize:320,
+        imgBoxSize:350,
         //图片剪裁区域大小校设置
-        imgCropSize:150,
+        imgCropSize:200,
         //剪裁图片预览容器大小
-        previewBoxSize:150
+        previewBoxSize:200
     },saveCallBack);
 </script>
 
@@ -303,8 +303,6 @@
   </div>
 </article>
 
-
-<!---->
 
 
 
@@ -524,8 +522,6 @@
 </article>
 
 
-<!---->
-
 
 
 <!---->
@@ -623,8 +619,6 @@
 </article>
 
 
-<!---->
-
 
 
 <!---->
@@ -694,8 +688,6 @@
   </div>
 </article>
 
-
-<!---->
 
 
 
