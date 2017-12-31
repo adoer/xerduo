@@ -881,7 +881,11 @@ body.search .page .entry-footer {
 
 .widget li a {
 	color: #333;
-	}
+    }
+.widget li span{
+    position: relative;
+    top:-1px;
+}
 .widget li a:hover {
 	color: #ff2828;
 	}
