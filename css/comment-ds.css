@@ -83,6 +83,9 @@ padding: 0 3px;
 #ds-thread #ds-reset .ds-post-button {background: #16171b;}
 #ds-thread #ds-reset .ds-post-button:hover {background: #ff2828;}
 /* 隐藏畅言相关信息 */
-#SOHUCS .module-hot-topic,#SOHUCS .module-cmt-footer{
+#SOHUCS .module-hot-topic{
+    display: none !important;
+}
+#SOHUCS .module-cmt-footer{
     display: none !important;
 }
