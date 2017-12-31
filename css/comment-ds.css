@@ -83,6 +83,6 @@ padding: 0 3px;
 #ds-thread #ds-reset .ds-post-button {background: #16171b;}
 #ds-thread #ds-reset .ds-post-button:hover {background: #ff2828;}
 
-#SOHUCS .hot-topic,#SOHUCS .module-cmt-footer{
+#SOHUCS #SOHU_MAIN .module-hot-topic,#SOHUCS #SOHU_MAIN .module-cmt-footer{
     display: none;
 }
