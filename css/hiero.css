@@ -1155,14 +1155,7 @@ body.search .page .entry-footer {
 	}
 .site-credit {
 	float: right;
-    }
-/* 隐藏畅言相关信息 */
-#SOHUCS .module-hot-topic{
-    display: none !important;
-}
-#SOHUCS .module-cmt-footer{
-    display: none !important;
-}
+	}
 
 /* RESPONSIVE SUPPORT
 ----------------------------------------------- */
