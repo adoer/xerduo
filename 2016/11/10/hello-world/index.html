@@ -16,16 +16,16 @@
 <meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随便写的">
-<meta property="og:url" content="http://yoursite.com/2016/11/10/hello-world/index.html">
+<meta property="og:url" content="http://xerduo.com/2016/11/10/hello-world/index.html">
 <meta property="og:site_name" content="小耳朵">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/gallery/hotfix.png">
+<meta property="og:image" content="http://xerduo.com/gallery/hotfix.png">
 <meta property="og:updated_time" content="2017-12-31T20:12:47.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随便写的">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="twitter:image" content="http://yoursite.com/gallery/hotfix.png">
+<meta name="twitter:image" content="http://xerduo.com/gallery/hotfix.png">
   
     <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -157,7 +157,25 @@ var themeMenus = {};
     </div>
 </header>
 
-<!--  -->
+<!-- 
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  </script>
+ -->
 
   <div id="container">
     <div id="wrap">
@@ -172,7 +190,7 @@ var themeMenus = {};
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="/gallery/hotfix.png" rel="gallery_cjbwai5ey000tqod4f8lkw6y0">
+      <a class="article-gallery-img fancybox" href="/gallery/hotfix.png" rel="gallery_cjbwau9n0000r90d4r656mz60">
         <img src="/gallery/hotfix.png" itemprop="image">
       </a>
     
