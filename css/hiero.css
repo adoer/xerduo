@@ -1164,7 +1164,8 @@ body.search .page .entry-footer {
 	color: #ff2828;
 	}
 .site-info {
-    text-align: center;
+    /* text-align: center; */
+    float:left;
 	}
 .site-credit {
 	float: right;
@@ -1191,7 +1192,7 @@ body.search .page .entry-footer {
     height: 10%;
     width: 5%;
     border-radius: 50%;
-    background: #161616;
+    background: #060608;
   }
   .ear::after {
     -webkit-transform-origin: 50% 100%;
@@ -1230,7 +1231,7 @@ body.search .page .entry-footer {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: #161616;
+    background: #060608;
     border-radius: 50%;
   }
   
@@ -1250,7 +1251,7 @@ body.search .page .entry-footer {
     height: 0;
     width: 100%;
     border-radius: 0 0 50% 50% / 0 0 40% 40%;
-    background: #161616;
+    background: #060608;
     -webkit-animation: blink 4s infinite ease-in;
             animation: blink 4s infinite ease-in;
   }
@@ -1323,7 +1324,7 @@ body.search .page .entry-footer {
     top: 25%;
     height: 50%;
     width: 20%;
-    background: #161616;
+    background: #060608;
     border-radius: 50%;
     -webkit-animation: look-around 4s infinite;
             animation: look-around 4s infinite;
@@ -1436,7 +1437,7 @@ body.search .page .entry-footer {
     }
 
 #edificios{
-    background: url('http://evasantos.com/ilustraciones/gatoCity/edificiosOne.svg');
+    background: url('images/edificiosOne.svg');
     height: 500px;
     width: 100%;
     z-index: -10;
@@ -1493,7 +1494,7 @@ body.search .page .entry-footer {
     }
 
 #gato{
-    background: url(http://evasantos.com/ilustraciones/gatoCity/gatito.svg);
+    background: url(images/gatito.svg);
     height: 297px;
     width: 507.5px;
     margin-top: -2em;
