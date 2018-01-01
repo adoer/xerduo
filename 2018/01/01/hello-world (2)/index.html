@@ -157,7 +157,25 @@ var themeMenus = {};
     </div>
 </header>
 
-<!--  -->
+<!-- 
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  </script>
+ -->
 
   <div id="container">
     <div id="wrap">
@@ -172,7 +190,7 @@ var themeMenus = {};
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="/gallery/hotfix.png" rel="gallery_cjbw0ci5s00057sd4cd2luynn">
+      <a class="article-gallery-img fancybox" href="/gallery/hotfix.png" rel="gallery_cjbw0vnz20000q0d4wxrxen00">
         <img src="/gallery/hotfix.png" itemprop="image">
       </a>
     
@@ -263,7 +281,7 @@ var a = new Donate({
 <nav id="article-nav">
   
   
-    <a href="/2016/11/10/hello-world (6)/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/10/hello-world1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">测试文章</div>
     </a>
@@ -304,10 +322,10 @@ var a = new Donate({
                                     </span>
                                     
                     </div>
-                    <div class="site-credit">
+                    <!-- <div class="site-credit">
                         Theme by
                             <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
-                    </div>
+                    </div> -->
                 </div>
 </footer>
 

@@ -148,7 +148,25 @@ var themeMenus = {};
     </div>
 </header>
 
-<!--  -->
+<!-- 
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  </script>
+ -->
 
   <div id="container">
     <div id="wrap">
@@ -178,7 +196,7 @@ var themeMenus = {};
     <div class="archive-article-inner">
         <header class="archive-article-header">
 
-            <a href="/2016/11/10/hello-world/" class="archive-article-date">
+            <a href="/2016/11/10/hello-world (9)/" class="archive-article-date">
                 <time datetime="2016-11-10T05:06:00.000Z" itemprop="datePublished">
                     2016-11-10
                 </time>
@@ -186,7 +204,7 @@ var themeMenus = {};
             
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2016/11/10/hello-world/">随便写的</a>
+      <a class="archive-article-title" href="/2016/11/10/hello-world (9)/">测试文章</a>
     </h1>
   
 
@@ -200,7 +218,7 @@ var themeMenus = {};
     <div class="archive-article-inner">
         <header class="archive-article-header">
 
-            <a href="/2016/11/10/hello-world1/" class="archive-article-date">
+            <a href="/2016/11/10/hello-world (5)/" class="archive-article-date">
                 <time datetime="2016-11-10T05:06:00.000Z" itemprop="datePublished">
                     2016-11-10
                 </time>
@@ -208,7 +226,7 @@ var themeMenus = {};
             
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2016/11/10/hello-world1/">测试文章</a>
+      <a class="archive-article-title" href="/2016/11/10/hello-world (5)/">测试文章</a>
     </h1>
   
 
@@ -345,7 +363,7 @@ var themeMenus = {};
 
                         
                             <div class="widget-entry-thumbnail">
-                                <a href="/2016/11/10/hello-world (6)/" title="">
+                                <a href="/2016/11/10/hello-world1/" title="">
                                     <img width="50" height="50" src="/gallery/hotfix.png" class="attachment-thumb-small size-thumb-small wp-post-image"
                                         alt="preview-16" title="">
                                 </a>
@@ -354,7 +372,7 @@ var themeMenus = {};
                                 
 
                                             <h6 style="margin: 0;">
-                                                <a href="/2016/11/10/hello-world (6)/">
+                                                <a href="/2016/11/10/hello-world1/">
                                                     测试文章
                                                 </a>
                                             </h6>
@@ -441,7 +459,7 @@ var themeMenus = {};
 
                         
                             <div class="widget-entry-thumbnail">
-                                <a href="/2016/11/10/hello-world (5)/" title="">
+                                <a href="/2016/11/10/hello-world (6)/" title="">
                                     <img width="50" height="50" src="/gallery/hotfix.png" class="attachment-thumb-small size-thumb-small wp-post-image"
                                         alt="preview-16" title="">
                                 </a>
@@ -450,7 +468,7 @@ var themeMenus = {};
                                 
 
                                             <h6 style="margin: 0;">
-                                                <a href="/2016/11/10/hello-world (5)/">
+                                                <a href="/2016/11/10/hello-world (6)/">
                                                     测试文章
                                                 </a>
                                             </h6>
@@ -525,10 +543,10 @@ var themeMenus = {};
                                     </span>
                                     
                     </div>
-                    <div class="site-credit">
+                    <!-- <div class="site-credit">
                         Theme by
                             <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
-                    </div>
+                    </div> -->
                 </div>
 </footer>
 
