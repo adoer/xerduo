@@ -1496,9 +1496,12 @@ body.search .page .entry-footer {
 #gato{
     background: url(images/gatito.svg);
     height: 297px;
-    width: 507.5px;
+    width: 508px;
     margin-top: -2em;
-    margin-left: 35em;
+    /* margin-left: 35em; */
+    position: absolute;
+    margin-left: -253px;
+    left: 50%;
     z-index: 10;
     -webkit-animation: sprite-animation 1.2s steps(16,end) infinite;
     -moz-animation: sprite-animation 1.2s steps(16,end) infinite; 
