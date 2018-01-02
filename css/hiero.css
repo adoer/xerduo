@@ -479,7 +479,9 @@ object {
 ----------------------------------------------- */
 .container {
 	width: 980px;
-	padding: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 3;
 	}
 .content-area {
 	width: 100%;
@@ -1425,6 +1427,7 @@ body.search .page .entry-footer {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
     }
 
 #cielo{
