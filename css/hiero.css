@@ -1558,6 +1558,9 @@ body.search .page .entry-footer {
 		}
 	}
 @media screen and (max-width: 758px) {
+    #gato{
+        display: none;
+    }
 	.site-header .widget-area {
 		display: none;
 		}
