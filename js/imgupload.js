@@ -63,7 +63,7 @@
             });
             self._$canvasW=self._imgBoxSize;
             self._$canvasH=self._imgBoxSize;
-            self._$canvas =$('<canvas '="" +="" 'width="' + self._$canvasW  + '" height="' + self._$canvasH + '">' +
+            self._$canvas =$('<canvas '="" 'width="' + self._$canvasW  + '" height="' + self._$canvasH + '">' /
                 '</canvas>');
             self._imgBox.append(self._$canvas);
             self._$canvas.ctx = self._$canvas[0].getContext('2d');
@@ -297,12 +297,19 @@
     }
     window.Imgupload = Imgupload;
 }(jQuery);
-var imgupload=new Imgupload({
-    uploadInputBtn:"#inputBtn",
-    previewBox:"#previewImgBox",
-    imgBox:"#imgBox",
-    imgBoxSize:350,
-    imgCropSize:200,
-    previewBoxSize:200
-});
+//    初始化
+    var imgupload=new Imgupload({
+        //选择文件按钮id
+        uploadInputBtn:"#inputBtn",
+        //预览容器id
+        previewBox:"#previewImgBox",
+        //容纳图片的容器id
+        imgBox:"#imgBox",
+        //容纳图片的容器大小设置
+        imgBoxSize:350,
+        //图片剪裁区域大小校设置
+        imgCropSize:200,
+        //剪裁图片预览容器大小
+        previewBoxSize:200
+    },saveCallBack);
 </zoomsize){></0){></self._imgpresize){>
