@@ -349,6 +349,9 @@
     }
     window.Imgupload = Imgupload;
 }(jQuery);
+function saveCallBack(base64) {
+    $("#base64 img").attr("src", base64);
+}
 var imgupload = new Imgupload({
     //选择文件按钮id
     uploadInputBtn: "#inputBtn",
@@ -362,6 +365,4 @@ var imgupload = new Imgupload({
     imgCropSize: 200,
     //剪裁图片预览容器大小
     previewBoxSize: 200
-}, function () {
-    $("#base64 img").attr("src", base64)
-});
+}, saveCallBack);
