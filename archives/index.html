@@ -148,7 +148,25 @@ var themeMenus = {};
     </div>
 </header>
 
-<!--  -->
+<!-- 
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  </script>
+ -->
 
   <div id="container">
     <div id="wrap">
@@ -156,7 +174,7 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>嗯，目前共计2篇文章</span></blockquote>
+  <div class="archives-tags-wrap"><blockquote><span>嗯，目前共计1篇文章</span></blockquote>
 
 
 
@@ -187,28 +205,6 @@ var themeMenus = {};
   
     <h1 class="thumb" itemprop="name">
       <a class="archive-article-title" href="/2018/01/18/imgUpload/">imgUpload 图片上传组件</a>
-    </h1>
-  
-
-        </header>
-    </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-
-            <a href="/2018/01/18/hello-world/" class="archive-article-date">
-                <time datetime="2018-01-18T05:06:00.000Z" itemprop="datePublished">
-                    2018-01-18
-                </time>
-            </a>
-            
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/18/hello-world/">adfd</a>
     </h1>
   
 
@@ -328,30 +324,6 @@ var themeMenus = {};
 
                     </li>
                     
-                    <li class="clearfix">
-
-                        
-                            <div class="widget-entry-thumbnail">
-                                <a href="/2018/01/18/hello-world/" title="">
-                                    <img width="50" height="50" src="/gallery/hotfix.png" class="attachment-thumb-small size-thumb-small wp-post-image"
-                                        alt="preview-16" title="">
-                                </a>
-                            </div>
-                            <div class="widget-entry-summary">
-                                
-
-                                            <h6 style="margin: 0;">
-                                                <a href="/2018/01/18/hello-world/">
-                                                    adfd
-                                                </a>
-                                            </h6>
-                                            <span>
-                                                2018-01-18
-                                            </span>
-                                    </div>
-
-                    </li>
-                    
             </ul>
             </div>
         </div>
@@ -361,7 +333,7 @@ var themeMenus = {};
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -371,7 +343,7 @@ var themeMenus = {};
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -381,7 +353,7 @@ var themeMenus = {};
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+      <a href="/tags/demo/" style="font-size: 10px;">demo</a>
     </div>
   </div>
 
@@ -391,7 +363,7 @@ var themeMenus = {};
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 

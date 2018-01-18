@@ -151,7 +151,25 @@ var themeMenus = {};
     </div>
 </header>
 
-<!--  -->
+<!-- 
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  </script>
+ -->
 
   <div id="container">
     <div id="wrap">
@@ -188,42 +206,30 @@ var themeMenus = {};
                             </div>
                             <div class="article-entry" itemprop="articleBody">
                                 
-                                    
+                                                                        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。</p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2>
+<link rel="stylesheet" href="/posts_css/imgupload.css">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8" style="padding:0;">
+            <input id="inputBtn" type="file" class="btn btn-default" style="margin:10px 0; ">
+            <p class="text-muted" style="color: #8d8d8d;">鼠标滚动可放大缩小图片</p>
+            <div class="wrap clearfix">
+                <div class="left pull-left" style="margin-right: 10px;margin-bottom: 10px;">
+                    <div id="imgBox"></div>
+                </div>
+                <div class="right pull-left" id="previewImgBox" style="width: 50%;"></div>
+            </div>
+            <button id="save" class="btn btn-default" style="margin: 10px 0;">保存预览</button>
+            <div id="base64"><img src="" alt=""></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/posts_js/imgupload.js"></script>
 
-                                                    
-                                                                    <div class="entry-summary" style="margin-left:0;">
-                                                                        介绍基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。
-演示
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveCallBack</span>(<span class="params">base64</span>)</span>&#123;</span><br><span class="line">$(<span class="string">"#base64 img"</span>).attr(<span class="string">"src"</span>,base64);</span><br><span class="line"><span class="comment">//最终把此base64传给后端</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> $.ajax(&#123;</span></span><br><span class="line"><span class="comment">        data: &#123;</span></span><br><span class="line"><span class="comment">            base64: base64</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;)</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="keyword">var</span> imgupload=<span class="keyword">new</span> Imgupload(&#123;</span><br><span class="line">    <span class="comment">//选择文件按钮id</span></span><br><span class="line">    uploadInputBtn:<span class="string">"#inputBtn"</span>,</span><br><span class="line">    <span class="comment">//预览容器id</span></span><br><span class="line">    previewBox:<span class="string">"#previewImgBox"</span>,</span><br><span class="line">    <span class="comment">//容纳图片的容器id</span></span><br><span class="line">    imgBox:<span class="string">"#imgBox"</span>,</span><br><span class="line">    <span class="comment">//容纳图片的容器大小设置</span></span><br><span class="line">    imgBoxSize:<span class="number">350</span>,</span><br><span class="line">    <span class="comment">//图片剪裁区域大小校设置</span></span><br><span class="line">    imgCropSize:<span class="number">200</span>,</span><br><span class="line">    <span class="comment">//剪裁图片预览容器大小</span></span><br><span class="line">    previewBoxSize:<span class="number">200</span></span><br><span class="line">&#125;,saveCallBack);</span><br></pre></td></tr></table></figure>
 
-
-    
-        
-            
-            鼠标滚动可放大缩小图片
-            
-                
-                    
-                
-                
-            
-            保存预览
-            
-        
-    
-
-
-
-初始化1234567891011121314151617181920212223242526function saveCallBack(base64)&#123;$("#base64 img").att...
                                                                             
-
-                                                                                
-                                                                                    <p class="article-more-link">
-                                                                                        <a href="/2018/01/18/imgUpload/#more">
-                                                                                            阅读全文 ...
-                                                                                        </a>
-                                                                                    </p>
-                                                                    </div>
-                                                                    
                                                         </div>
                                                         <footer class="entry-meta entry-footer">
                                                             
@@ -233,81 +239,6 @@ var themeMenus = {};
                                                                 
   <span class="ico-tags"></span>
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
-
-                                                                    
-
-                                                                                
-                                                        </footer>
-                                        </div>
-                                        
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-hello-world"  class="article article-type-
-        post" itemscope itemprop="blogPost" >
-            <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-                
-                    
-                        <header class="article-header">
-                            
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/01/18/hello-world/">adfd</a>
-    </h1>
-  
-
-                        </header>
-                        
-                            <div class="article-meta">
-                                
-    发表于
-    <a href="/2018/01/18/hello-world/" class="article-date">
-        <time datetime="2018-01-18T05:06:00.000Z" itemprop="datePublished">
-            2018-01-18 13:01:00
-        </time>
-    </a>
-    
-                                    
-                            </div>
-                            <div class="article-entry" itemprop="articleBody">
-                                
-                                    
-                                        <div class="entry-thumbnail">
-                                            <a href="/2018/01/18/hello-world/">
-                                                <img width="250" height="175" src="/gallery/hotfix.png" class="attachment-thumb-featured size-thumb-featured wp-post-image"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                        <div class="entry-summary">
-                                            fesfsdfsdf
-Quick Start
-Create a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to...
-
-                                                
-                                                                                    <p class="article-more-link">
-                                                                                        <a href="/2018/01/18/hello-world/#more">
-                                                                                            阅读全文 ...
-                                                                                        </a>
-                                                                                    </p>
-                                                                    </div>
-                                                                    
-                                                        </div>
-                                                        <footer class="entry-meta entry-footer">
-                                                            
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/生活/">生活</a>
-
-                                                                
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 
                                                                     
 
@@ -427,30 +358,6 @@ Deploy to...
 
                     </li>
                     
-                    <li class="clearfix">
-
-                        
-                            <div class="widget-entry-thumbnail">
-                                <a href="/2018/01/18/hello-world/" title="">
-                                    <img width="50" height="50" src="/gallery/hotfix.png" class="attachment-thumb-small size-thumb-small wp-post-image"
-                                        alt="preview-16" title="">
-                                </a>
-                            </div>
-                            <div class="widget-entry-summary">
-                                
-
-                                            <h6 style="margin: 0;">
-                                                <a href="/2018/01/18/hello-world/">
-                                                    adfd
-                                                </a>
-                                            </h6>
-                                            <span>
-                                                2018-01-18
-                                            </span>
-                                    </div>
-
-                    </li>
-                    
             </ul>
             </div>
         </div>
@@ -460,7 +367,7 @@ Deploy to...
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -470,7 +377,7 @@ Deploy to...
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/">demo</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -480,7 +387,7 @@ Deploy to...
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+      <a href="/tags/demo/" style="font-size: 10px;">demo</a>
     </div>
   </div>
 
@@ -490,7 +397,7 @@ Deploy to...
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
