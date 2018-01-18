@@ -1172,6 +1172,10 @@ body.search .page .entry-footer {
 .site-credit {
 	float: right;
     }
+/* 隐藏搜索框 中的搜索页面 */
+.ins-search .ins-section-container .ins-section:nth-child(2){
+    display: none;
+}
 /* 小猫头像动画样式*/
 .cat {
     position: relative;
