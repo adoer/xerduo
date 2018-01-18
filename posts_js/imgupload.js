@@ -342,11 +342,9 @@
                 }
             });
         },
-        save: function (fun) {
-            if (fun && typeof fun === "function") {
-                var base64Url = this._$canvasPreview[0].toDataURL('image/jpeg');
-                fun && fun(base64Url);
-            }
+        save: function () {
+            var base64Url = this._$canvasPreview[0].toDataURL('image/jpeg');
+            saveCallBack && saveCallBack(base64Url);
         }
     }
     window.Imgupload = Imgupload;
