@@ -297,4 +297,11 @@
     }
     window.Imgupload = Imgupload;
 }(jQuery);
-</zoomsize){></0){></self._imgpresize){>
+var imgupload=new Imgupload({
+    uploadInputBtn:"#inputBtn",
+    previewBox:"#previewImgBox",
+    imgBox:"#imgBox",
+    imgBoxSize:350,
+    imgCropSize:200,
+    previewBoxSize:200
+});</zoomsize){></0){></self._imgpresize){>
