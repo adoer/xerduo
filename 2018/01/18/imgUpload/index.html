@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="小耳朵">
 <meta property="og:description" content="介绍基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-18T15:34:42.135Z">
+<meta property="og:updated_time" content="2018-01-18T16:28:42.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="imgUpload图片上传组件">
 <meta name="twitter:description" content="介绍基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。">
@@ -214,8 +214,9 @@ var themeMenus = {};
                             <div class="article-entry" itemprop="articleBody">
                                 
                                                                         <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。<br><a id="more"></a></p>
-<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><div class="container-fluid"><br>    <div class="row"><br>        <div class="col-md-8 col-md-offset-2"><br>            <h2 class="bg-primary" style="margin: 0;padding: 6px;">imgUpload</h2><br>            <input id="inputBtn" type="file" class="btn btn-default" style="margin:10px 0; "><br>            <p class="text-muted" style="color: #8d8d8d;">鼠标滚动可放大缩小图片</p><br>            <div class="wrap clearfix"><br>                <div class="left pull-left" style="margin-right: 10px;margin-bottom: 10px;"><br>                    <div id="imgBox"><br>                    </div><br>                </div><br>                <div class="right pull-left" id="previewImgBox" style="width: 50%;"><br>                </div><br>            </div><br>            <button id="save" class="btn btn-default" style="margin: 10px 0;">保存预览</button><br>            <div id="base64"><br>                <img src="" alt=""><br>            </div><br>        </div><br>    </div><br></div></p>
-<p><script type="text/javascript" src="/js/imgupload.js"></script></p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><link rel="stylesheet" href="/post_css/imgupload.css"></p>
+<p><div class="container-fluid"><br>    <div class="row"><br>        <div class="col-md-8"><br>            <h2 class="bg-primary" style="margin: 0;padding: 6px;">imgUpload</h2><br>            <input id="inputBtn" type="file" class="btn btn-default" style="margin:10px 0; "><br>            <p class="text-muted" style="color: #8d8d8d;">鼠标滚动可放大缩小图片</p><br>            <div class="wrap clearfix"><br>                <div class="left pull-left" style="margin-right: 10px;margin-bottom: 10px;"><br>                    <div id="imgBox"></div><br>                </div><br>                <div class="right pull-left" id="previewImgBox" style="width: 50%;"></div><br>            </div><br>            <button id="save" class="btn btn-default" style="margin: 10px 0;">保存预览</button><br>            <div id="base64"><img src="" alt=""></div><br>        </div><br>    </div><br></div></p>
+<p><script type="text/javascript" src="/post_js/imgupload.js"></script></p>
 <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveCallBack</span>(<span class="params">base64</span>)</span>&#123;</span><br><span class="line">$(<span class="string">"#base64 img"</span>).attr(<span class="string">"src"</span>,base64);</span><br><span class="line"><span class="comment">//最终把此base64传给后端</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> $.ajax(&#123;</span></span><br><span class="line"><span class="comment">        data: &#123;</span></span><br><span class="line"><span class="comment">            base64: base64</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;)</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="keyword">var</span> imgupload=<span class="keyword">new</span> Imgupload(&#123;</span><br><span class="line">    <span class="comment">//选择文件按钮id</span></span><br><span class="line">    uploadInputBtn:<span class="string">"#inputBtn"</span>,</span><br><span class="line">    <span class="comment">//预览容器id</span></span><br><span class="line">    previewBox:<span class="string">"#previewImgBox"</span>,</span><br><span class="line">    <span class="comment">//容纳图片的容器id</span></span><br><span class="line">    imgBox:<span class="string">"#imgBox"</span>,</span><br><span class="line">    <span class="comment">//容纳图片的容器大小设置</span></span><br><span class="line">    imgBoxSize:<span class="number">350</span>,</span><br><span class="line">    <span class="comment">//图片剪裁区域大小校设置</span></span><br><span class="line">    imgCropSize:<span class="number">200</span>,</span><br><span class="line">    <span class="comment">//剪裁图片预览容器大小</span></span><br><span class="line">    previewBoxSize:<span class="number">200</span></span><br><span class="line">&#125;,saveCallBack);</span><br></pre></td></tr></table></figure>
 
                                                                             
@@ -262,11 +263,15 @@ var a = new Donate({
                                             
 <nav id="article-nav">
   
-  
-    <a href="/2018/01/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。</div>
+    <a href="/2018/01/18/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          基于canvas图片剪裁，并上传base64码。支持本地预览、拖动、放大缩小等操作。
+        
+      </div>
     </a>
+  
   
 </nav>
 
