@@ -63,8 +63,7 @@
             });
             self._$canvasW=self._imgBoxSize;
             self._$canvasH=self._imgBoxSize;
-            self._$canvas =$('<canvas '="" +="" 'width="' + self._$canvasW  + '" height="' + self._$canvasH + '">' +
-                '</canvas>');
+            self._$canvas =$('<canvas width="' + self._$canvasW  + '" height="' + self._$canvasH + '"></canvas>');
             self._imgBox.append(self._$canvas);
             self._$canvas.ctx = self._$canvas[0].getContext('2d');
             // 绘制canvas上的遮罩层
