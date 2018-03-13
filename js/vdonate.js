@@ -36,10 +36,10 @@
                 if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
             }
             var a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (t) {
-                    return typeof t
-                } : function (t) {
-                    return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-                },
+                return typeof t
+            } : function (t) {
+                return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
+            },
                 i = function () {
                     function t(t, e) {
                         for (var n = 0; n < e.length; n++) {
@@ -53,9 +53,9 @@
                 }();
             n(2);
             var r = {
-                    title: "如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!",
-                    btnText: "打赏支持"
-                },
+                title: "如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!",
+                btnText: "打赏支持"
+            },
                 // d = document.body,
                 d = document.getElementById('donation_div'),
                 s = !1,
@@ -65,6 +65,7 @@
                         if (!this.options.alipayImage) throw new Error("alipayImage is required");
                         this.el = this.options.el && this.options.el, this.render(), this.bind()
                     }
+                    debugger
                     return i(t, [{
                         key: "render",
                         value: function () {
@@ -76,18 +77,18 @@
                         key: "bind",
                         value: function () {
                             var t = this;
-                            this.btns = this.modal.querySelectorAll(".donate-tab a"), 
-                            this.images = this.modal.querySelectorAll(".donate-tab .donate-image"), 
-                            this.modal.addEventListener("click", this._modalEvent.bind(t), !1), 
-                            this.el && this.el.addEventListener("click", this._donateBtnEvent.bind(t), !1)
+                            this.btns = this.modal.querySelectorAll(".donate-tab a"),
+                                this.images = this.modal.querySelectorAll(".donate-tab .donate-image"),
+                                this.modal.addEventListener("click", this._modalEvent.bind(t), !1),
+                                this.el && this.el.addEventListener("click", this._donateBtnEvent.bind(t), !1)
                         }
                     }, {
                         key: "_modalEvent",
                         value: function (t) {
-                            if (t.stopPropagation(), t.target.dataset.index) 
+                            if (t.stopPropagation(), t.target.dataset.index)
                                 return [].slice.call(this.btns).forEach(function (t) {
                                     t.classList.toggle("active")
-                                }), void[].slice.call(this.images).forEach(function (t) {
+                                }), void [].slice.call(this.images).forEach(function (t) {
                                     t.classList.toggle("active")
                                 });
                             this.hide()
@@ -227,8 +228,8 @@
                     o = e.sourceMap;
                 o && (n += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(o)))) + " */");
                 var a = new Blob([n], {
-                        type: "text/css"
-                    }),
+                    type: "text/css"
+                }),
                     i = t.href;
                 t.href = URL.createObjectURL(a), i && URL.revokeObjectURL(i)
             }
@@ -257,7 +258,7 @@
                         for (var i = [], r = 0; r < a.length; r++) {
                             var d = a[r],
                                 s = p[d.id];
-                            s.refs--, i.push(s)
+                            s.refs-- , i.push(s)
                         }
                         if (t) {
                             n(o(t), e)
