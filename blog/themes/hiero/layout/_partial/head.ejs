@@ -21,6 +21,10 @@
   %>
   <title><% if (title){ %><%= __(title.toLowerCase()) %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <% if (is_home()){ %>
+    <meta name="baidu-site-verification" content="KPLAFff2dH" />
+    <meta name="google-site-verification" content="ZWaWywNywxoMbqhnSCz9QyhcOP1YdewVatOJd27yJqY" />
+  <% } %>
   <% if (page.keywords){ %>
     <meta name="keywords" content="<%- page.keywords %>" />
   <% } else if (theme.keywords){ %>

@@ -253,13 +253,19 @@ object {
 /* HEADER
 ----------------------------------------------- */
 .site-header {
-	padding: 20px 0 0;
-	background: #16171b;
+	padding: 150px 0 0;
+	/* background: #16171b; */
 	}
 .site-branding {
-	float: left;
+    float: left;
+    position: relative;
 	}
 .site-title {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 100%;
+    text-align: center;
 	margin: 0;
 	font-size: 4.25em;
 	font-family: "Yanone Kaffeesatz", "Microsoft YaHei Light", Arial, Helvetica, sans-serif;
@@ -268,7 +274,8 @@ object {
 	}
 .site-title a {
 	color: #fff;
-	text-decoration: none;
+    text-decoration: none;
+    font-size: 32px;
 	}
 .site-description {
 	color: #999;
@@ -327,15 +334,17 @@ object {
 
 #main-navigation {
 	clear: both;
-	padding: 20px 0 0;
+	/* padding: 20px 0 0; */
 	}
 #main-navigation .sf-menu {
-	background: #060608;
+    background: #060608;
+    position: relative;
+    z-index: 2;
 	}
 #main-navigation .sf-menu > ul > li:after {
 	width: 1px;
 	float: left;
-	margin: 15px 0 0;
+	margin: 10px 0 0;
 	content: "|";
 	display: block;
 	color: #666;
@@ -470,7 +479,9 @@ object {
 ----------------------------------------------- */
 .container {
 	width: 980px;
-	padding: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 3;
 	}
 .content-area {
 	width: 100%;
@@ -872,7 +883,11 @@ body.search .page .entry-footer {
 
 .widget li a {
 	color: #333;
-	}
+    }
+.widget li span{
+    position: relative;
+    top:-1px;
+}
 .widget li a:hover {
 	color: #ff2828;
 	}
@@ -1151,11 +1166,382 @@ body.search .page .entry-footer {
 	color: #ff2828;
 	}
 .site-info {
-	float: left;
+    /* text-align: center; */
+    float:left;
 	}
 .site-credit {
 	float: right;
-	}
+    }
+/* 隐藏搜索框 中的搜索页面 */
+.ins-search .ins-section-container .ins-section:nth-child(2){
+    display: none;
+}
+/* 小猫头像动画样式*/
+.cat {
+    position: relative;
+    height: 88px;
+    width: 113.1px;
+    margin-bottom: -20px;
+  }
+  
+  .ear {
+    position: absolute;
+    top: -30%;
+    height: 60%;
+    width: 25%;
+    background: #fff;
+  }
+  .ear::before, .ear::after {
+    content: '';
+    position: absolute;
+    bottom: 24%;
+    height: 10%;
+    width: 5%;
+    border-radius: 50%;
+    background: #060608;
+  }
+  .ear::after {
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  
+  .ear--left {
+    left: -7%;
+    border-radius: 70% 30% 0% 0% / 100% 100% 0% 0%;
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  .ear--left::before, .ear--left::after {
+    right: 10%;
+  }
+  .ear--left::after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .ear--right {
+    right: -7%;
+    border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%;
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  .ear--right::before, .ear--right::after {
+    left: 10%;
+  }
+  .ear--right::after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  
+  .face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #060608;
+    border-radius: 50%;
+  }
+  
+  .eye {
+    position: absolute;
+    top: 35%;
+    height: 30%;
+    width: 31%;
+    background: #fff;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+  .eye::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    border-radius: 0 0 50% 50% / 0 0 40% 40%;
+    background: #060608;
+    -webkit-animation: blink 4s infinite ease-in;
+            animation: blink 4s infinite ease-in;
+  }
+  @-webkit-keyframes blink {
+    0% {
+      height: 0;
+    }
+    90% {
+      height: 0;
+    }
+    92.5% {
+      height: 100%;
+    }
+    95% {
+      height: 0;
+    }
+    97.5% {
+      height: 100%;
+    }
+    100% {
+      height: 0;
+    }
+  }
+  @keyframes blink {
+    0% {
+      height: 0;
+    }
+    90% {
+      height: 0;
+    }
+    92.5% {
+      height: 100%;
+    }
+    95% {
+      height: 0;
+    }
+    97.5% {
+      height: 100%;
+    }
+    100% {
+      height: 0;
+    }
+  }
+  .eye::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    height: 10%;
+    width: 15%;
+    background: #fff;
+    border-radius: 50%;
+  }
+  
+  .eye--left {
+    left: 0;
+  }
+  .eye--left::before {
+    right: -5%;
+  }
+  
+  .eye--right {
+    right: 0;
+  }
+  .eye--right::before {
+    left: -5%;
+  }
+  
+  .eye-pupil {
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    width: 20%;
+    background: #060608;
+    border-radius: 50%;
+    -webkit-animation: look-around 4s infinite;
+            animation: look-around 4s infinite;
+  }
+  @-webkit-keyframes look-around {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    5% {
+      -webkit-transform: translate(50%, -25%);
+              transform: translate(50%, -25%);
+    }
+    10% {
+      -webkit-transform: translate(50%, -25%);
+              transform: translate(50%, -25%);
+    }
+    15% {
+      -webkit-transform: translate(-100%, -25%);
+              transform: translate(-100%, -25%);
+    }
+    20% {
+      -webkit-transform: translate(-100%, -25%);
+              transform: translate(-100%, -25%);
+    }
+    25% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    100% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+  }
+  @keyframes look-around {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    5% {
+      -webkit-transform: translate(50%, -25%);
+              transform: translate(50%, -25%);
+    }
+    10% {
+      -webkit-transform: translate(50%, -25%);
+              transform: translate(50%, -25%);
+    }
+    15% {
+      -webkit-transform: translate(-100%, -25%);
+              transform: translate(-100%, -25%);
+    }
+    20% {
+      -webkit-transform: translate(-100%, -25%);
+              transform: translate(-100%, -25%);
+    }
+    25% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    100% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+  }
+  .eye--left .eye-pupil {
+    right: 30%;
+  }
+  .eye--right .eye-pupil {
+    left: 30%;
+  }
+  .eye-pupil::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -5%;
+    height: 20%;
+    width: 35%;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .muzzle {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    height: 6%;
+    width: 10%;
+    background: #fff;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  }
+/* 小猫跑动css样式 */
+#marco{
+    width: 100%;
+    height: 268px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    }
+
+#cielo{
+    width: 100%;
+    height: 389px;
+    background: linear-gradient(to bottom, #0B4C5F 0%,#04B4AE 52%,#0c0207 100%);
+    position: absolute;
+    z-index: -30;
+    top: 0;
+    }
+
+#edificios{
+    background: url('images/edificiosOne.svg');
+    height: 500px;
+    width: 100%;
+    z-index: -10;
+    top: 1.5em;
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    -webkit-animation: animar_edificios 120s linear infinite;
+    -ms-animation: animar_edificios 120s linear infinite;
+    -moz-animation: animar_edificios 120s linear infinite;
+    position: absolute;
+    }
+
+/* Animacion edificios */
+
+   @keyframes  animar_edificios {
+        from { background-position: 0 0; }
+        to { background-position: 100% 0; }
+    }
+    @-webkit-keyframes  animar_edificios {
+        from { background-position: 0 0; }
+        to { background-position: 100% 0; }
+    }
+    @-ms-keyframes  animar_edificios {
+        from { background-position: 0 0; }
+        to { background-position: 100% 0; }
+    }
+    @-moz-keyframes  animar_edificios {
+        from { background-position: 0 0; }
+        to { background-position: 100% 0; }
+    }
+   
+#luna {
+    width: 6em;
+    height: 6em;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 30px 10px 0 #F7F8E0;
+    -webkit-box-shadow: 30px 10px 0 #F7F8E0;
+    box-shadow: 30px 10px 0 #F7F8E0;
+    margin-top: 1em;
+    margin-left: 72%;
+    position: absolute;
+    z-index: -19;
+    }
+
+#muro{
+    /* height: 23em; */
+    width: 100%;
+    background: -moz-linear-gradient(top,  #416663 0%, #0c0207 19%); 
+    background: -webkit-linear-gradient(top,  #416663 0%,#0c0207 19%); 
+    background: linear-gradient(to bottom,  #416663 0%,#0c0207 19%); 
+    bottom:0px; 
+    }
+
+#gato{
+    background: url(images/gatito.svg);
+    height: 297px;
+    width: 508px;
+    margin-top: -2em;
+    /* margin-left: 35em; */
+    position: absolute;
+    margin-left: -253px;
+    left: 50%;
+    z-index: 10;
+    -webkit-animation: sprite-animation 1.2s steps(16,end) infinite;
+    -moz-animation: sprite-animation 1.2s steps(16,end) infinite; 
+    -ms-animation: sprite-animation 1.2s steps(16,end) infinite; 
+    animation: sprite-animation 1.2s steps(16,end) infinite;
+    }
+
+@-webkit-keyframes sprite-animation { 
+        from { background-position: 0 0; }
+        to { background-position: -8120px 0; } 
+    }
+
+@-ms-keyframes sprite-animation { 
+        from { background-position: 0 0; }
+        to { background-position: -8120px 0; }
+    }
+
+@-moz-keyframes sprite-animation { 
+        from { background-position: 0 0; }
+        to { background-position: -8120px 0; }
+    }
+
+@keyframes sprite-animation { 
+        from { background-position: 0 0; }
+        to { background-position: -8120px 0; }
+    }
+/* 隐藏畅言相关信息 */
+#SOHUCS .module-hot-topic{
+    display: none !important;
+}
+#SOHUCS .module-cmt-footer{
+    display: none !important;
+}
 
 /* RESPONSIVE SUPPORT
 ----------------------------------------------- */
@@ -1179,6 +1565,9 @@ body.search .page .entry-footer {
 		}
 	}
 @media screen and (max-width: 758px) {
+    #gato{
+        display: none;
+    }
 	.site-header .widget-area {
 		display: none;
 		}
