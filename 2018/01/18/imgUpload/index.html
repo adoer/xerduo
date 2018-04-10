@@ -3,24 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>小耳朵</title>
+  <title>two sum | 小耳朵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
+    <meta name="keywords" content="demo" />
   
   
   
-  <meta name="description" content="关于我123456789101112131415161718&amp;#123;  &quot;name&quot;: &quot;duer&quot;,  &quot;gender&quot;: &quot;man&quot;,  &quot;address&quot;: &quot;广东省深圳市&quot;,  &quot;education&quot;: &quot;本科/贵州大学&quot;,  &quot;Github&quot;: &quot;https://github.com/adoer&quot;,  &quot;blog&quot;: &quot;www.xerduo.com&quot;,  &quot;email&quot;: &quot;duqi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小耳朵">
-<meta property="og:url" content="http://xerduo.com/about/index.html">
+  
+  <meta name="description" content="题意Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same">
+<meta name="keywords" content="demo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Two Sum">
+<meta property="og:url" content="http://xerduo.com/2018/01/18/imgUpload/index.html">
 <meta property="og:site_name" content="小耳朵">
-<meta property="og:description" content="关于我123456789101112131415161718&amp;#123;  &quot;name&quot;: &quot;duer&quot;,  &quot;gender&quot;: &quot;man&quot;,  &quot;address&quot;: &quot;广东省深圳市&quot;,  &quot;education&quot;: &quot;本科/贵州大学&quot;,  &quot;Github&quot;: &quot;https://github.com/adoer&quot;,  &quot;blog&quot;: &quot;www.xerduo.com&quot;,  &quot;email&quot;: &quot;duqi">
+<meta property="og:description" content="题意Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-18T17:19:26.134Z">
+<meta property="og:updated_time" content="2018-03-13T17:40:25.815Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小耳朵">
-<meta name="twitter:description" content="关于我123456789101112131415161718&amp;#123;  &quot;name&quot;: &quot;duer&quot;,  &quot;gender&quot;: &quot;man&quot;,  &quot;address&quot;: &quot;广东省深圳市&quot;,  &quot;education&quot;: &quot;本科/贵州大学&quot;,  &quot;Github&quot;: &quot;https://github.com/adoer&quot;,  &quot;blog&quot;: &quot;www.xerduo.com&quot;,  &quot;email&quot;: &quot;duqi">
+<meta name="twitter:title" content="Two Sum">
+<meta name="twitter:description" content="题意Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same">
   
     <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -68,7 +71,7 @@ var themeMenus = {};
 </script>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   <header id="allheader" class="site-header" role="banner">
@@ -159,13 +162,31 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main"><article id="about-"  class="article article-type-
-        about" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-imgUpload" style="width: 66%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
             <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
                 
                     
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Two Sum
+    </h1>
+  
+
+                        </header>
+                        
                             <div class="article-meta">
                                 
+    发表于
+    <a href="/2018/01/18/imgUpload/" class="article-date">
+        <time datetime="2018-01-18T05:06:00.000Z" itemprop="datePublished">
+            2018-01-18 13:01:00
+        </time>
+    </a>
+    
                                     
 	<span id="busuanzi_container_page_pv">
 	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -174,13 +195,24 @@ var themeMenus = {};
                             </div>
                             <div class="article-entry" itemprop="articleBody">
                                 
-                                                                        <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"duer"</span>,</span><br><span class="line">  <span class="attr">"gender"</span>: <span class="string">"man"</span>,</span><br><span class="line">  <span class="attr">"address"</span>: <span class="string">"广东省深圳市"</span>,</span><br><span class="line">  <span class="attr">"education"</span>: <span class="string">"本科/贵州大学"</span>,</span><br><span class="line">  <span class="attr">"Github"</span>: <span class="string">"https://github.com/adoer"</span>,</span><br><span class="line">  <span class="attr">"blog"</span>: <span class="string">"www.xerduo.com"</span>,</span><br><span class="line">  <span class="attr">"email"</span>: <span class="string">"duqing957@gmail.com"</span>,</span><br><span class="line">  <span class="attr">"qq"</span>: <span class="string">"957965700"</span>,</span><br><span class="line">  <span class="attr">"company"</span>: <span class="string">"Chinasoft International"</span>,</span><br><span class="line">  <span class="attr">"hobby"</span>: [</span><br><span class="line">    <span class="string">"coding"</span>,</span><br><span class="line">    <span class="string">"swimming"</span>,</span><br><span class="line">    <span class="string">"cycling"</span>,</span><br><span class="line">    <span class="string">"basketball"</span>,</span><br><span class="line">    <span class="string">"..."</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                                                                        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target，<br>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>给定一个整数数组，返回其中两个数的索引，并使索引对应元素之和与给定的数相等，<br>假定每次输入都只有一个解决方案，并且不会使用相同的元素两次。     </p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [2, 7, 11, 15], target = 9,</span><br><span class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</span><br><span class="line">return [0, 1].</span><br></pre></td></tr></table></figure></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;number[]&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> map = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = nums.length; i &lt; l; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (map[target - nums[i]] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> [map[target - nums[i]], i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="在线演示"><a href="#在线演示" class="headerlink" title="在线演示"></a>在线演示</h2><script async src="//jsfiddle.net/duqing/g6wLLesw/embed/"></script>
+
+
 
                                                                             
                                                         </div>
                                                         <footer class="entry-meta entry-footer">
                                                             
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+
                                                                 
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/刷题/">刷题</a></li></ul>
+
                                                                     
                                                                         <div id="donation_div"></div>
 
@@ -212,179 +244,36 @@ var a = new Donate({
                                         </div>
                                         
                                             
+<nav id="article-nav">
+  
+    <a href="/2018/01/18/TwoSum/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Two Sum
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
                                                 
 </article>
 
 <!-- Table of Contents -->
-</section>
-          <aside id="sidebar">
-  
-    <div class="widget-wrap" style="margin: 20px 0;">
-	<div id="search-form-wrap">
-    
-        <form class="search-form">
-            <label style="width: 75%;">
-                <span class="screen-reader-text">Search for:</span>
-                <input type="search" class="search-field" style="height: 42px;" placeholder=" 搜索…" value="" name="s" title="">
-            </label>
-            <input type="submit" class="search-form-submit" value="搜索">
-        </form>
-        <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+
+    <aside id="sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+                文章目录
+            </strong>
             
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">联系我吧</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-            <li><a href="mailto:?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-    <div class="widget_athemes_tabs">
-        <ul id="widget-tab" class="clearfix widget-tab-nav">
-            <li class="active">
-                <a>
-                    最新文章
-                </a>
-            </li>
-        </ul>
-        <div class="widget">
-            <ul>
-                
-                    <li class="clearfix">
-
-                        
-                                    <div class="widget-entry-summary" style="margin: 0;">
-                                        
-
-                                            <h6 style="margin: 0;">
-                                                <a href="/2018/01/18/TwoSum/">
-                                                    Two Sum
-                                                </a>
-                                            </h6>
-                                            <span>
-                                                2018-01-18
-                                            </span>
-                                    </div>
-
-                    </li>
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线演示"><span class="nav-number">3.</span> <span class="nav-text">在线演示</span></a></li></ol>
                     
-                    <li class="clearfix">
-
-                        
-                                    <div class="widget-entry-summary" style="margin: 0;">
-                                        
-
-                                            <h6 style="margin: 0;">
-                                                <a href="/2018/01/18/imgUpload/">
-                                                    Two Sum
-                                                </a>
-                                            </h6>
-                                            <span>
-                                                2018-01-18
-                                            </span>
-                                    </div>
-
-                    </li>
-                    
-            </ul>
-            </div>
         </div>
-        
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a><span class="tag-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/刷题/" style="font-size: 10px;">刷题</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
+    </aside>
+    </section>
         
       </div>
       <footer id="footer" class="site-footer">
