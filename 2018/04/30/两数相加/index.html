@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>two sum | 小耳朵</title>
+  <title>两数相加 | 小耳朵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -12,18 +12,18 @@
   
   
   
-  <meta name="description" content="题意Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same">
+  <meta name="description" content="题意You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
 <meta name="keywords" content="demo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Two Sum">
-<meta property="og:url" content="http://xerduo.com/2018/01/18/TwoSum/index.html">
+<meta property="og:title" content="两数相加">
+<meta property="og:url" content="http://xerduo.com/2018/04/30/两数相加/index.html">
 <meta property="og:site_name" content="小耳朵">
-<meta property="og:description" content="题意Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same">
+<meta property="og:description" content="题意You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-11T12:25:54.126Z">
+<meta property="og:updated_time" content="2018-04-29T18:30:38.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Two Sum">
-<meta name="twitter:description" content="题意Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same">
+<meta name="twitter:title" content="两数相加">
+<meta name="twitter:description" content="题意You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
   
     <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -155,14 +155,32 @@ var themeMenus = {};
     </div>
 </header>
 
-<!--  -->
+<!-- 
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  </script>
+ -->
 
   <div id="container">
     <div id="wrap">
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-TwoSum" style="width: 66%; float:left;"
+          <section id="main" style="float:none;"><article id="post-两数相加" style="width: 66%; float:left;"
      class="article article-type-
         post" itemscope itemprop="blogPost" >
             <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -172,7 +190,7 @@ var themeMenus = {};
                             
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Two Sum
+      两数相加
     </h1>
   
 
@@ -181,9 +199,9 @@ var themeMenus = {};
                             <div class="article-meta">
                                 
     发表于
-    <a href="/2018/01/18/TwoSum/" class="article-date">
-        <time datetime="2018-01-18T05:06:00.000Z" itemprop="datePublished">
-            2018-01-18 13:01:00
+    <a href="/2018/04/30/两数相加/" class="article-date">
+        <time datetime="2018-04-29T18:26:00.000Z" itemprop="datePublished">
+            2018-04-30 02:04:00
         </time>
     </a>
     
@@ -195,12 +213,10 @@ var themeMenus = {};
                             </div>
                             <div class="article-entry" itemprop="articleBody">
                                 
-                                                                        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>给定一个整数数组，返回其中两个数的索引，并使索引对应元素之和与给定的数相等，假定每次输入都只有一个解决方案，并且不会使用相同的元素两次。     </p>
-<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Given nums = [2, 7, 11, 15], target = 9,</span><br><span class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</span><br><span class="line">return [0, 1].</span><br></pre></td></tr></table></figure></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;number[]&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> map = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = nums.length; i &lt; l; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (map[target - nums[i]] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> [map[target - nums[i]], i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="在线演示"><a href="#在线演示" class="headerlink" title="在线演示"></a>在线演示</h2><script async src="//jsfiddle.net/duqing/g6wLLesw/embed/js,html,css,result/dark/"></script>
-
-
+                                                                        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.<br>You may assume the two numbers do not contain any leading zero, except the number 0 itself.<br>给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。<br>你可以假设除了数字 0 之外，这两个数字都不会以零开头。     </p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">Output: 7 -&gt; 0 -&gt; 8</span><br><span class="line">Explanation: 342 + 465 = 807.</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = val;</span></span><br><span class="line"><span class="comment"> *     this.next = null;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l1</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l2</span></span><br><span class="line"><span class="comment"> * @return &#123;ListNode&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> addTwoNumbers = <span class="function"><span class="keyword">function</span>(<span class="params">l1, l2</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 假设l1,l2是数组(其实是链表) 需要理解链表概念 因为 l1 l1 是非空链表</span></span><br><span class="line">    <span class="comment">// 将链表转化为数组</span></span><br><span class="line">    <span class="keyword">let</span> arrL1,arrL2;</span><br><span class="line">    <span class="keyword">let</span> dealListNode=<span class="function"><span class="keyword">function</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 递归</span></span><br><span class="line">        <span class="keyword">let</span> arr=[];</span><br><span class="line">        <span class="keyword">let</span> curItemConst=arg;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">curItem</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(curItem)&#123;</span><br><span class="line">                arr.push(curItem[<span class="string">'val'</span>]);</span><br><span class="line">                curItemConst=curItem[<span class="string">'next'</span>];</span><br><span class="line">                fun(curItemConst);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        fun(curItemConst);</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    arrL1=dealListNode(l1);</span><br><span class="line">    arrL2=dealListNode(l2);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//判断哪个长</span></span><br><span class="line">    <span class="keyword">var</span> arr=arrL1.length&gt;arrL2.length?arrL1:arrL2;</span><br><span class="line">    <span class="comment">// 结果数组,// 进位数组</span></span><br><span class="line">    <span class="keyword">let</span> result=[],cache=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>, l=arr.length; i&lt;l; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> curL1=arrL1[i]||<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> curL2=arrL2[i]||<span class="number">0</span>;</span><br><span class="line">        cache[i]=cache[i]||<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> res=curL1+curL2+cache[i];</span><br><span class="line">        <span class="keyword">if</span>(res&lt;<span class="number">10</span>)&#123;</span><br><span class="line">           result[i]=res;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            result[i]=res%<span class="number">10</span>;</span><br><span class="line">            cache[i+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(cache.length&gt;arr.length)&#123;</span><br><span class="line">        result=[...result,<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
                                                                             
                                                         </div>
@@ -244,6 +260,25 @@ var a = new Donate({
                                         </div>
                                         
                                             
+<nav id="article-nav">
+  
+    <a href="/2018/04/30/基于Canvas的俄罗斯方块游戏/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          🎮 基于Canvas的俄罗斯方块游戏
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/18/两数之和/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">两数之和</div>
+    </a>
+  
+</nav>
+
                                                 
 </article>
 
@@ -255,7 +290,7 @@ var a = new Donate({
                 文章目录
             </strong>
             
-                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线演示"><span class="nav-number">3.</span> <span class="nav-text">在线演示</span></a></li></ol>
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol>
                     
         </div>
     </aside>

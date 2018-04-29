@@ -152,7 +152,25 @@ var themeMenus = {};
     </div>
 </header>
 
-<!--  -->
+<!-- 
+  <div style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  </script>
+ -->
 
   <div id="container">
     <div id="wrap">
@@ -316,8 +334,44 @@ var a = new Donate({
                                         
 
                                             <h6 style="margin: 0;">
-                                                <a href="/2018/01/18/TwoSum/">
-                                                    Two Sum
+                                                <a href="/2018/04/30/基于Canvas的俄罗斯方块游戏/">
+                                                    🎮 基于Canvas的俄罗斯方块游戏
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2018-04-30
+                                            </span>
+                                    </div>
+
+                    </li>
+                    
+                    <li class="clearfix">
+
+                        
+                                    <div class="widget-entry-summary" style="margin: 0;">
+                                        
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2018/04/30/两数相加/">
+                                                    两数相加
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2018-04-30
+                                            </span>
+                                    </div>
+
+                    </li>
+                    
+                    <li class="clearfix">
+
+                        
+                                    <div class="widget-entry-summary" style="margin: 0;">
+                                        
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2018/01/18/两数之和/">
+                                                    两数之和
                                                 </a>
                                             </h6>
                                             <span>
@@ -336,7 +390,7 @@ var a = new Donate({
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -346,7 +400,7 @@ var a = new Donate({
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -356,7 +410,7 @@ var a = new Donate({
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/刷题/" style="font-size: 10px;">刷题</a>
+      <a href="/tags/刷题/" style="font-size: 20px;">刷题</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a>
     </div>
   </div>
 
@@ -366,7 +420,7 @@ var a = new Donate({
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
