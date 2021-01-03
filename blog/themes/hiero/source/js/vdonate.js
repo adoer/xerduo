@@ -65,7 +65,6 @@
                         if (!this.options.alipayImage) throw new Error("alipayImage is required");
                         this.el = this.options.el && this.options.el, this.render(), this.bind()
                     }
-                    debugger
                     return i(t, [{
                         key: "render",
                         value: function () {

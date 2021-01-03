@@ -1543,6 +1543,10 @@ body.search .page .entry-footer {
     display: none !important;
 }
 
+#pop_ad {
+	display: none !important;
+}
+
 /* RESPONSIVE SUPPORT
 ----------------------------------------------- */
 @media screen and (max-width: 960px) {

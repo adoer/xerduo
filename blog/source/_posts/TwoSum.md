@@ -1,17 +1,19 @@
 ---
-title: Two Sum
+title: 两数之和
 layout: post
 date: 2018-01-18 13:06:00
-comments: true
+comments: false
 tags: 
     - 刷题
 categories: [前端]
 keywords: demo
 description: 
 ---
-## 题意
+## 题意 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target，You may assume that each input would have exactly one solution, and you may not use the same element twice.   
 给定一个整数数组，返回其中两个数的索引，并使索引对应元素之和与给定的数相等，假定每次输入都只有一个解决方案，并且不会使用相同的元素两次。     
+
+<!--more-->
 
 例如：
 ```
@@ -38,7 +40,7 @@ var twoSum = function(nums, target) {
     }
 };
 ```
-## 在线演示
-<script async src="//jsfiddle.net/duqing/g6wLLesw/embed/js,html,css,result/dark/"></script>
+<!-- ## 在线演示
+<script async src="//jsfiddle.net/duqing/g6wLLesw/embed/js,html,css,result/dark/"></script> -->
 
 
