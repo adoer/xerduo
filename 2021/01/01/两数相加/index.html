@@ -3,24 +3,27 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>小耳朵</title>
+  <title>两数相加 | 小耳朵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
+    <meta name="keywords" content="demo">
   
   
   
-  <meta name="description" content="google-site-verification: google184e1e684149229c.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小耳朵">
-<meta property="og:url" content="http://xerduo.com/google184e1e684149229c.html">
+  
+  <meta name="description" content="题意You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
+<meta name="keywords" content="demo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="两数相加">
+<meta property="og:url" content="http://xerduo.com/2021/01/01/两数相加/index.html">
 <meta property="og:site_name" content="小耳朵">
-<meta property="og:description" content="google-site-verification: google184e1e684149229c.html">
+<meta property="og:description" content="题意You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-03T08:59:09.465Z">
+<meta property="og:updated_time" content="2021-01-03T08:59:09.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小耳朵">
-<meta name="twitter:description" content="google-site-verification: google184e1e684149229c.html">
+<meta name="twitter:title" content="两数相加">
+<meta name="twitter:description" content="题意You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return">
   
     <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
   
@@ -66,7 +69,7 @@ var themeMenus = {};
 </script>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   <header id="allheader" class="site-header" role="banner">
@@ -175,17 +178,28 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main"><article id="page-"  class="article article-type-
-        page" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-两数相加" style="width: 66%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
             <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
                 
                     
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      两数相加
+    </h1>
+  
+
+                        </header>
+                        
                             <div class="article-meta">
                                 
     发表于
-    <a href="/google184e1e684149229c.html" class="article-date">
-        <time datetime="2021-01-03T08:59:09.465Z" itemprop="datePublished">
-            2021-01-03 16:01:46
+    <a href="/2021/01/01/两数相加/" class="article-date">
+        <time datetime="2021-01-01T03:41:50.000Z" itemprop="datePublished">
+            2021-01-01 11:01:00
         </time>
     </a>
     
@@ -197,221 +211,63 @@ var themeMenus = {};
                             </div>
                             <div class="article-entry" itemprop="articleBody">
                                 
-                                                                        google-site-verification: google184e1e684149229c.html
+                                                                        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.<br>You may assume the two numbers do not contain any leading zero, except the number 0 itself.<br>给定两个非空链表来表示两个非负整数。位数按照逆序方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。<br>你可以假设除了数字 0 之外，这两个数字都不会以零开头。</p>
+<a id="more"></a>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">Output: 7 -&gt; 0 -&gt; 8</span><br><span class="line">Explanation: 342 + 465 = 807.</span><br></pre></td></tr></table></figure></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = val;</span></span><br><span class="line"><span class="comment"> *     this.next = null;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l1</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l2</span></span><br><span class="line"><span class="comment"> * @return &#123;ListNode&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> addTwoNumbers = <span class="function"><span class="keyword">function</span>(<span class="params">l1, l2</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 假设l1,l2是数组(其实是链表) 需要理解链表概念 因为 l1 l1 是非空链表</span></span><br><span class="line">    <span class="comment">// 将链表转化为数组</span></span><br><span class="line">    <span class="keyword">let</span> arrL1,arrL2;</span><br><span class="line">    <span class="keyword">let</span> dealListNode=<span class="function"><span class="keyword">function</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 递归</span></span><br><span class="line">        <span class="keyword">let</span> arr=[];</span><br><span class="line">        <span class="keyword">let</span> curItemConst=arg;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">curItem</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(curItem)&#123;</span><br><span class="line">                arr.push(curItem[<span class="string">'val'</span>]);</span><br><span class="line">                curItemConst=curItem[<span class="string">'next'</span>];</span><br><span class="line">                fun(curItemConst);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        fun(curItemConst);</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    arrL1=dealListNode(l1);</span><br><span class="line">    arrL2=dealListNode(l2);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//判断哪个长</span></span><br><span class="line">    <span class="keyword">var</span> arr=arrL1.length&gt;arrL2.length?arrL1:arrL2;</span><br><span class="line">    <span class="comment">// 结果数组,// 进位数组</span></span><br><span class="line">    <span class="keyword">let</span> result=[],cache=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>, l=arr.length; i&lt;l; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> curL1=arrL1[i]||<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> curL2=arrL2[i]||<span class="number">0</span>;</span><br><span class="line">        cache[i]=cache[i]||<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> res=curL1+curL2+cache[i];</span><br><span class="line">        <span class="keyword">if</span>(res&lt;<span class="number">10</span>)&#123;</span><br><span class="line">           result[i]=res;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            result[i]=res%<span class="number">10</span>;</span><br><span class="line">            cache[i+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(cache.length&gt;arr.length)&#123;</span><br><span class="line">        result=[...result,<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
                                                                             
                                                         </div>
                                                         <footer class="entry-meta entry-footer">
                                                             
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+
                                                                 
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/刷题/">刷题</a></li></ul>
+
                                                                     
 
                                                                                 
-                                                                                    
-                        <div id="SOHUCS"></div>
-                        <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
-                        <script type="text/javascript">
-                            window.changyan.api.config({
-                                appid: 'cytipdyyz',
-                                conf: 'prod_5137275b2043f6fa6ea2af2e0087000a'
-                            });
-                        </script>
-                        
-                                                                                        
                                                         </footer>
                                         </div>
                                         
                                             
+<nav id="article-nav">
+  
+    <a href="/2021/01/03/基于canvas的俄罗斯方块游戏/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          🎮基于canvas的俄罗斯方块游戏
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/18/TwoSum/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">两数之和</div>
+    </a>
+  
+</nav>
+
                                                 
 </article>
 
 <!-- Table of Contents -->
-</section>
-          <aside id="sidebar">
-  
-    <div class="widget-wrap" style="margin: 20px 0;">
-	<div id="search-form-wrap">
-    
-        <form class="search-form">
-            <label style="width: 75%;">
-                <span class="screen-reader-text">Search for:</span>
-                <input type="search" class="search-field" style="height: 42px;" placeholder=" 搜索…" value="" name="s" title="">
-            </label>
-            <input type="submit" class="search-form-submit" value="搜索">
-        </form>
-        <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+
+    <aside id="sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+                文章目录
+            </strong>
             
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">联系我吧</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-            <li><a href="mailto:?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-    <div class="widget_athemes_tabs">
-        <ul id="widget-tab" class="clearfix widget-tab-nav">
-            <li class="active">
-                <a>
-                    最新文章
-                </a>
-            </li>
-        </ul>
-        <div class="widget">
-            <ul>
-                
-                    <li class="clearfix">
-
-                        
-                                    <div class="widget-entry-summary" style="margin: 0;">
-                                        
-
-                                            <h6 style="margin: 0;">
-                                                <a href="/2021/01/03/基于canvas的俄罗斯方块游戏/">
-                                                    🎮基于canvas的俄罗斯方块游戏
-                                                </a>
-                                            </h6>
-                                            <span>
-                                                2021-01-03
-                                            </span>
-                                    </div>
-
-                    </li>
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol>
                     
-                    <li class="clearfix">
-
-                        
-                                    <div class="widget-entry-summary" style="margin: 0;">
-                                        
-
-                                            <h6 style="margin: 0;">
-                                                <a href="/2021/01/01/两数相加/">
-                                                    两数相加
-                                                </a>
-                                            </h6>
-                                            <span>
-                                                2021-01-01
-                                            </span>
-                                    </div>
-
-                    </li>
-                    
-                    <li class="clearfix">
-
-                        
-                                    <div class="widget-entry-summary" style="margin: 0;">
-                                        
-
-                                            <h6 style="margin: 0;">
-                                                <a href="/2018/01/18/TwoSum/">
-                                                    两数之和
-                                                </a>
-                                            </h6>
-                                            <span>
-                                                2018-01-18
-                                            </span>
-                                    </div>
-
-                    </li>
-                    
-            </ul>
-            </div>
         </div>
-        
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/刷题/" style="font-size: 20px;">刷题</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
+    </aside>
+    </section>
         
       </div>
       <footer id="footer" class="site-footer">
