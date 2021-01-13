@@ -15,7 +15,7 @@
     }, searchAnimDuration);
   };
 
-  var s = [
+/*   var s = [
         '<div style="display: none;">',
           '<script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>',
         '</div>'
@@ -23,7 +23,7 @@
 
   var di = $(s);
 
-  $('#container').append(di);
+  $('#container').append(di); */
 
   $('#nav-search-btn').on('click', function(){
     if (isSearchAnim) return;

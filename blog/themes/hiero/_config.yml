@@ -124,7 +124,7 @@ google_analytics:
 gauges_analytics:
 baidu_analytics:
 tencent_analytics:
-busuanzi_analytics: true
+busuanzi_analytics: false
 twitter:
 google_plus:
 fb_admins:
@@ -140,7 +140,7 @@ facebook_sdk:
   webmaster:    #true
 
 # CNZZ count
-cnzz_siteid: 1260716016
+# cnzz_siteid: 1260716016
 
 # donation button
 donate:
