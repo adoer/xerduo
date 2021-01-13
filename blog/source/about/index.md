@@ -6,21 +6,12 @@ comments: true
 ## 关于我
 ``` json
 {
-  "name": "duer",
-  "gender": "man",
+  "name": "Duer",
   "address": "广东省深圳市",
   "education": "本科/贵州大学",
   "Github": "https://github.com/adoer",
   "blog": "www.xerduo.com",
-  "email": "duqing957@gmail.com",
-  "qq": "957965700",
-  "company": "Chinasoft International",
-  "hobby": [
-    "coding",
-    "swimming",
-    "cycling",
-    "basketball",
-    "..."
-  ]
+  "email": "duqingbetter@qq.com",
+  "company": "格创东智",
 }
 ```
