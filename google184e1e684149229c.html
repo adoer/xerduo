@@ -182,20 +182,25 @@ var themeMenus = {};
                                                         <footer class="entry-meta entry-footer">
                                                             
                                                                 
+                                                                
+                                                                
+                                                                
                                                                     
-
-                                                                                
-                                                                                    
-                        <div id="SOHUCS"></div>
-                        <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+                        <div id="vcomments" style="margin-top: 20px;"></div>
+                        <script src="/js/Valine.min.js"></script>
+                        <!-- <script charset="utf-8" type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+                        <!-- <script charset="utf-8" type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
                         <script type="text/javascript">
-                            window.changyan.api.config({
-                                appid: 'cytipdyyz',
-                                conf: 'prod_5137275b2043f6fa6ea2af2e0087000a'
-                            });
+                            new Valine({
+                                el: '#vcomments',
+                                placeholder: '说点什么吧...',
+                                appId: 'ukMmYdN5OJN3yJ6reejhduyJ-9Nh9j0Va',
+                                appKey: 'K0KrIsh1h4zVTP6xds7nh5Qe',
+                                avatar:'wavatar' // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+                            })
                         </script>
                         
-                                                                                        
+                                                                
                                                         </footer>
                                         </div>
                                         
