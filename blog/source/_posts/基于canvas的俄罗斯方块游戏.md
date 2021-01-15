@@ -1,7 +1,7 @@
 ---
 title: 🎮基于canvas的俄罗斯方块游戏
 date: 2021-01-03 15:00:53
-comments: false
+comments: true
 tags: 
     - 游戏
 categories: [前端]

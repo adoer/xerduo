@@ -84,6 +84,20 @@
                                 conf: 'prod_5137275b2043f6fa6ea2af2e0087000a'
                             });
                         </script>
+                    <% } else if (theme.valine) {%>
+                        <div id="vcomments" style="margin-top: 20px;"></div>
+                        <%- js('js/Valine.min') %>
+                        <!-- <script charset="utf-8" type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+                        <!-- <script charset="utf-8" type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script> -->
+                        <script type="text/javascript">
+                            new Valine({
+                                el: '#vcomments',
+                                placeholder: '说点什么吧...',
+                                appId: 'ukMmYdN5OJN3yJ6reejhduyJ-9Nh9j0Va',
+                                appKey: 'K0KrIsh1h4zVTP6xds7nh5Qe',
+                                avatar:'wavatar' // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+                            })
+                        </script>
                         <% } else if (theme.wumii) {%>
                             <div id="comment">
                                 <script type="text/javascript" id="wumiiComments">

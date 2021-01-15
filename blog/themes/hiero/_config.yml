@@ -87,6 +87,7 @@ disqus_shortname:
 livere_shortname: #MTAyMC8yOTQ4MS82MDQ5
 uyan_uid: 
 changyan: false
+valine: true
 wumii:
 gitment:
   owner:                   #Your GitHub ID

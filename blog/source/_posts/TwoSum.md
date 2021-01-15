@@ -2,7 +2,7 @@
 title: 两数之和
 layout: post
 date: 2018-01-18 13:06:00
-comments: false
+comments: true
 tags: 
     - 刷题
 categories: [前端]

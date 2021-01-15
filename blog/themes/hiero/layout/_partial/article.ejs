@@ -55,13 +55,13 @@
                                                         <footer class="entry-meta entry-footer">
                                                             <%- partial('post/category') %>
                                                                 <%- partial('post/tag') %>
-                                                                    <% if (!index && theme.donate.enable){ %>
-                                                                        <%- partial('donate') %>
-                                                                            <% } %>
-
-                                                                                <% if (!index && post.comments && (theme.gentie_productKey || theme.duoshuo_shortname || theme.disqus_shortname || theme.uyan_uid ||theme.changyan || theme.wumii || theme.livere_shortname || theme.gitment.owner)){ %>
-                                                                                    <%- partial('comment') %>
-                                                                                        <% } %>
+                                                                
+                                                                <% if (!index && theme.donate.enable){ %>
+                                                                    <%- partial('donate') %>
+                                                                <% } %>
+                                                                <% if (!index && post.comments && (theme.gentie_productKey || theme.duoshuo_shortname || theme.disqus_shortname || theme.uyan_uid ||theme.changyan ||theme.valine || theme.wumii || theme.livere_shortname || theme.gitment.owner)){ %>
+                                                                    <%- partial('comment') %>
+                                                                <% } %>
                                                         </footer>
                                         </div>
                                         <% if (!index){ %>
