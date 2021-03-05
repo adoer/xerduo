@@ -19,6 +19,7 @@ body {
 	font-family: Arial, Helvetica, Microsoft Yahei;
 	line-height: 1.8;
 	background: #fff;
+	cursor: url('images/cursor.ico'),auto
 	}
 
 /* Headings */
