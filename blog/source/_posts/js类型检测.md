@@ -11,8 +11,8 @@ description:
 # JS类型检测
 在 ECMAScript 规范中，共定义了 7 种数据类型，分为 基本类型 和 引用类型 两大类，如下所示：
 
-基本类型：String、Number、Boolean、Symbol、Undefined、Null 
-引用类型：Object
+基本类型：**String、Number、Boolean、Symbol、Undefined、Null**
+引用类型：**Object**
 
 基本类型也称为简单类型，由于其占据空间固定，是简单的数据段，为了便于提升变量查询速度，将其存储在栈中，即按值访问。
 
