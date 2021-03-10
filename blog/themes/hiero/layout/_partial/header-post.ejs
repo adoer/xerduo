@@ -6,21 +6,23 @@
         <div id="muro"></div>
         <div id="edificios"></div>
     </div>
-    <div class="clearfix container">
+    <div class="clearfix container headCon">
         <div class="site-branding">
 
-            <h1 class="site-title">
-                <% if (theme.avatar.enable){ %>
+            <div class="site-title">
+                <!-- <% if (theme.avatar.enable){ %>
                     <a href="<%= config.root %>" rel="home">
                         <img style="margin-bottom: <%= theme.avatar.bottom %>px;" width="<%= theme.avatar.width %>px" height="<%= theme.avatar.height %>px"
                             alt="Hike News" src="<% if (!(theme.avatar.url.startsWith('http') || theme.avatar.url.indexOf('://') >= 0)){ %> <%-config.root %><% } %><%- theme.avatar.url %>">
                     </a>
-                    <% } else { %>
-                        <a href="<%= config.root %>" title="<%= config.title %>" rel="home">
-                            <%= config.title %>
-                        </a>
-                        <% } %>
-            </h1>
+                <% } else { %>
+                    <a href="<%= config.root %>" title="<%= config.title %>" rel="home">
+                        <%= config.title %>
+                    </a>
+                <% } %> -->
+                <div class="titleText"><%= config.title %></div>
+                <!-- <div class="decText">让世界听见我们的声音</div> -->
+            </div>
 
             <div class="cat">
                 <div class="ear ear--left"></div>
