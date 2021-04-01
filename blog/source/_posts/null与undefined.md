@@ -25,12 +25,12 @@ String 和 Symbol </font>。Symbol（符号）是 ECMAScript 6 新增的。还�
 
 （4）函数没有返回值时，默认返回undefined。
 
->一般来说，永远不用显式地给某个变量设置 undefined 值。字面值 undefined
+> 一般来说，永远不用显式地给某个变量设置 undefined 值。字面值 undefined
  主要用于比较，而且在 ECMA-262 第 3 版之前是不存在的。<font color='red'>增加这个特殊值的目的就是为
  了正式明确空对象指针（null）和未初始化变量的区别<font>。
 
 # null
->Null 类型同样只有一个值，即特殊值 null。逻辑上讲，null 值表示一个空对象指针，这也是给
+> Null 类型同样只有一个值，即特殊值 null。逻辑上讲，null 值表示一个空对象指针，这也是给
 typeof 传一个 null 会返回"object"的原因：
 let car = null; 
 console.log(typeof car); // "object" 
