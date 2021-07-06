@@ -2,7 +2,7 @@
 <%- partial('_partial/jsHelper') %>
 
 <% if (is_post()){ %>
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
+  <body data-spy="scroll" data-target="#toc" data-offset="50" id="cbody">
 <% } else {%>
   <body>
 <% } %>
@@ -28,5 +28,28 @@
 
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js" async=""></script>
+  <!-- 飞鸟动画背景 -->
+  <!-- <script src="/js/three.min.js"></script>
+  <script src="/js/vanta.birds.min.js"></script>
+  <script>
+    const effect = VANTA.BIRDS({
+      el: "#container",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xffffff,
+      birdSize: 0.50,
+      wingSpan: 15.00,
+      speedLimit: 2.00,
+      separation: 100.00,
+      alignment: 48.00,
+      cohesion: 41.00,
+      quantity: 3.00
+    })
+  </script> -->
 </body>
 </html>
