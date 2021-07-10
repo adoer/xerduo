@@ -1,5 +1,5 @@
 ---
-title: 说说你对作用域链的理解
+title: JS作用域链的理解
 date: 2021-07-01 00:51:32
 tags: 
     - JavaScript

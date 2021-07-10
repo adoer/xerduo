@@ -1,5 +1,5 @@
 ---
-title: 说说你对事件循环的理解
+title: JS事件循环的理解
 date: 2021-07-10 00:12:02
 tags: 
     - JavaScript
@@ -218,5 +218,4 @@ console.log('script end')
 7. 上一个宏任务所有事都做完了，开始下一个宏任务，就是定时器，打印 `settimeout`
 
 所以最后的结果是：`script start`、`async1 start`、`async2`、`promise1`、`script end`、`async1 end`、`promise2`、`settimeout`
-
 

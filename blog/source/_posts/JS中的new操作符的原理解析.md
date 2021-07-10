@@ -1,5 +1,5 @@
 ---
-title: JavaScript中的new操作符的原理解析
+title: JS中的new操作符的原理解析
 date: 2021-06-25 23:05:12
 tags: 
     - JavaScript
@@ -8,7 +8,7 @@ keywords: demo
 description: 
 ---
 
-# JavaScript中的new操作符的原理解析
+# JS中的new操作符的原理解析
 
 JavaScript中new操作符用于创建一个给定构造函数的对象实例。如下例子：
  ``` javascript
