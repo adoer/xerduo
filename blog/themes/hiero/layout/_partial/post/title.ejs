@@ -4,8 +4,15 @@
   </h1>
 <% } else if (post.title){ %>
   <% if (index){ %>
-    <h1 class="thumb" itemprop="name">
-      <a class="<%= class_name %>" href="<%- url_for(post.path) %>"><%= post.title %></a>
+    <h1 class="thumb bb" itemprop="name">
+      <a class="<%= class_name %>" href="<%- url_for(post.path) %>">
+        <span class="t1"><%= post.title %></span>
+        <span class="t2 text-gradient">
+          <span>
+            <%= post.title %>
+          </span>
+        </span>
+      </a>
     </h1>
   <% } else { %>
     <h1 class="thumb" class="<%= class_name %>" itemprop="name">

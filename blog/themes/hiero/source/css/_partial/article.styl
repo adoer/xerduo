@@ -66,9 +66,34 @@
   color: #555
   line-height: line-height-title
   transition: color 0.2s
+  position: relative
   a&:hover
     color: color-theme
     text-decoration: none;
+  a&:hover .t1
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(.16,1,.3,1)!important;
+  a&:hover .text-gradient
+    background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    span
+      background-size: 100% 100%;
+  .text-gradient
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+    transition: opacity 1s cubic-bezier(.16,1,.3,1)!important;
+    opacity: 0;
+    line-height: 25px;
+  .text-gradient span
+    background-image: linear-gradient(180deg,transparent 97.5%,#035bd6 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size 1s cubic-bezier(.16,1,.3,1)!important;
 
 .article-entry
   @extend $base-style

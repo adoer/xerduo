@@ -22,7 +22,7 @@
                                             </a>
                                         </div>
                                         <div class="entry-summary">
-                                            <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>
+                                            <%- truncate(strip_html(post.content), {length: 100, omission: '...'}) %>
 
                                                 <% } else { %>
 
@@ -35,10 +35,10 @@
                                                             </a>
                                                         </div>
                                                         <div class="entry-summary">
-                                                            <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>
+                                                            <%- truncate(strip_html(post.content), {length: 100, omission: '...'}) %>
                                                                 <% } else { %>
                                                                     <div class="entry-summary" style="margin-left:0;">
-                                                                        <%- truncate(strip_html(post.content), {length: 350, omission: '...'}) %>
+                                                                        <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>
                                                                             <% } %>
 
                                                                                 <% } %>
