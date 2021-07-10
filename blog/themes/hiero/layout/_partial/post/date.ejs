@@ -2,7 +2,8 @@
     发表于
     <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
         <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
-            <%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %>
+            <!-- <%= date(post.date, 'YYYY-MM-DD HH:MM:SS') %> -->
+            <%= moment(post.date).format('YYYY-MM-DD HH:mm:ss') %>
         </time>
     </a>
     <% } %>
