@@ -70,8 +70,9 @@
   a&:hover
     color: color-theme
     text-decoration: none;
-  
+
 .text-gradient-a
+  text-decoration: none!important;
   &:hover .t1
     opacity: 0;
     transition: opacity 1s cubic-bezier(.16,1,.3,1)!important;
@@ -80,6 +81,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
+    font-weight: bold
     span
       background-size: 100% 100%;
   .text-gradient
