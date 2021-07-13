@@ -1615,13 +1615,6 @@ body.search .page .entry-footer {
 	.site-content {
 		margin: 0;
 		}
-	.entry-thumbnail {
-		float: none;
-		margin: 0 auto 15px;
-		}
-	.entry-summary {
-		margin-left: 0;
-		}
 	.site-sidebar {
 		width: auto;
 		float: none;
@@ -1632,6 +1625,18 @@ body.search .page .entry-footer {
 		}
 	}
 @media screen and (max-width: 480px) {
+	.entry-thumbnail {
+		margin: 0 0 10px 0;
+		border: none;
+		width: 100%;
+	}
+	.entry-thumbnail a img {
+		width: 100%;
+		height: 200px;
+	}
+	.entry-summary {
+		margin-left: 0;
+	}
 	.site-footer {
 		text-align: center;
 		}
