@@ -1637,16 +1637,29 @@ body.search .page .entry-footer {
 	.entry-summary {
 		margin-left: 0;
 	}
+	#page-nav{
+		border: none;
+	}
+	#page-nav .prev{
+		width: 100%;
+    display: block;
+		margin-bottom: 6px;
+	}
+	#page-nav .next{
+		width: 100%;
+    display: block;
+		margin-top: 6px;
+	}
 	.site-footer {
 		text-align: center;
-		}
+	}
 	.site-footer .site-info,
 	.site-footer .site-credit {
 		float: none;
-		}
 	}
+}
 @media screen and (max-width: 320px) {
-	}
+}
 
 	/* 底部茶杯 */
 	.cup-wrap {
