@@ -35,7 +35,7 @@ about_big_image: [css/images/pose.jpg, https://source.unsplash.com/collection/95
 
 
 # Homepage thumbnail
-random_thumb: false
+random_thumb: true
 
 
 # Post Article's Content
