@@ -209,6 +209,13 @@ object {
 	}
 
 /* Text meant only for screen readers */
+#search-form-wrap label{
+	margin: 0 10px 0 0 ;
+}
+#search-form-wrap .search-form{
+	display: flex;
+	align-items: center;
+}
 .screen-reader-text {
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
