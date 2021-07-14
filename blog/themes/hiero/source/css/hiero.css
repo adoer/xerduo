@@ -432,7 +432,8 @@ object {
 .nav-open,
 .nav-close {
 	display: none;
-	color: #eb2121;
+	color: #fff!important;
+	/* color: #eb2121; */
 	font-size: 1.2em;
 	font-weight: 400;
 	font-family: "Yanone Kaffeesatz", "方正姚体", Arial, Helvetica, sans-serif;
@@ -441,13 +442,30 @@ object {
 	line-height: 50px;
 	letter-spacing: 1px;
 	background: #060608;
-	}
+}
+.search-mobile{
+	margin-bottom: 18px;
+	margin-top: -14px;
+	border-radius: 4px !important;
+}
 @media only screen and (max-width: 60em) {
 	.nav-open {
 		display: block;
 		cursor: pointer;
 		text-align: center;
-		}
+	}
+	.main-navigation .open{
+		display: inline-block;
+	}
+	.main-navigation .closeIcon{
+		display: none;
+	}
+	.main-navigation-open .open{
+		display: none;
+	}
+	.main-navigation-open .closeIcon{
+		display: inline-block;
+	}
 	#main-navigation:target > .nav-open {
 		display: none;
 		}

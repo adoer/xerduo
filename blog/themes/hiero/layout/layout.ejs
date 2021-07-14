@@ -13,6 +13,9 @@
     <div id="wrap">
             
       <div id="content" class="outer">
+        <% if (!is_post()){ %>
+          <input type="text" class="search-mobile form-control search-form-submit" placeholder="搜索...">
+        <% } %>
         <% if (theme.sidebar && theme.sidebar !== 'bottom' && !is_post()){ %>
           <section id="main"><%- body %></section>
           <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
