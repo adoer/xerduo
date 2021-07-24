@@ -529,7 +529,7 @@ object {
   background-color: rgba(255,255,255,1);
 }
 #wrap{
-	background-color: #fff;
+	background-color: rgba(255,255,255,.8);
 	/* background: url(https://source.unsplash.com/1600x900/?white) no-repeat center center; */
 	/* background: url(https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) no-repeat center center; */
 	background-size: cover;
@@ -539,6 +539,15 @@ object {
 	padding: 0px;
 	position: relative;
 	z-index: 3;
+	background: transparent;
+}
+.fixbackground{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url("./images/background.png") no-repeat center center;
+	width: 100%;
+	height: 100%;
 }
 .headCon{
 	position: absolute;
@@ -1226,8 +1235,8 @@ body.search .page .entry-footer {
 	color: #999; 
 	font-size: .9em;
 	border-top: 1px solid #f3efef;
-	/* background: #16171b; */
-	}
+	background: #ffffff; 
+}
 .site-footer a {
 	color: #fff;
 	text-decoration: none;
@@ -1252,6 +1261,7 @@ body.search .page .entry-footer {
     height: 88px;
     width: 113.1px;
     margin-bottom: -20px;
+		display: block;
   }
   
   .ear {

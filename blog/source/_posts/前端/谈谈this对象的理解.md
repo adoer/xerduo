@@ -7,8 +7,6 @@ categories: [前端]
 keywords: demo
 description: 
 ---
-![](https://camo.githubusercontent.com/a16e990abe68fcb0870a1f1bb4fd96fafba5eb54cc0d9208959516fdf24264aa/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f34366338323064302d373462372d313165622d383566362d3666616337376330633962332e706e67)
-
 ## 一、定义
 函数的 `this` 关键字在 `JavaScript` 中的表现略有不同，此外，在严格模式和非严格模式之间也会有一些差别
 
@@ -251,7 +249,11 @@ cat.sayName()
 
 同样的，箭头函数不能作为构建函数
 
-## 四、优先级
+
+## 四、箭头函数和普通函数中this的区别
+
+https://www.cnblogs.com/fanzhanxiang/p/8888963.html
+## 五、优先级
 ### 隐式绑定 VS 显式绑定
 ```js
 function foo() {

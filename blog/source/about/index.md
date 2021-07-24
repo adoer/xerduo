@@ -10,6 +10,5 @@ comments: true
   "Github": "https://github.com/adoer",
   "blog": "www.xerduo.com",
   "email": "duqingbetter@qq.com",
-  "WeChat": "duerKing",
 }
 ```
