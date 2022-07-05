@@ -1247,6 +1247,7 @@ body.search .page .entry-footer {
 .site-info {
     /* text-align: center; */
     float:left;
+		margin-top:10px;
 	}
 .site-credit {
 	float: right;
