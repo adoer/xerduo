@@ -54,5 +54,44 @@
       quantity: 3.00
     })
   </script> -->
+  <!-- 获取日期星期 -->
+  <script>
+    var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var weekDay = now.getDay();
+    $("#dateTxt").text(year + "年" + month + "月" + day + "日");
+    $("#weekTxt").text( week[weekDay]);
+  </script>
+  <!-- 获取位置 -->
+  <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script> 
+  <!-- 获取天气 --> 
+  <script type="text/javascript">  
+    if(returnCitySN && returnCitySN['cid']){
+      var api = "https://restapi.amap.com/v3/weather/weatherInfo"
+      $.ajax({
+          url: api,
+          type: 'get',
+          data: {
+            key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+            city: returnCitySN['cid'],
+            // extensions: 'all',
+          },
+          dataType: 'json',
+          success:function(data){
+            if(data &&  data.status=="1"){
+              var lives = data.lives[0];
+              $("#cityName").text(lives.city);
+              $("#weatherTxt").text(lives.weather);
+              $("#temperature").text(lives.temperature+"°");
+              $("#winddirection").text(lives.winddirection+"风");
+              $("#windpower").text(lives.windpower+"级");
+            }
+          }
+        })
+    }
+  </script>
 </body>
 </html>

@@ -11,11 +11,11 @@
             <ul>
                 <% site.posts.sort('date', -1).limit(6).each(function(post){ %>
                     <li class="clearfix">
-
-                        <% if (post.photos != ""){ %>
+                        <div class="widget-entry-item">
+                          <% if (post.photos != ""){ %>
                             <div class="widget-entry-thumbnail">
                                 <a href="<%- url_for(post.path) %>" title="<% post.title %>">
-                                    <img width="50" height="50" src="<%= post.photos[0] %>" class="attachment-thumb-small size-thumb-small wp-post-image"
+                                    <img width="50" height="50" src="<%= '../../css/images/artarticleImg/' + post.photos[0] %>" class="attachment-thumb-small size-thumb-small wp-post-image"
                                         alt="preview-16" title="<% post.title %>">
                                 </a>
                             </div>
@@ -33,7 +33,7 @@
                                                 <%= date(post.date, 'YYYY-MM-DD') %>
                                             </span>
                                     </div>
-
+                          </div>
                     </li>
                     <% }) %>
             </ul>

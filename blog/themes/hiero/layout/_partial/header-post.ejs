@@ -1,16 +1,16 @@
 <header id="allheader" class="site-header" role="banner">
-    <div id="marco">
-        <div id="cielo"></div>
-        <div id="luna"></div>
-        <div id="gato"></div>
-        <div id="muro"></div>
-        <div id="edificios"></div>
-    </div>
-    <div class="clearfix container headCon">
-        <div class="site-branding">
-
-            <div class="site-title">
-                <!-- <% if (theme.avatar.enable){ %>
+  <!-- 顶部小猫跑动 -->
+  <!-- <div id="marco">
+    <div id="cielo"></div>
+    <div id="luna"></div>
+    <div id="gato"></div>
+    <div id="muro"></div>
+    <div id="edificios"></div>
+  </div> -->
+  <div class="clearfix container headCon">
+    <!-- <div class="site-branding">
+      <div class="site-title">
+        <% if (theme.avatar.enable){ %>
                     <a href="<%= config.root %>" rel="home">
                         <img style="margin-bottom: <%= theme.avatar.bottom %>px;" width="<%= theme.avatar.width %>px" height="<%= theme.avatar.height %>px"
                             alt="Hike News" src="<% if (!(theme.avatar.url.startsWith('http') || theme.avatar.url.indexOf('://') >= 0)){ %> <%-config.root %><% } %><%- theme.avatar.url %>">
@@ -19,54 +19,73 @@
                     <a href="<%= config.root %>" title="<%= config.title %>" rel="home">
                         <%= config.title %>
                     </a>
-                <% } %> -->
-                <div class="titleText"><%= config.title %></div>
-                <!-- <div class="decText">让世界听见我们的声音</div> -->
-            </div>
+                <% } %>
+        <div class="titleText"><%= config.title %></div>
+      </div> -->
 
-            <a class="cat" href="/">
-                <div class="ear ear--left"></div>
-                <div class="ear ear--right"></div>
-                <div class="face">
-                    <div class="eye eye--left">
-                        <div class="eye-pupil"></div>
-                    </div>
-                    <div class="eye eye--right">
-                        <div class="eye-pupil"></div>
-                    </div>
-                    <div class="muzzle"></div>
+      <!-- <a class="cat" href="/">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </a> -->
+      <div class="titleTextCon">
+          <div class="bgCon">
+              <div class="titleTextBg">
+                  <!-- <%= config.title %> -->
                 </div>
-            </a>
-
-            <% if (config.description){ %>
-                <div class="site-description">
+                <div class="titleText">
                     <%= config.description %>
                 </div>
-                <% } %>
-
-                    <nav id="main-navigation" class="main-navigation" role="navigation">
-                        <a class="nav-open">
-                            <i class="fa fa-align-justify open"></i>
-                            <i class="fa fa-close closeIcon"></i>
-                        </a>
-                        <!-- <a class="nav-close">Close</a> -->
-                        <div class="clearfix sf-menu">
-
-                            <ul id="main-nav" class="nmenu sf-js-enabled">
-                                <% for (var i in theme.menu){ %>
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663">
-                                        <a class="" href="<%- url_for(theme.menu[i]) %>">
-                                            <%= __(i.toLowerCase()) %>
-                                        </a>
-                                    </li>
-                                    <% } %>
-                            </ul>
-                        </div>
-                    </nav>
-
-
+          </div>
+          <div class="rTextCon"">
+            <div>
+                <span id="dateTxt"></span>
+                <span id="weekTxt"></span>
+            </div>
+            <div class="bottomWeather">
+                <span id="cityName"></span>
+                <span id="weatherTxt"></span>
+                <span id="temperature"></span>
+                <span id="winddirection"></span><span id="windpower"></span>
+                
+            </div>
+          </div>
+      </div>
+      <!-- <% if (config.description){ %>
+      <div class="site-description">
+        <%= config.description %>
+      </div>
+      <% } %> -->
+      
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">
+          <i class="fa fa-align-justify open"></i>
+          <i class="fa fa-close closeIcon"></i>
+        </a>
+        <div class="clearfix sf-menu">
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+            <% for (var i in theme.menu){ %>
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="<%- url_for(theme.menu[i]) %>">
+                <%= __(i.toLowerCase()) %>
+              </a>
+            </li>
+            <% } %>
+          </ul>
         </div>
+      </nav>
     </div>
+  </div>
 </header>
 
 <!-- <% if (is_current("about", false) && theme.about_big_image){ %>
