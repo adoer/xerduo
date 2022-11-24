@@ -1,6 +1,6 @@
 ---
 title: Vue父子组件生命周期执行顺序
-date: 2021-08-04 21:04:56
+date: 2020-03-04 21:04:56
 photos: "img(12).jpg"
 tags:
   - Vue2
