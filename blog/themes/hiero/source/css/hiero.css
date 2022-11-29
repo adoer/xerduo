@@ -316,12 +316,12 @@ object {
   content: " ";
   position: absolute;
   top: 50%;
-  right: 180px;
+  right: 148px;
   margin-top: -2px;
   z-index: 1;
   height: 1px;
   background: #e0e0e0;
-  width: calc(100% - 600px);
+  width: calc(100% - 566px);
 }
 .titleText {
   color: #a09999;

@@ -3,6 +3,7 @@
 
 <% if (is_post()){ %>
   <body data-spy="scroll" data-target="#toc" data-offset="50" id="cbody">
+      <div id="iCenter"></div>
 <% } else {%>
   <body>
 <% } %>
@@ -54,7 +55,7 @@
       quantity: 3.00
     })
   </script> -->
-  <!-- 获取日期星期 -->
+  <!-- 获取日期星期 实时时间 -->
   <script>
     var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
     var now = new Date();
@@ -64,34 +65,82 @@
     var weekDay = now.getDay();
     $("#dateTxt").text(year + "年" + month + "月" + day + "日");
     $("#weekTxt").text( week[weekDay]);
-  </script>
-  <!-- 获取位置 -->
-  <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script> 
-  <!-- 获取天气 --> 
-  <script type="text/javascript">  
-    if(returnCitySN && returnCitySN['cid']){
-      var api = "https://restapi.amap.com/v3/weather/weatherInfo"
-      $.ajax({
-          url: api,
-          type: 'get',
-          data: {
-            key: '36f8f876aea61ff0f4a7fc18fada0ab8',
-            city: returnCitySN['cid'],
-            // extensions: 'all',
-          },
-          dataType: 'json',
-          success:function(data){
-            if(data &&  data.status=="1"){
-              var lives = data.lives[0];
-              $("#cityName").text(lives.city);
-              $("#weatherTxt").text(lives.weather);
-              $("#temperature").text(lives.temperature+"°");
-              $("#winddirection").text(lives.winddirection+"风");
-              $("#windpower").text(lives.windpower+"级");
-            }
-          }
-        })
+    
+    var timeArr = [
+      "夜深了，早点休息",  // 清晨5：00-6：00、
+      "早起的鸟儿有虫吃", // 早晨6：00-8：00、
+      "一年之计在于晨",// 上午8:00—11:00、
+      "上午好",// 中午11:00—13:00、
+      "中午好",// 下午13:00—17:00、
+      "傍晚好",// 傍晚17:00—18:00、
+      "晚上好",// 晚上18:00—24:00
+      ];
+    var greeting = '';
+    
+    function getNowTime(){
+      var curDate = new Date();
+      var hour = curDate.getHours();
+      var minute = curDate.getMinutes();
+      var second = curDate.getSeconds();
+      switch(true){
+        case hour >= 0 && hour < 5:
+          greeting = timeArr[0];
+          break;
+        case hour >= 5 && hour < 8:
+          greeting = timeArr[1];
+          break;
+        case hour >= 8 && hour < 11:
+          greeting = timeArr[2];
+          break;
+        case hour >= 11 && hour < 13:
+          greeting = timeArr[3];
+          break;
+        case hour >= 13 && hour < 17:
+          greeting = timeArr[4];
+          break;
+        case hour >= 17 && hour < 18:
+          greeting = timeArr[5];
+          break;
+        case hour >= 18 && hour <= 23:
+          greeting = timeArr[6];
+          break;
+      }
+      hour =  hour>10?hour:'0'+hour;
+      minute =  minute>10? minute:'0'+minute;
+      second =  second>10?second:'0'+second;
+
+      $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
     }
+    getNowTime();
+    setInterval(getNowTime,1000);
   </script>
+
+  <!-- 获取位置和才是编码（有时候不准） -->
+  <!-- <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>  -->
+
+  <!-- 获根据城市编码取天气 --> 
+  <!-- <script type="text/javascript">
+    if(returnCitySN && returnCitySN['cid']){
+      $.ajax({
+        url: "https://restapi.amap.com/v3/weather/weatherInfo",
+        type: 'get',
+        data: {
+          key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+          city: returnCitySN['cid'],
+        },
+        dataType: 'json',
+        success:function(data){
+          if(data &&  data.status=="1"){
+            var lives = data.lives[0];
+            $("#cityName").text(lives.city);
+            $("#weatherTxt").text(lives.weather);
+            $("#temperature").text(lives.temperature+"°");
+            $("#winddirection").text(lives.winddirection+"风");
+            $("#windpower").text(lives.windpower+"级");
+          }
+        }
+      })
+    }
+  </script> -->
 </body>
 </html>
