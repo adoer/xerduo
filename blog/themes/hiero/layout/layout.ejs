@@ -105,9 +105,9 @@
           greeting = timeArr[6];
           break;
       }
-      hour =  hour>10?hour:'0'+hour;
-      minute =  minute>10? minute:'0'+minute;
-      second =  second>10?second:'0'+second;
+      hour =  hour<10?'0'+hour:hour;
+      minute =  minute<10?'0'+minute:minute;
+      second =  second<10?'0'+second:second;
 
       $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
     }
