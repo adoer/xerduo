@@ -189,7 +189,7 @@ description:
 ### 小结
 可以看到上面几个案例，都体现了`BFC`实际就是页面一个独立的容器，里面的子元素不影响外面的元素
 
-## 参考文献
+## 参考资料
 * https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context
 * https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md
 

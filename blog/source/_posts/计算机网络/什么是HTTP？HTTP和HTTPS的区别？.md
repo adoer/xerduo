@@ -55,7 +55,7 @@ description:
 * HTTPS 由于需要设计加密以及多次握手，性能方面不如 HTTP
 * HTTPS需要SSL，SSL 证书需要钱，功能越强大的证书费用越高
 
-## 参考文献
+## 参考资料
 * https://www.cnblogs.com/klb561/p/10289199.html
 * https://www.jianshu.com/p/205c0fc51c97
 * https://vue3js.cn/interview

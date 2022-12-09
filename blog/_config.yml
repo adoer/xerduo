@@ -84,3 +84,48 @@ deploy:
     #coding: git@git.coding.net:duqing/duqing.git
   branch: master
   message: a little wroks
+
+# 搜索内容数据配置 https://github.com/alexbruno/hexo-generator-json-content
+jsonContent:
+  meta: false
+  pages:
+    title: true
+    slug: false
+    date: false
+    updated: false
+    comments: false
+    path: true
+    link: true
+    permalink: true
+    excerpt: false
+    keywords: false
+    text: true
+    raw: false
+    content: false
+    author: false
+  posts:
+    title: true
+    date: false
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: true
+    excerpt: false
+    categories: true
+    tags: true
+    author: false
+  categories:
+    name: true
+    slug: true
+    path: true
+    permalink: true
+  tags:
+    name: true
+    slug: true
+    path: true
+    permalink: true

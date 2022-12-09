@@ -226,7 +226,7 @@ export default {
 * 内联模板 `attribute`
 * `$destroy` 实例方法。用户不应再手动管理单个` Vue` 组件的生命周期。
 
-## 参考文献
+## 参考资料
 * https://vue3js.cn/docs/zh/guide/migration/introduction.html#%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4
 * https://composition-api.vuejs.org/zh/#api-%E4%BB%8B%E7%BB%8D
 

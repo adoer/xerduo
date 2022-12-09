@@ -6,9 +6,9 @@ comments: true
 ## 关于我
 ``` json
 {
-  "name": "Duer",
+  "name": "Du Qing",
   "Github": "https://github.com/adoer",
-  "blog": "www.xerduo.com",
-  "email": "duqingbetter@qq.com",
+  "blog": ["www.duqing.ink", "www.xerduo.com"],
+  "email": ["i@duqing.ink", "duqingbetter@qq.com"],
 }
 ```

@@ -131,6 +131,6 @@ description:
 |transition|	不支持|	支持|	支持|
 |子元素可复原|	不能|	能|	不能|
 |被遮挡的元素可触发事件|	能|	能|	不能|
-## 参考文献
+## 参考资料
 * https://www.cnblogs.com/a-cat/p/9039962.html
 

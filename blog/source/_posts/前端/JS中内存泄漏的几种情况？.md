@@ -151,7 +151,7 @@ console.log(refA, 'refA'); // 解除引用
 
 包括使用事件监听`addEventListener`监听的时候，在不监听的情况下使用`removeEventListener`取消对事件监听
 
-## 参考文献
+## 参考资料
 * http://www.ruanyifeng.com/blog/2017/04/memory-leak.html
 * https://zh.wikipedia.org/wiki
 

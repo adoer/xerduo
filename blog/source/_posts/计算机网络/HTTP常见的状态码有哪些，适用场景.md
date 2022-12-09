@@ -98,7 +98,7 @@ HTTP状态码（英语：HTTP Status Code），用以表示网页服务器超文
 * 503：服务器停机维护时，主动用503响应请求或 nginx 设置限速，超过限速，会返回503
 * 504：网关超时
 
-## 参考文献
+## 参考资料
 * [https://zh.wikipedia.org/wiki/HTTP状态码](https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81)
 * https://kebingzao.com/2018/10/05/http-status-code/
 * https://vue3js.cn/interview

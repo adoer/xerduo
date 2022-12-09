@@ -217,7 +217,7 @@ inject:['foo'] // 获取到祖先组件传递过来的值
 * 祖先与后代组件数据传递可选择`attrs`与`listeners`或者 `Provide`与 `Inject`
 * 复杂关系的组件数据传递可以通过`vuex`存放共享的变量
 
-## 参考文献
+## 参考资料
 * https://juejin.cn/post/6844903990052782094#heading-0
 * [https://zh.wikipedia.org/wiki/\%E9\%80\%9A\%E4\%BF\%A1](https://zh.wikipedia.org/wiki/%5C%E9%5C%80%5C%9A%5C%E4%5C%BF%5C%A1)
 * https://vue3js.cn/docs/zh

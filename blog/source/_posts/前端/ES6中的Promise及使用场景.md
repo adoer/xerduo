@@ -380,7 +380,7 @@ Promise
 });
 ```
 
-## 参考文献
+## 参考资料
 * https://es6.ruanyifeng.com/#docs/promise
 
 

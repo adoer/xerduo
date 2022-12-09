@@ -112,7 +112,7 @@ Vue.js（/vjuː/，或简称为Vue）是一个用于创建用户界面的开源J
 * 组件化通信的不同。`react`中我们通过使用回调函数来进行通信的，而`Vue`中子组件向父组件传递消息有两种方式：事件和回调函数
 * diff算法不同。`react`主要使用diff队列保存需要更新哪些DOM，得到patch树，再统一操作批量更新DOM。`Vue` 使用双向指针，边对比，边更新DOM
 
-## 参考文献
+## 参考资料
 * https://github.com/febobo/web-interview/issues/1
 * https://segmentfault.com/a/1190000016269636
 * https://zh.wikipedia.org/zh-cn/Vue.js

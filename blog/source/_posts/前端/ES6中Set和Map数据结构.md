@@ -411,7 +411,7 @@ wm.get(key)
 // Object {foo: 1}
 ```
 
-## 参考文献
+## 参考资料
 * https://es6.ruanyifeng.com/#docs/set-map
 
 

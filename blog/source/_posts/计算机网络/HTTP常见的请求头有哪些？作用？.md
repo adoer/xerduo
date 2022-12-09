@@ -87,7 +87,7 @@ Cache-Control: max-age=0
 * 个性化设置（如用户自定义设置、主题等）
 * 浏览器行为跟踪（如跟踪分析用户行为等
 
-## 参考文献
+## 参考资料
 * [https://zh.wikipedia.org/wiki/HTTP头字段](https://zh.wikipedia.org/wiki/HTTP%E5%A4%B4%E5%AD%97%E6%AE%B5)
 * [缓存（二）——浏览器缓存机制：强缓存、协商缓存 amandakelake/blog#41](https://github.com/amandakelake/blog/issues/41)
 
