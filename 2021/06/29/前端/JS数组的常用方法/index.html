@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js数组的常用方法 | 小耳朵</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <meta name="keywords" content="demo" />
+  
+  
+  
+  
+  <meta name="description" content="JS数组的常用方法操作方法、排序方法、转换方法、迭代方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS数组的常用方法">
+<meta property="og:url" content="http://xerduo.com/2021/06/29/%E5%89%8D%E7%AB%AF/JS%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="小耳朵">
+<meta property="og:description" content="JS数组的常用方法操作方法、排序方法、转换方法、迭代方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-29T14:23:53.000Z">
+<meta property="article:modified_time" content="2023-02-16T14:27:44.729Z">
+<meta property="article:author" content="Duer">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css"> -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style> -->
+    
+  <!-- <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all"> -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+  <!-- <script>
+    // 随机排序数组
+    function shuffle(arr) { 
+      let i = arr.length; 
+      while (i) { 
+          let j = Math.floor(Math.random() * i--); 
+          [arr[j], arr[i]] = [arr[i], arr[j]]; 
+      } 
+      return arr;
+    }
+    window.randArr = [];
+    function getRandArr(num){
+      for(var i = 1;i<=num;i++){
+        randArr.push(i);
+      }
+      randArr = shuffle(randArr).slice();
+    }
+    getRandArr(47);
+    console.log(randArr);
+  </script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50" id="cbody">
+      <div id="iCenter"></div>
+
+  <div class="fixbackground"></div>
+  <header id="allheader" class="site-header" role="banner">
+  <!-- 顶部小猫跑动 -->
+  <!-- <div id="marco">
+    <div id="cielo"></div>
+    <div id="luna"></div>
+    <div id="gato"></div>
+    <div id="muro"></div>
+    <div id="edificios"></div>
+  </div> -->
+  <div class="clearfix container headCon">
+    <!-- <div class="site-branding">
+      <div class="site-title">
+        
+                    <a href="/" title="小耳朵" rel="home">
+                        小耳朵
+                    </a>
+                
+        <div class="titleText">小耳朵</div>
+      </div> -->
+
+      <!-- <a class="cat" href="/">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </a> -->
+      <div class="titleTextCon">
+          <div class="bgCon">
+              <div class="titleTextBg">
+                  <!-- 小耳朵 -->
+                </div>
+                <div class="titleText">
+                    <div>倾听世界的声音</div>
+                    <div>xerduo.com</div>
+                </div>
+                <div class="titleTextBg1"></div>
+          </div>
+          <div class="rTextCon"">
+            <div id="dateTxt"></div>
+            <div id="weekTxt"></div>
+            <div>
+              <span id="timeShow""></span>
+            </div>
+            <!-- <div class="bottomWeather">
+                <span id="cityName"></span>
+                <span id="weatherTxt"></span>
+                <span id="temperature"></span>
+                <span id="winddirection"></span><span id="windpower"></span>
+            </div> -->
+          </div>
+      </div>
+      <!-- 
+      <div class="site-description">
+        倾听世界的声音
+      </div>
+       -->
+      
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">
+          <i class="fa fa-align-justify open"></i>
+          <i class="fa fa-close closeIcon"></i>
+        </a>
+        <div class="clearfix sf-menu">
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/">
+                首页
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/archives">
+                归档
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/categories">
+                分类
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/tags">
+                标签
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/about">
+                关于
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--  -->
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+        
+          <section id="main" style="float:none;"><article id="post-前端/JS数组的常用方法" style="width: 66%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+                <!--  -->
+
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JS数组的常用方法
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+    发表于
+    <a href="/2021/06/29/%E5%89%8D%E7%AB%AF/JS%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+        <time datetime="2021-06-29T14:23:53.000Z" itemprop="datePublished">
+            <!-- 2021-06-29 22:06:00 -->
+            2021-06-29 22:23:53
+        </time>
+    </a>
+    
+                                    
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                                                        <h1 id="JS数组的常用方法"><a href="#JS数组的常用方法" class="headerlink" title="JS数组的常用方法"></a>JS数组的常用方法</h1><p><strong>操作方法、排序方法、转换方法、迭代方法</strong></p>
+<span id="more"></span>
+
+<h1 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h1><p>数组基本操作可以归纳为 增、删、改、查，需要留意的是哪些方法会对原数组产生影响，哪些方法不会</p>
+<p>下面对数组常用的操作方法做一个归纳</p>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><p>下面前三种是对原数组产生影响的增添方法，第四种则不会对原数组产生影响<br><strong>1. push()</strong><br><strong>2. unshift()</strong><br><strong>3. splice()</strong><br><strong>4. concat()</strong></p>
+<h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><p>push()方法接收任意数量的参数，并将它们添加到数组末尾，返回数组的最新长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = []; <span class="comment">// 创建一个数组</span></span><br><span class="line"><span class="keyword">let</span> count = colors.<span class="title function_">push</span>(<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>); <span class="comment">// 推入两项</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift()"></a>unshift()</h3><p>unshift()在数组开头添加任意多个值，然后返回新的数组长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = <span class="keyword">new</span> <span class="title class_">Array</span>(); <span class="comment">// 创建一个数组</span></span><br><span class="line"><span class="keyword">let</span> count = colors.<span class="title function_">unshift</span>(<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>); <span class="comment">// 从数组开头推入两项</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><p>传入三个参数，分别是开始位置、0（要删除的元素数量）、插入的元素，返回空数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> removed = colors.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="string">&quot;yellow&quot;</span>, <span class="string">&quot;orange&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors) <span class="comment">// red,yellow,orange,green,blue</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(removed) <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><p>首先会创建一个当前数组的副本，然后再把它的参数添加到副本末尾，最后返回这个新构建的数组，不会影响原始数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> colors2 = colors.<span class="title function_">concat</span>(<span class="string">&quot;yellow&quot;</span>, [<span class="string">&quot;black&quot;</span>, <span class="string">&quot;brown&quot;</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors); <span class="comment">// [&quot;red&quot;, &quot;green&quot;,&quot;blue&quot;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors2); <span class="comment">// [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;black&quot;, &quot;brown&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><p>下面三种都会影响原数组，最后一项不影响原数组：</p>
+<ul>
+<li><strong>pop()</strong></li>
+<li><strong>shift()</strong></li>
+<li><strong>splice()</strong></li>
+<li><strong>slice()</strong></li>
+</ul>
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3><p>pop() 方法用于删除数组的最后一项，同时减少数组的 length 值，返回被删除的项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> item = colors.<span class="title function_">pop</span>(); <span class="comment">// 取得最后一项</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(item) <span class="comment">// green</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="property">length</span>) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift()"></a>shift()</h3><p>shift() 方法用于删除数组的第一项，同时减少数组的 length 值，返回被删除的项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> item = colors.<span class="title function_">shift</span>(); <span class="comment">// 取得第一项</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(item) <span class="comment">// red</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="property">length</span>) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="splice-1"><a href="#splice-1" class="headerlink" title="splice()"></a>splice()</h3><p>splice() 传入两个参数，分别是开始位置，删除元素的数量，返回包含删除元素的数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> removed = colors.<span class="title function_">splice</span>(<span class="number">0</span>,<span class="number">1</span>); <span class="comment">// 删除第一项</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors); <span class="comment">// green,blue</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(removed); <span class="comment">// red，只有一个元素的数组</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><p>slice() 用于创建一个包含原有数组中一个或多个元素的新数组，不会影响原始数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;yellow&quot;</span>, <span class="string">&quot;purple&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> colors2 = colors.<span class="title function_">slice</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">let</span> colors3 = colors.<span class="title function_">slice</span>(<span class="number">1</span>, <span class="number">4</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors)   <span class="comment">// red,green,blue,yellow,purple</span></span><br><span class="line">concole.<span class="title function_">log</span>(colors2); <span class="comment">// green,blue,yellow,purple</span></span><br><span class="line">concole.<span class="title function_">log</span>(colors3); <span class="comment">// green,blue,yellow</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p>即修改原来数组的内容，常用splice</p>
+<h3 id="splice-2"><a href="#splice-2" class="headerlink" title="splice()"></a>splice()</h3><p>传入三个参数，分别是开始位置，要删除元素的数量，要插入的任意多个元素，返回删除元素的数组，对原数组产生影响</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> removed = colors.<span class="title function_">splice</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="string">&quot;red&quot;</span>, <span class="string">&quot;purple&quot;</span>); <span class="comment">// 插入两个值，删除一个元素</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors); <span class="comment">// red,red,purple,blue</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(removed); <span class="comment">// green，只有一个元素的数组</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><p>即查找元素，返回元素坐标或者元素值<br><strong>indexOf()、includes()、find()</strong></p>
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>返回要查找的元素在数组中的位置，如果没找到则返回1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line">numbers.<span class="title function_">indexOf</span>(<span class="number">4</span>) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h3><p>返回要查找的元素在数组中的位置，找到返回true，否则false</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line">numbers.<span class="title function_">includes</span>(<span class="number">4</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h3><p>返回第一个匹配的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&quot;Matt&quot;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">27</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&quot;Nicholas&quot;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">29</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line">people.<span class="title function_">find</span>(<span class="function">(<span class="params">element, index, array</span>) =&gt;</span> element.<span class="property">age</span> &lt; <span class="number">28</span>) <span class="comment">// // &#123;name: &quot;Matt&quot;, age: 27&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h1><p>数组有两个方法可以用来对元素重新排序：<br><strong>reverse()、sort()</strong></p>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h2><p>顾名思义，将数组元素反方向排列</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">values.<span class="title function_">reverse</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(values); <span class="comment">// 5,4,3,2,1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h2><p> sort()方法接受一个比较函数，用于判断哪个值应该排在前面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">compare</span>(<span class="params">value1, value2</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (value1 &lt; value2) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> values = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line">values.<span class="title function_">sort</span>(compare);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(values); <span class="comment">// 0,1,5,10,15</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h1><p>常见的转换方法有join()</p>
+<h2 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h2><p>join() 方法接收一个参数，即字符串分隔符，返回包含所有项的字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="title function_">join</span>(<span class="string">&quot;,&quot;</span>)); <span class="comment">// red,green,blue</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors.<span class="title function_">join</span>(<span class="string">&quot;||&quot;</span>)); <span class="comment">// red||green||blue</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h1><p>常用来迭代数组的方法（都不改变原数组）有如下：<br><strong>some()、every()、forEach()、filter()、map()</strong></p>
+<h2 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h2><p>对数组每一项都运行传入的函数，如果有一项函数返回 true ，则这个方法返回 true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> someResult = numbers.<span class="title function_">every</span>(<span class="function">(<span class="params">item, index, array</span>) =&gt;</span> item &gt; <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(someResult) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h2><p>对数组每一项都运行传入的函数，如果对每一项函数都返回 true ，则这个方法返回 true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> everyResult = numbers.<span class="title function_">every</span>(<span class="function">(<span class="params">item, index, array</span>) =&gt;</span> item &gt; <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(everyResult) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h2><p>对数组每一项都运行传入的函数，没有返回值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line">numbers.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item, index, array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 执行某些操作</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h2><p>对数组每一项都运行传入的函数，函数返回 true 的项会组成数组之后返回</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> filterResult = numbers.<span class="title function_">filter</span>(<span class="function">(<span class="params">item, index, array</span>) =&gt;</span> item &gt; <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(filterResult); <span class="comment">// 3,4,5,4,3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h2><p>对数组每一项都运行传入的函数，返回由每次函数调用的结果构成的数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> mapResult = numbers.<span class="title function_">map</span>(<span class="function">(<span class="params">item, index, array</span>) =&gt;</span> item * <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(mapResult) <span class="comment">// 2,4,6,8,10,8,6,4,2</span></span><br></pre></td></tr></table></figure>
+
+                                                                            
+                                                        </div>
+                                                        <footer class="entry-meta entry-footer">
+                                                            
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+
+                                                                
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+                                                                
+                                                                
+                                                                
+                                                        </footer>
+                                        </div>
+                                        
+                                            
+<nav id="article-nav">
+  
+    <a href="/2021/06/29/%E5%89%8D%E7%AB%AF/JS%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          JS字符串的常用方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/28/%E5%89%8D%E7%AB%AF/JS%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">JS中的数据类型以及区别</div>
+    </a>
+  
+</nav>
+
+                                        
+</article>
+
+<!-- Table of Contents -->
+
+    <aside id="sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+                文章目录
+            </strong>
+            
+                <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">JS数组的常用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">操作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E"><span class="nav-number">2.1.</span> <span class="nav-text">增</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#push"><span class="nav-number">2.1.1.</span> <span class="nav-text">push()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unshift"><span class="nav-number">2.1.2.</span> <span class="nav-text">unshift()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#splice"><span class="nav-number">2.1.3.</span> <span class="nav-text">splice()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat"><span class="nav-number">2.1.4.</span> <span class="nav-text">concat()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0"><span class="nav-number">2.2.</span> <span class="nav-text">删</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pop"><span class="nav-number">2.2.1.</span> <span class="nav-text">pop()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shift"><span class="nav-number">2.2.2.</span> <span class="nav-text">shift()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#splice-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">splice()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slice"><span class="nav-number">2.2.4.</span> <span class="nav-text">slice()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9"><span class="nav-number">2.3.</span> <span class="nav-text">改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#splice-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">splice()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5"><span class="nav-number">2.4.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf"><span class="nav-number">2.4.1.</span> <span class="nav-text">indexOf()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#includes"><span class="nav-number">2.4.2.</span> <span class="nav-text">includes()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">2.4.3.</span> <span class="nav-text">find()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">排序方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">3.1.</span> <span class="nav-text">reverse()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">3.2.</span> <span class="nav-text">sort()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">转换方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">4.1.</span> <span class="nav-text">join()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">迭代方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#some"><span class="nav-number">5.1.</span> <span class="nav-text">some()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#every"><span class="nav-number">5.2.</span> <span class="nav-text">every()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEach"><span class="nav-number">5.3.</span> <span class="nav-text">forEach()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter"><span class="nav-number">5.4.</span> <span class="nav-text">filter()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">5.5.</span> <span class="nav-text">map()</span></a></li></ol></li></ol>
+                    
+        </div>
+    </aside>
+    </section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+        <div class="clearfix container footCon">
+          <!-- <div class="cup-wrap">
+      <div class="cup">
+        <div class="cup__mouse"></div>
+        <div class="cup__eyes"></div>
+      </div>
+      <div class="cup-shadow"></div>
+    </div> -->
+          <!-- 小耳朵 All Rights Reserved.  -->
+          <!-- <div class="footText">Work Hard, Play Hard</div> -->
+          <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
+          <!-- <div class="footText"></div> -->
+
+          <div class="site-info">
+            2020 - <span id="bootm-date"></span> ©小耳朵
+            <!-- All rights reserved.  -->
+            
+          </div>
+          <!-- <div class="site-credit">
+                        Theme by
+                            <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+                    </div> -->
+        </div>
+</footer>
+
+<!-- min height -->
+
+<script>
+  var contentdiv = document.getElementById("content")
+
+  contentdiv.style.minHeight =
+    document.body.offsetHeight -
+    document.getElementById("allheader").offsetHeight -
+    document.getElementById("footer").offsetHeight +
+    "px"
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+     <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+ 
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<script src="/js/scripts.js"></script>
+ 
+<script src="/js/bootstrap.js"></script>
+ 
+<script src="/js/main.js"></script>
+ 
+<script src="/js/cursor-effects.js"></script>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<!-- 左下角动态小猫注释开始 -->
+<!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  // https://github.com/stevenjoezhang/live2d-widget
+  // https://blog.csdn.net/wang_123_zy/article/details/87181892
+  L2Dwidget.init({
+    model: {
+      jsonPath:
+        "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+      scale: 1
+    },
+    display: {
+      position: "left",
+      width: 100,
+      height: 200,
+      hOffset: 30, // 水平
+      vOffset: -108 // 垂直
+    },
+    mobile: {
+      show: false,
+      scale: 0.5
+    },
+    react: {
+      opacityDefault: 0.9,
+      opacityOnHover: 0.2
+    }
+  })
+</script> -->
+<!-- 左下角动态及小猫注释结束 -->
+
+<!-- 文章被访问时页面URL会自动推送给百度 -->
+<!-- <script>
+    (function(){
+        var bp = document.createElement('script');
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> -->
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+  <!-- 飞鸟动画背景 -->
+  <!-- <script src="/js/three.min.js"></script>
+  <script src="/js/vanta.birds.min.js"></script>
+  <script>
+    const effect = VANTA.BIRDS({
+      el: "#container",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xffffff,
+      birdSize: 0.50,
+      wingSpan: 15.00,
+      speedLimit: 2.00,
+      separation: 100.00,
+      alignment: 48.00,
+      cohesion: 41.00,
+      quantity: 3.00
+    })
+  </script> -->
+  <!-- 获取日期星期 实时时间 -->
+  <script>
+    var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var weekDay = now.getDay();
+    $("#dateTxt").text(year + "年" + month + "月" + day + "日");
+    $("#weekTxt").text( week[weekDay]);
+    
+    var timeArr = [
+      "早起的鸟儿有虫吃", // 早晨6：00-7：00
+      "早上好",// 早上7:00—9:00、
+      "上午好",// 上午9:00—12:00、
+      "中午好",// 中午12:00—14:00、
+      "下午好",// 下午14:00—18:00、
+      "傍晚好",// 傍晚18:00—19:00、
+      "晚上好",// 晚上19:00—24:00
+      "夜深了，早点休息",  // 凌晨24：00-6：00
+      ];
+    var greeting = '';
+    
+    function getNowTime(){
+      var curDate = new Date();
+      var hour = curDate.getHours();
+      var minute = curDate.getMinutes();
+      var second = curDate.getSeconds();
+      switch(true){
+        case hour >= 6 && hour < 7:
+          greeting = timeArr[0];
+          break;
+        case hour >= 7 && hour < 9:
+          greeting = timeArr[1];
+          break;
+        case hour >= 9 && hour < 12:
+          greeting = timeArr[2];
+          break;
+        case hour >= 12 && hour < 14:
+          greeting = timeArr[3];
+          break;
+        case hour >= 14 && hour < 18:
+          greeting = timeArr[4];
+          break;
+        case hour >= 18 && hour < 19:
+          greeting = timeArr[5];
+          break;
+        case hour >= 19 && hour <= 23:
+          greeting = timeArr[6];
+          break;
+        case hour >= 0 && hour < 6:
+          greeting = timeArr[7];
+          break;
+      }
+      hour =  hour<10?'0'+hour:hour;
+      minute =  minute<10?'0'+minute:minute;
+      second =  second<10?'0'+second:second;
+
+      $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
+    }
+    getNowTime();
+    setInterval(getNowTime,1000);
+  </script>
+
+  <!-- 获取位置和才是编码（有时候不准） -->
+  <!-- <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>  -->
+
+  <!-- 获根据城市编码取天气 --> 
+  <!-- <script type="text/javascript">
+    if(returnCitySN && returnCitySN['cid']){
+      $.ajax({
+        url: "https://restapi.amap.com/v3/weather/weatherInfo",
+        type: 'get',
+        data: {
+          key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+          city: returnCitySN['cid'],
+        },
+        dataType: 'json',
+        success:function(data){
+          if(data &&  data.status=="1"){
+            var lives = data.lives[0];
+            $("#cityName").text(lives.city);
+            $("#weatherTxt").text(lives.weather);
+            $("#temperature").text(lives.temperature+"°");
+            $("#winddirection").text(lives.winddirection+"风");
+            $("#windpower").text(lives.windpower+"级");
+          }
+        }
+      })
+    }
+  </script> -->
+</body>
+</html>

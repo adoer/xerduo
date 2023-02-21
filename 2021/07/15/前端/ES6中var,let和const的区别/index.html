@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>es6中var,let和const的区别 | 小耳朵</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <meta name="keywords" content="demo" />
+  
+  
+  
+  
+  <meta name="description" content="一、var在ES5中，顶层对象的属性和全局变量是等价的，用var声明的变量既是全局变量，也是顶层变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6中var,let和const的区别">
+<meta property="og:url" content="http://xerduo.com/2021/07/15/%E5%89%8D%E7%AB%AF/ES6%E4%B8%ADvar,let%E5%92%8Cconst%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:site_name" content="小耳朵">
+<meta property="og:description" content="一、var在ES5中，顶层对象的属性和全局变量是等价的，用var声明的变量既是全局变量，也是顶层变量">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-15T14:35:53.000Z">
+<meta property="article:modified_time" content="2023-02-16T14:27:44.723Z">
+<meta property="article:author" content="Duer">
+<meta property="article:tag" content="ES6">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css"> -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style> -->
+    
+  <!-- <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all"> -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+  <!-- <script>
+    // 随机排序数组
+    function shuffle(arr) { 
+      let i = arr.length; 
+      while (i) { 
+          let j = Math.floor(Math.random() * i--); 
+          [arr[j], arr[i]] = [arr[i], arr[j]]; 
+      } 
+      return arr;
+    }
+    window.randArr = [];
+    function getRandArr(num){
+      for(var i = 1;i<=num;i++){
+        randArr.push(i);
+      }
+      randArr = shuffle(randArr).slice();
+    }
+    getRandArr(47);
+    console.log(randArr);
+  </script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50" id="cbody">
+      <div id="iCenter"></div>
+
+  <div class="fixbackground"></div>
+  <header id="allheader" class="site-header" role="banner">
+  <!-- 顶部小猫跑动 -->
+  <!-- <div id="marco">
+    <div id="cielo"></div>
+    <div id="luna"></div>
+    <div id="gato"></div>
+    <div id="muro"></div>
+    <div id="edificios"></div>
+  </div> -->
+  <div class="clearfix container headCon">
+    <!-- <div class="site-branding">
+      <div class="site-title">
+        
+                    <a href="/" title="小耳朵" rel="home">
+                        小耳朵
+                    </a>
+                
+        <div class="titleText">小耳朵</div>
+      </div> -->
+
+      <!-- <a class="cat" href="/">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </a> -->
+      <div class="titleTextCon">
+          <div class="bgCon">
+              <div class="titleTextBg">
+                  <!-- 小耳朵 -->
+                </div>
+                <div class="titleText">
+                    <div>倾听世界的声音</div>
+                    <div>xerduo.com</div>
+                </div>
+                <div class="titleTextBg1"></div>
+          </div>
+          <div class="rTextCon"">
+            <div id="dateTxt"></div>
+            <div id="weekTxt"></div>
+            <div>
+              <span id="timeShow""></span>
+            </div>
+            <!-- <div class="bottomWeather">
+                <span id="cityName"></span>
+                <span id="weatherTxt"></span>
+                <span id="temperature"></span>
+                <span id="winddirection"></span><span id="windpower"></span>
+            </div> -->
+          </div>
+      </div>
+      <!-- 
+      <div class="site-description">
+        倾听世界的声音
+      </div>
+       -->
+      
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">
+          <i class="fa fa-align-justify open"></i>
+          <i class="fa fa-close closeIcon"></i>
+        </a>
+        <div class="clearfix sf-menu">
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/">
+                首页
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/archives">
+                归档
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/categories">
+                分类
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/tags">
+                标签
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/about">
+                关于
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--  -->
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+        
+          <section id="main" style="float:none;"><article id="post-前端/ES6中var,let和const的区别" style="width: 66%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+                <!--  -->
+
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      ES6中var,let和const的区别
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+    发表于
+    <a href="/2021/07/15/%E5%89%8D%E7%AB%AF/ES6%E4%B8%ADvar,let%E5%92%8Cconst%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+        <time datetime="2021-07-15T14:35:53.000Z" itemprop="datePublished">
+            <!-- 2021-07-15 22:07:00 -->
+            2021-07-15 22:35:53
+        </time>
+    </a>
+    
+                                    
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                                                        <h2 id="一、var"><a href="#一、var" class="headerlink" title="一、var"></a>一、var</h2><p>在ES5中，顶层对象的属性和全局变量是等价的，用<code>var</code>声明的变量既是全局变量，也是顶层变量</p>
+<span id="more"></span>
+<p>注意：顶层对象，在浏览器环境指的是<code>window</code>对象，在 <code>Node</code> 指的是<code>global</code>对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">a</span>) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<p>使用<code>var</code>声明的变量存在变量提升的情况</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>在编译阶段，编译器会将其变成以下执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">a = <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>使用<code>var</code>，我们能够对一个变量进行多次声明，后面声明的变量会覆盖前面的变量声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">20</span> </span><br><span class="line"><span class="keyword">var</span> a = <span class="number">30</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// 30</span></span><br></pre></td></tr></table></figure>
+
+<p>在函数中使用使用<code>var</code>声明变量时候，该变量是局部的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">20</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">change</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">change</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// 20 </span></span><br></pre></td></tr></table></figure>
+
+<p>而如果在函数内不使用<code>var</code>，该变量是全局的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">20</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">change</span>(<span class="params"></span>)&#123;</span><br><span class="line">   a = <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">change</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// 30 </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、let"><a href="#二、let" class="headerlink" title="二、let"></a>二、let</h2><p><code>let</code>是<code>ES6</code>新增的命令，用来声明变量</p>
+<p>用法类似于<code>var</code>，但是所声明的变量，只在<code>let</code>命令所在的代码块内有效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// ReferenceError: a is not defined.</span></span><br></pre></td></tr></table></figure>
+
+<p>不存在变量提升</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// 报错ReferenceError</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>这表示在声明它之前，变量<code>a</code>是不存在的，这时如果用到它，就会抛出一个错误</p>
+<p>只要块级作用域内存在<code>let</code>命令，这个区域就不再受外部影响</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    a = <span class="string">&#x27;abc&#x27;</span> <span class="comment">// ReferenceError</span></span><br><span class="line">    <span class="keyword">let</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>let</code>声明变量前，该变量都不可用，也就是大家常说的“暂时性死区”</p>
+<p>最后，<code>let</code>不允许在相同作用域中重复声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">20</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">30</span></span><br><span class="line"><span class="comment">// Uncaught SyntaxError: Identifier &#x27;a&#x27; has already been declared</span></span><br></pre></td></tr></table></figure>
+
+<p>注意的是相同作用域，下面这种情况是不会报错的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">20</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">30</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因此，我们不能在函数内部重新声明参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">arg</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">func</span>()</span><br><span class="line"><span class="comment">// Uncaught SyntaxError: Identifier &#x27;arg&#x27; has already been declared</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、const"><a href="#三、const" class="headerlink" title="三、const"></a>三、const</h2><p><code>const</code>声明一个只读的常量，一旦声明，常量的值就不能改变</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">1</span></span><br><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="comment">// TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+
+<p>这意味着，<code>const</code>一旦声明变量，就必须立即初始化，不能留到以后赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a;</span><br><span class="line"><span class="comment">// SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure>
+
+<p>如果之前用<code>var</code>或<code>let</code>声明过变量，再用<code>const</code>声明同样会报错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">20</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">30</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="number">30</span></span><br><span class="line"><span class="comment">// 都会报错</span></span><br></pre></td></tr></table></figure>
+
+<p><code>const</code>实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动</p>
+<p>对于简单类型的数据，值就保存在变量指向的那个内存地址，因此等同于常量</p>
+<p>对于复杂类型的数据，变量指向的内存地址，保存的只是一个指向实际数据的指针，<code>const</code>只能保证这个指针是固定的，并不能确保改变量的结构不变</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为 foo 添加一个属性，可以成功</span></span><br><span class="line">foo.<span class="property">prop</span> = <span class="number">123</span>;</span><br><span class="line">foo.<span class="property">prop</span> <span class="comment">// 123</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将 foo 指向另一个对象，就会报错</span></span><br><span class="line">foo = &#123;&#125;; <span class="comment">// TypeError: &quot;foo&quot; is read-only</span></span><br></pre></td></tr></table></figure>
+
+<p>其它情况，<code>const</code>与<code>let</code>一致</p>
+<h2 id="四、区别"><a href="#四、区别" class="headerlink" title="四、区别"></a>四、区别</h2><p><code>var</code>、<code>let</code>、<code>const</code>三者区别可以围绕下面五点展开：</p>
+<ul>
+<li>变量提升</li>
+<li>暂时性死区</li>
+<li>块级作用域</li>
+<li>重复声明</li>
+<li>修改声明的变量</li>
+<li>使用</li>
+</ul>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p><code>var </code>声明的变量存在变量提升，即变量可以在声明之前调用，值为<code>undefined</code></p>
+<p><code>let</code>和<code>const</code>不存在变量提升，即它们所声明的变量一定要在声明后使用，否则报错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a)  <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// let </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b)  <span class="comment">// Cannot access &#x27;b&#x27; before initialization</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// const</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c)  <span class="comment">// Cannot access &#x27;c&#x27; before initialization</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p><code>var</code>不存在暂时性死区</p>
+<p><code>let</code>和<code>const</code>存在暂时性死区，只有等到声明变量的那一行代码出现，才可以获取和使用该变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a)  <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// let</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b)  <span class="comment">// Cannot access &#x27;b&#x27; before initialization</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// const</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c)  <span class="comment">// Cannot access &#x27;c&#x27; before initialization</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p><code>var</code>不存在块级作用域</p>
+<p><code>let</code>和<code>const</code>存在块级作用域</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a)  <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// let</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b)  <span class="comment">// Uncaught ReferenceError: b is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">const</span> c = <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c)  <span class="comment">// Uncaught ReferenceError: c is not defined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="重复声明"><a href="#重复声明" class="headerlink" title="重复声明"></a>重复声明</h3><p><code>var</code>允许重复声明变量</p>
+<p><code>let</code>和<code>const</code>在同一作用域不允许重复声明变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">20</span> <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// let</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">20</span> <span class="comment">// Identifier &#x27;b&#x27; has already been declared</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// const</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">10</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">20</span> <span class="comment">// Identifier &#x27;c&#x27; has already been declared</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改声明的变量"><a href="#修改声明的变量" class="headerlink" title="修改声明的变量"></a>修改声明的变量</h3><p><code>var</code>和<code>let</code>可以</p>
+<p><code>const</code>声明一个只读的常量。一旦声明，常量的值就不能改变</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line">a = <span class="number">20</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a)  <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//let</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">10</span></span><br><span class="line">b = <span class="number">20</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b)  <span class="comment">// 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// const</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="number">10</span></span><br><span class="line">c = <span class="number">20</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c) <span class="comment">// Uncaught TypeError: Assignment to constant variable</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>能用<code>const</code>的情况尽量使用<code>const</code>，其他情况下大多数使用<code>let</code>，避免使用<code>var</code></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">https://es6.ruanyifeng.com/</a></li>
+</ul>
+
+                                                                            
+                                                        </div>
+                                                        <footer class="entry-meta entry-footer">
+                                                            
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+
+                                                                
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
+
+                                                                
+                                                                
+                                                                
+                                                        </footer>
+                                        </div>
+                                        
+                                            
+<nav id="article-nav">
+  
+    <a href="/2021/07/16/%E5%89%8D%E7%AB%AF/ES6%E4%B8%AD%E7%9A%84Promise%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          ES6中的Promise及使用场景
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/07/15/%E5%89%8D%E7%AB%AF/ES6%E4%B8%ADSet%E5%92%8CMap%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">ES6中Set和Map数据结构</div>
+    </a>
+  
+</nav>
+
+                                        
+</article>
+
+<!-- Table of Contents -->
+
+    <aside id="sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+                文章目录
+            </strong>
+            
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81var"><span class="nav-number">1.</span> <span class="nav-text">一、var</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81let"><span class="nav-number">2.</span> <span class="nav-text">二、let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81const"><span class="nav-number">3.</span> <span class="nav-text">三、const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">四、区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="nav-number">4.1.</span> <span class="nav-text">变量提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9A%82%E6%97%B6%E6%80%A7%E6%AD%BB%E5%8C%BA"><span class="nav-number">4.2.</span> <span class="nav-text">暂时性死区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">4.3.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E5%A3%B0%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">重复声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8F%98%E9%87%8F"><span class="nav-number">4.5.</span> <span class="nav-text">修改声明的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">4.6.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol>
+                    
+        </div>
+    </aside>
+    </section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+        <div class="clearfix container footCon">
+          <!-- <div class="cup-wrap">
+      <div class="cup">
+        <div class="cup__mouse"></div>
+        <div class="cup__eyes"></div>
+      </div>
+      <div class="cup-shadow"></div>
+    </div> -->
+          <!-- 小耳朵 All Rights Reserved.  -->
+          <!-- <div class="footText">Work Hard, Play Hard</div> -->
+          <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
+          <!-- <div class="footText"></div> -->
+
+          <div class="site-info">
+            2020 - <span id="bootm-date"></span> ©小耳朵
+            <!-- All rights reserved.  -->
+            
+          </div>
+          <!-- <div class="site-credit">
+                        Theme by
+                            <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+                    </div> -->
+        </div>
+</footer>
+
+<!-- min height -->
+
+<script>
+  var contentdiv = document.getElementById("content")
+
+  contentdiv.style.minHeight =
+    document.body.offsetHeight -
+    document.getElementById("allheader").offsetHeight -
+    document.getElementById("footer").offsetHeight +
+    "px"
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+     <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+ 
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<script src="/js/scripts.js"></script>
+ 
+<script src="/js/bootstrap.js"></script>
+ 
+<script src="/js/main.js"></script>
+ 
+<script src="/js/cursor-effects.js"></script>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<!-- 左下角动态小猫注释开始 -->
+<!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  // https://github.com/stevenjoezhang/live2d-widget
+  // https://blog.csdn.net/wang_123_zy/article/details/87181892
+  L2Dwidget.init({
+    model: {
+      jsonPath:
+        "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+      scale: 1
+    },
+    display: {
+      position: "left",
+      width: 100,
+      height: 200,
+      hOffset: 30, // 水平
+      vOffset: -108 // 垂直
+    },
+    mobile: {
+      show: false,
+      scale: 0.5
+    },
+    react: {
+      opacityDefault: 0.9,
+      opacityOnHover: 0.2
+    }
+  })
+</script> -->
+<!-- 左下角动态及小猫注释结束 -->
+
+<!-- 文章被访问时页面URL会自动推送给百度 -->
+<!-- <script>
+    (function(){
+        var bp = document.createElement('script');
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> -->
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+  <!-- 飞鸟动画背景 -->
+  <!-- <script src="/js/three.min.js"></script>
+  <script src="/js/vanta.birds.min.js"></script>
+  <script>
+    const effect = VANTA.BIRDS({
+      el: "#container",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xffffff,
+      birdSize: 0.50,
+      wingSpan: 15.00,
+      speedLimit: 2.00,
+      separation: 100.00,
+      alignment: 48.00,
+      cohesion: 41.00,
+      quantity: 3.00
+    })
+  </script> -->
+  <!-- 获取日期星期 实时时间 -->
+  <script>
+    var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var weekDay = now.getDay();
+    $("#dateTxt").text(year + "年" + month + "月" + day + "日");
+    $("#weekTxt").text( week[weekDay]);
+    
+    var timeArr = [
+      "早起的鸟儿有虫吃", // 早晨6：00-7：00
+      "早上好",// 早上7:00—9:00、
+      "上午好",// 上午9:00—12:00、
+      "中午好",// 中午12:00—14:00、
+      "下午好",// 下午14:00—18:00、
+      "傍晚好",// 傍晚18:00—19:00、
+      "晚上好",// 晚上19:00—24:00
+      "夜深了，早点休息",  // 凌晨24：00-6：00
+      ];
+    var greeting = '';
+    
+    function getNowTime(){
+      var curDate = new Date();
+      var hour = curDate.getHours();
+      var minute = curDate.getMinutes();
+      var second = curDate.getSeconds();
+      switch(true){
+        case hour >= 6 && hour < 7:
+          greeting = timeArr[0];
+          break;
+        case hour >= 7 && hour < 9:
+          greeting = timeArr[1];
+          break;
+        case hour >= 9 && hour < 12:
+          greeting = timeArr[2];
+          break;
+        case hour >= 12 && hour < 14:
+          greeting = timeArr[3];
+          break;
+        case hour >= 14 && hour < 18:
+          greeting = timeArr[4];
+          break;
+        case hour >= 18 && hour < 19:
+          greeting = timeArr[5];
+          break;
+        case hour >= 19 && hour <= 23:
+          greeting = timeArr[6];
+          break;
+        case hour >= 0 && hour < 6:
+          greeting = timeArr[7];
+          break;
+      }
+      hour =  hour<10?'0'+hour:hour;
+      minute =  minute<10?'0'+minute:minute;
+      second =  second<10?'0'+second:second;
+
+      $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
+    }
+    getNowTime();
+    setInterval(getNowTime,1000);
+  </script>
+
+  <!-- 获取位置和才是编码（有时候不准） -->
+  <!-- <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>  -->
+
+  <!-- 获根据城市编码取天气 --> 
+  <!-- <script type="text/javascript">
+    if(returnCitySN && returnCitySN['cid']){
+      $.ajax({
+        url: "https://restapi.amap.com/v3/weather/weatherInfo",
+        type: 'get',
+        data: {
+          key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+          city: returnCitySN['cid'],
+        },
+        dataType: 'json',
+        success:function(data){
+          if(data &&  data.status=="1"){
+            var lives = data.lives[0];
+            $("#cityName").text(lives.city);
+            $("#weatherTxt").text(lives.weather);
+            $("#temperature").text(lives.temperature+"°");
+            $("#winddirection").text(lives.winddirection+"风");
+            $("#windpower").text(lives.windpower+"级");
+          }
+        }
+      })
+    }
+  </script> -->
+</body>
+</html>

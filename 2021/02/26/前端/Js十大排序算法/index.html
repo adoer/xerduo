@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js十大排序算法 | 小耳朵</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <meta name="keywords" content="demo" />
+  
+  
+  
+  
+  <meta name="description" content="参考文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js十大排序算法">
+<meta property="og:url" content="http://xerduo.com/2021/02/26/%E5%89%8D%E7%AB%AF/Js%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="小耳朵">
+<meta property="og:description" content="参考文档">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xerduo.com/2021/02/26/%E5%89%8D%E7%AB%AF/Js%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/img(35).jpg">
+<meta property="article:published_time" content="2021-02-26T12:39:59.000Z">
+<meta property="article:modified_time" content="2023-02-16T14:27:44.729Z">
+<meta property="article:author" content="Duer">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xerduo.com/2021/02/26/%E5%89%8D%E7%AB%AF/Js%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/img(35).jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css"> -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style> -->
+    
+  <!-- <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all"> -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+  <!-- <script>
+    // 随机排序数组
+    function shuffle(arr) { 
+      let i = arr.length; 
+      while (i) { 
+          let j = Math.floor(Math.random() * i--); 
+          [arr[j], arr[i]] = [arr[i], arr[j]]; 
+      } 
+      return arr;
+    }
+    window.randArr = [];
+    function getRandArr(num){
+      for(var i = 1;i<=num;i++){
+        randArr.push(i);
+      }
+      randArr = shuffle(randArr).slice();
+    }
+    getRandArr(47);
+    console.log(randArr);
+  </script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50" id="cbody">
+      <div id="iCenter"></div>
+
+  <div class="fixbackground"></div>
+  <header id="allheader" class="site-header" role="banner">
+  <!-- 顶部小猫跑动 -->
+  <!-- <div id="marco">
+    <div id="cielo"></div>
+    <div id="luna"></div>
+    <div id="gato"></div>
+    <div id="muro"></div>
+    <div id="edificios"></div>
+  </div> -->
+  <div class="clearfix container headCon">
+    <!-- <div class="site-branding">
+      <div class="site-title">
+        
+                    <a href="/" title="小耳朵" rel="home">
+                        小耳朵
+                    </a>
+                
+        <div class="titleText">小耳朵</div>
+      </div> -->
+
+      <!-- <a class="cat" href="/">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </a> -->
+      <div class="titleTextCon">
+          <div class="bgCon">
+              <div class="titleTextBg">
+                  <!-- 小耳朵 -->
+                </div>
+                <div class="titleText">
+                    <div>倾听世界的声音</div>
+                    <div>xerduo.com</div>
+                </div>
+                <div class="titleTextBg1"></div>
+          </div>
+          <div class="rTextCon"">
+            <div id="dateTxt"></div>
+            <div id="weekTxt"></div>
+            <div>
+              <span id="timeShow""></span>
+            </div>
+            <!-- <div class="bottomWeather">
+                <span id="cityName"></span>
+                <span id="weatherTxt"></span>
+                <span id="temperature"></span>
+                <span id="winddirection"></span><span id="windpower"></span>
+            </div> -->
+          </div>
+      </div>
+      <!-- 
+      <div class="site-description">
+        倾听世界的声音
+      </div>
+       -->
+      
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">
+          <i class="fa fa-align-justify open"></i>
+          <i class="fa fa-close closeIcon"></i>
+        </a>
+        <div class="clearfix sf-menu">
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/">
+                首页
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/archives">
+                归档
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/categories">
+                分类
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/tags">
+                标签
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/about">
+                关于
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--  -->
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+        
+          <section id="main" style="float:none;"><article id="post-前端/Js十大排序算法" style="width: 66%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+                <!-- 
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+    <a
+      class="article-gallery-img fancybox"
+      href="/img(35).jpg"
+      rel="gallery_cleeggscp001axgvl1cyddsmz"
+    >
+      <img src="/img(35).jpg" itemprop="image" />
+    </a>
+    
+  </div>
+</div>
+ -->
+
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Js十大排序算法
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+    发表于
+    <a href="/2021/02/26/%E5%89%8D%E7%AB%AF/Js%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="article-date">
+        <time datetime="2021-02-26T12:39:59.000Z" itemprop="datePublished">
+            <!-- 2021-02-26 20:02:00 -->
+            2021-02-26 20:39:59
+        </time>
+    </a>
+    
+                                    
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                                                        <p>参考文档</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/AlbertP/p/10847627.html">https://www.cnblogs.com/AlbertP/p/10847627.html</a></p>
+
+                                                                            
+                                                        </div>
+                                                        <footer class="entry-meta entry-footer">
+                                                            
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+
+                                                                
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+                                                                
+                                                                
+                                                                
+                                                        </footer>
+                                        </div>
+                                        
+                                            
+<nav id="article-nav">
+  
+    <a href="/2021/03/08/%E5%89%8D%E7%AB%AF/null%E4%B8%8Eundefined/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          null与undefined
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/03/%E5%89%8D%E7%AB%AF/%E5%9F%BA%E4%BA%8Ecanvas%E7%9A%84%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E6%B8%B8%E6%88%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">🎮基于canvas的俄罗斯方块游戏</div>
+    </a>
+  
+</nav>
+
+                                        
+</article>
+
+<!-- Table of Contents -->
+
+    <aside id="sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+                文章目录
+            </strong>
+            
+                        <ol class="nav">
+                            无
+                        </ol>
+                        
+        </div>
+    </aside>
+    </section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+        <div class="clearfix container footCon">
+          <!-- <div class="cup-wrap">
+      <div class="cup">
+        <div class="cup__mouse"></div>
+        <div class="cup__eyes"></div>
+      </div>
+      <div class="cup-shadow"></div>
+    </div> -->
+          <!-- 小耳朵 All Rights Reserved.  -->
+          <!-- <div class="footText">Work Hard, Play Hard</div> -->
+          <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
+          <!-- <div class="footText"></div> -->
+
+          <div class="site-info">
+            2020 - <span id="bootm-date"></span> ©小耳朵
+            <!-- All rights reserved.  -->
+            
+          </div>
+          <!-- <div class="site-credit">
+                        Theme by
+                            <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+                    </div> -->
+        </div>
+</footer>
+
+<!-- min height -->
+
+<script>
+  var contentdiv = document.getElementById("content")
+
+  contentdiv.style.minHeight =
+    document.body.offsetHeight -
+    document.getElementById("allheader").offsetHeight -
+    document.getElementById("footer").offsetHeight +
+    "px"
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+     <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+ 
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<script src="/js/scripts.js"></script>
+ 
+<script src="/js/bootstrap.js"></script>
+ 
+<script src="/js/main.js"></script>
+ 
+<script src="/js/cursor-effects.js"></script>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<!-- 左下角动态小猫注释开始 -->
+<!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  // https://github.com/stevenjoezhang/live2d-widget
+  // https://blog.csdn.net/wang_123_zy/article/details/87181892
+  L2Dwidget.init({
+    model: {
+      jsonPath:
+        "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+      scale: 1
+    },
+    display: {
+      position: "left",
+      width: 100,
+      height: 200,
+      hOffset: 30, // 水平
+      vOffset: -108 // 垂直
+    },
+    mobile: {
+      show: false,
+      scale: 0.5
+    },
+    react: {
+      opacityDefault: 0.9,
+      opacityOnHover: 0.2
+    }
+  })
+</script> -->
+<!-- 左下角动态及小猫注释结束 -->
+
+<!-- 文章被访问时页面URL会自动推送给百度 -->
+<!-- <script>
+    (function(){
+        var bp = document.createElement('script');
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> -->
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+  <!-- 飞鸟动画背景 -->
+  <!-- <script src="/js/three.min.js"></script>
+  <script src="/js/vanta.birds.min.js"></script>
+  <script>
+    const effect = VANTA.BIRDS({
+      el: "#container",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xffffff,
+      birdSize: 0.50,
+      wingSpan: 15.00,
+      speedLimit: 2.00,
+      separation: 100.00,
+      alignment: 48.00,
+      cohesion: 41.00,
+      quantity: 3.00
+    })
+  </script> -->
+  <!-- 获取日期星期 实时时间 -->
+  <script>
+    var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var weekDay = now.getDay();
+    $("#dateTxt").text(year + "年" + month + "月" + day + "日");
+    $("#weekTxt").text( week[weekDay]);
+    
+    var timeArr = [
+      "早起的鸟儿有虫吃", // 早晨6：00-7：00
+      "早上好",// 早上7:00—9:00、
+      "上午好",// 上午9:00—12:00、
+      "中午好",// 中午12:00—14:00、
+      "下午好",// 下午14:00—18:00、
+      "傍晚好",// 傍晚18:00—19:00、
+      "晚上好",// 晚上19:00—24:00
+      "夜深了，早点休息",  // 凌晨24：00-6：00
+      ];
+    var greeting = '';
+    
+    function getNowTime(){
+      var curDate = new Date();
+      var hour = curDate.getHours();
+      var minute = curDate.getMinutes();
+      var second = curDate.getSeconds();
+      switch(true){
+        case hour >= 6 && hour < 7:
+          greeting = timeArr[0];
+          break;
+        case hour >= 7 && hour < 9:
+          greeting = timeArr[1];
+          break;
+        case hour >= 9 && hour < 12:
+          greeting = timeArr[2];
+          break;
+        case hour >= 12 && hour < 14:
+          greeting = timeArr[3];
+          break;
+        case hour >= 14 && hour < 18:
+          greeting = timeArr[4];
+          break;
+        case hour >= 18 && hour < 19:
+          greeting = timeArr[5];
+          break;
+        case hour >= 19 && hour <= 23:
+          greeting = timeArr[6];
+          break;
+        case hour >= 0 && hour < 6:
+          greeting = timeArr[7];
+          break;
+      }
+      hour =  hour<10?'0'+hour:hour;
+      minute =  minute<10?'0'+minute:minute;
+      second =  second<10?'0'+second:second;
+
+      $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
+    }
+    getNowTime();
+    setInterval(getNowTime,1000);
+  </script>
+
+  <!-- 获取位置和才是编码（有时候不准） -->
+  <!-- <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>  -->
+
+  <!-- 获根据城市编码取天气 --> 
+  <!-- <script type="text/javascript">
+    if(returnCitySN && returnCitySN['cid']){
+      $.ajax({
+        url: "https://restapi.amap.com/v3/weather/weatherInfo",
+        type: 'get',
+        data: {
+          key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+          city: returnCitySN['cid'],
+        },
+        dataType: 'json',
+        success:function(data){
+          if(data &&  data.status=="1"){
+            var lives = data.lives[0];
+            $("#cityName").text(lives.city);
+            $("#weatherTxt").text(lives.weather);
+            $("#temperature").text(lives.temperature+"°");
+            $("#winddirection").text(lives.winddirection+"风");
+            $("#windpower").text(lives.windpower+"级");
+          }
+        }
+      })
+    }
+  </script> -->
+</body>
+</html>

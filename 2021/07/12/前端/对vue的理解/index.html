@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>对vue的理解 | 小耳朵</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <meta name="keywords" content="demo" />
+  
+  
+  
+  
+  <meta name="description" content="一、从历史说起Web是World Wide Web的简称，中文译为万维网我们可以将它规划成如下的几个时代来进行理解  石器时代 文明时代 工业革命时代 百花齐放时代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对vue的理解">
+<meta property="og:url" content="http://xerduo.com/2021/07/12/%E5%89%8D%E7%AB%AF/%E5%AF%B9vue%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="小耳朵">
+<meta property="og:description" content="一、从历史说起Web是World Wide Web的简称，中文译为万维网我们可以将它规划成如下的几个时代来进行理解  石器时代 文明时代 工业革命时代 百花齐放时代">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://camo.githubusercontent.com/55f0c957876b10457fd40c5d5d42b5a7e1ea0cd46e0ebb99a2b6fd6330fac546/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f31373334653435302d336163362d313165622d383566362d3666616337376330633962332e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/65bb93fab9a8d0166247f105ba3133f22dcbb7b35da005482afec0108bf74b91/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f32333138393030302d336163362d313165622d383566362d3666616337376330633962332e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/d2205b5df30f95df54d9450f770a1803b31faaecb0359c4f197dfc1c2f3b79de/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f33326136663433302d336163362d313165622d383566362d3666616337376330633962332e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/9f2c6ac991cca83428ef930a87e286f88566a5c8e5bc068797d313081747eb73/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f34343032633536302d336163362d313165622d383566362d3666616337376330633962332e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/6afa5c050a2cb91a5adbd001c18fe2edd96e55b4c3327680333b12db2f605618/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f35616538343834302d336163362d313165622d616239302d6439616538313462323430642e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/c697600963b00a57784ea01bca27731e9b778eaf9a0ed4c3c8604bb7fd9136af/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f36356638396536302d336163362d313165622d383566362d3666616337376330633962332e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/8ba79bc3991fea023daf2aad4300b3ec7447c0e863cc27284c3e60574ec1083d/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f36663931366662302d336163362d313165622d616239302d6439616538313462323430642e706e67">
+<meta property="article:published_time" content="2021-07-12T13:08:04.000Z">
+<meta property="article:modified_time" content="2023-02-16T14:27:44.740Z">
+<meta property="article:author" content="Duer">
+<meta property="article:tag" content="Vue2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/55f0c957876b10457fd40c5d5d42b5a7e1ea0cd46e0ebb99a2b6fd6330fac546/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f31373334653435302d336163362d313165622d383566362d3666616337376330633962332e706e67">
+  
+    <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css"> -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style> -->
+    
+  <!-- <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all"> -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+  <!-- <script>
+    // 随机排序数组
+    function shuffle(arr) { 
+      let i = arr.length; 
+      while (i) { 
+          let j = Math.floor(Math.random() * i--); 
+          [arr[j], arr[i]] = [arr[i], arr[j]]; 
+      } 
+      return arr;
+    }
+    window.randArr = [];
+    function getRandArr(num){
+      for(var i = 1;i<=num;i++){
+        randArr.push(i);
+      }
+      randArr = shuffle(randArr).slice();
+    }
+    getRandArr(47);
+    console.log(randArr);
+  </script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50" id="cbody">
+      <div id="iCenter"></div>
+
+  <div class="fixbackground"></div>
+  <header id="allheader" class="site-header" role="banner">
+  <!-- 顶部小猫跑动 -->
+  <!-- <div id="marco">
+    <div id="cielo"></div>
+    <div id="luna"></div>
+    <div id="gato"></div>
+    <div id="muro"></div>
+    <div id="edificios"></div>
+  </div> -->
+  <div class="clearfix container headCon">
+    <!-- <div class="site-branding">
+      <div class="site-title">
+        
+                    <a href="/" title="小耳朵" rel="home">
+                        小耳朵
+                    </a>
+                
+        <div class="titleText">小耳朵</div>
+      </div> -->
+
+      <!-- <a class="cat" href="/">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </a> -->
+      <div class="titleTextCon">
+          <div class="bgCon">
+              <div class="titleTextBg">
+                  <!-- 小耳朵 -->
+                </div>
+                <div class="titleText">
+                    <div>倾听世界的声音</div>
+                    <div>xerduo.com</div>
+                </div>
+                <div class="titleTextBg1"></div>
+          </div>
+          <div class="rTextCon"">
+            <div id="dateTxt"></div>
+            <div id="weekTxt"></div>
+            <div>
+              <span id="timeShow""></span>
+            </div>
+            <!-- <div class="bottomWeather">
+                <span id="cityName"></span>
+                <span id="weatherTxt"></span>
+                <span id="temperature"></span>
+                <span id="winddirection"></span><span id="windpower"></span>
+            </div> -->
+          </div>
+      </div>
+      <!-- 
+      <div class="site-description">
+        倾听世界的声音
+      </div>
+       -->
+      
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">
+          <i class="fa fa-align-justify open"></i>
+          <i class="fa fa-close closeIcon"></i>
+        </a>
+        <div class="clearfix sf-menu">
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/">
+                首页
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/archives">
+                归档
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/categories">
+                分类
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/tags">
+                标签
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/about">
+                关于
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--  -->
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+        
+          <section id="main" style="float:none;"><article id="post-前端/对vue的理解" style="width: 66%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+                <!--  -->
+
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      对vue的理解
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+    发表于
+    <a href="/2021/07/12/%E5%89%8D%E7%AB%AF/%E5%AF%B9vue%E7%9A%84%E7%90%86%E8%A7%A3/" class="article-date">
+        <time datetime="2021-07-12T13:08:04.000Z" itemprop="datePublished">
+            <!-- 2021-07-12 21:07:00 -->
+            2021-07-12 21:08:04
+        </time>
+    </a>
+    
+                                    
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                                                        <h2 id="一、从历史说起"><a href="#一、从历史说起" class="headerlink" title="一、从历史说起"></a>一、从历史说起</h2><p>Web是World Wide Web的简称，中文译为万维网我们可以将它规划成如下的几个时代来进行理解</p>
+<ul>
+<li>石器时代</li>
+<li>文明时代</li>
+<li>工业革命时代</li>
+<li>百花齐放时代<span id="more"></span></li>
+</ul>
+<h3 id="石器时代"><a href="#石器时代" class="headerlink" title="石器时代"></a>石器时代</h3><p>石器时代指的就是我们的静态网页，可以欣赏一下1997的Apple官网</p>
+<p><img src="https://camo.githubusercontent.com/55f0c957876b10457fd40c5d5d42b5a7e1ea0cd46e0ebb99a2b6fd6330fac546/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f31373334653435302d336163362d313165622d383566362d3666616337376330633962332e706e67"></p>
+<p>最早的网页是没有数据库的，可以理解成就是一张可以在网络上浏览的报纸，直到CGI技术的出现通过 CGI Perl 运行一小段代码与数据库或文件系统进行交互，如当时的Google（1998年）</p>
+<p><img src="https://camo.githubusercontent.com/65bb93fab9a8d0166247f105ba3133f22dcbb7b35da005482afec0108bf74b91/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f32333138393030302d336163362d313165622d383566362d3666616337376330633962332e706e67"></p>
+<h3 id="文明时代"><a href="#文明时代" class="headerlink" title="文明时代"></a>文明时代</h3><p>ASP，JSP大家应该都不会太陌生，最早出现于 2005 年左右，先后出现了微软的 ASP 和 Java Server Pages [JSP] 等技术,取代了 CGI ，增强了 WEB 与服务端的交互的安全性，类似于下面这样，其实就是Java + HTML</p>
+<p>&#96;&lt;%@ page language&#x3D;”java” contentType&#x3D;”text&#x2F;html; charset&#x3D;utf-8”<br>    pageEncoding&#x3D;”utf-8”%&gt;</p>
+<p>     <title>JSP demo&lt;&#x2F;title   &#96;<br>JSP有一个很大的缺点，就是不太灵活，因为JSP是在服务器端执行的，通常返回该客户端的就是一个HTML文本。我们每次的请求：获取的数据、内容的加载，都是服务器为我们返回渲染完成之后的 DOM，这也就使得我们开发网站的灵活度大打折扣在这种情况下，同年：Ajax火了(小细节，这里为什么说火了，因为 Ajax 技术并不是 2005 年出现的，他的雏形是 1999 年)，现在看来很常见的技术手段，在当时可是珍贵无比</p>
+<h3 id="工业革命时代"><a href="#工业革命时代" class="headerlink" title="工业革命时代"></a>工业革命时代</h3><p>到这里大家就更熟悉了，移动设备的普及，Jquery的出现，以及SPA（Single Page Application 单页面应用）的雏形，Backbone EmberJS AngularJS 这样一批前端框架随之出现，但当时SPA的路不好走，例如SEO问题，SPA 过多的页面、复杂场景下 View 的绑定等，都没有很好的处理经过这几年的飞速发展，节约了开发人员大量的精力、降低了开发者和开发过程的门槛，极大提升了开发效率和迭代速度，我们可以称之其为工业时代</p>
+<h3 id="百花齐放时代"><a href="#百花齐放时代" class="headerlink" title="百花齐放时代"></a>百花齐放时代</h3><p>这里没有文字，放一张图感受一下</p>
+<p><img src="https://camo.githubusercontent.com/d2205b5df30f95df54d9450f770a1803b31faaecb0359c4f197dfc1c2f3b79de/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f33326136663433302d336163362d313165622d383566362d3666616337376330633962332e706e67"></p>
+<p>PS：这里为什么要说这么多Web的历史，我们可以看到Web技术的变化之大与快，每一种新的技术出现都是一些特定场景的解决方案，那我们今天的主角Vue又是为了解决什么呢？我们接着往下看</p>
+<h2 id="二、vue是什么"><a href="#二、vue是什么" class="headerlink" title="二、vue是什么"></a>二、vue是什么</h2><p>Vue.js（&#x2F;vjuː&#x2F;，或简称为Vue）是一个用于创建用户界面的开源JavaScript框架，也是一个创建单页应用的Web应用框架。2016年一项针对JavaScript的调查表明，Vue有着89%的开发者满意度。在GitHub上，该项目平均每天能收获95颗星，为Github有史以来星标数第3多的项目同时也是一款流行的JavaScript前端框架，旨在更好地组织与简化Web开发。Vue所关注的核心是MVC模式中的视图层，同时，它也能方便地获取数据更新，并通过组件内部特定的方法实现视图与模型的交互PS: Vue作者尤雨溪是在为AngularJS工作之后开发出了这一框架。他声称自己的思路是提取Angular中为自己所喜欢的部分，构建出一款相当轻量的框架最早发布于2014年2月</p>
+<h2 id="三、Vue核心特性"><a href="#三、Vue核心特性" class="headerlink" title="三、Vue核心特性"></a>三、Vue核心特性</h2><h3 id="数据驱动（MVVM"><a href="#数据驱动（MVVM" class="headerlink" title="数据驱动（MVVM)"></a>数据驱动（MVVM)</h3><p><code>MVVM</code>表示的是 <code>Model-View-ViewModel</code></p>
+<ul>
+<li>Model：模型层，负责处理业务逻辑以及和服务器端进行交互</li>
+<li>View：视图层：负责将数据模型转化为UI展示出来，可以简单的理解为HTML页面</li>
+<li>ViewModel：视图模型层，用来连接Model和View，是Model和View之间的通信桥梁</li>
+</ul>
+<p>这时候需要一张直观的关系图，如下<br><img src="https://camo.githubusercontent.com/9f2c6ac991cca83428ef930a87e286f88566a5c8e5bc068797d313081747eb73/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f34343032633536302d336163362d313165622d383566362d3666616337376330633962332e706e67" alt="image.png"></p>
+<h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><p>1.什么是组件化一句话来说就是把图形、非图形的各种逻辑均抽象为一个统一的概念（组件）来实现开发的模式，在<code>Vue</code>中每一个<code>.vue</code>文件都可以视为一个组件2.组件化的优势</p>
+<ul>
+<li>降低整个系统的耦合度，在保持接口不变的情况下，我们可以替换不同的组件快速完成需求，例如输入框，可以替换为日历、时间、范围等组件作具体的实现</li>
+<li>调试方便，由于整个系统是通过组件组合起来的，在出现问题的时候，可以用排除法直接移除组件，或者根据报错的组件快速定位问题，之所以能够快速定位，是因为每个组件之间低耦合，职责单一，所以逻辑会比分析整个系统要简单</li>
+<li>提高可维护性，由于每个组件的职责单一，并且组件在系统中是被复用的，所以对代码进行优化可获得系统的整体升级</li>
+</ul>
+<h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><p>解释：指令 (Directives) 是带有 v- 前缀的特殊属性作用：当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM</p>
+<ul>
+<li><p>常用的指令</p>
+<ul>
+<li>条件渲染指令 <code>v-if</code></li>
+<li>列表渲染指令<code>v-for</code></li>
+<li>属性绑定指令<code>v-bind</code></li>
+<li>事件绑定指令<code>v-on</code></li>
+<li>双向数据绑定指令<code>v-model</code></li>
+</ul>
+</li>
+</ul>
+<p>没有指令之前我们是怎么做的？是不是先要获取到DOM然后在….干点啥</p>
+<h4 id="四、Vue跟传统开发的区别"><a href="#四、Vue跟传统开发的区别" class="headerlink" title="四、Vue跟传统开发的区别"></a>四、Vue跟传统开发的区别</h4><p>没有落地使用场景的革命不是好革命，就以一个高频的应用场景来示意吧注册账号这个需求大家应该很熟悉了，如下</p>
+<p><img src="https://camo.githubusercontent.com/6afa5c050a2cb91a5adbd001c18fe2edd96e55b4c3327680333b12db2f605618/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f35616538343834302d336163362d313165622d616239302d6439616538313462323430642e706e67"></p>
+<p>用<code>jquery</code>来实现大概的思路就是选择流程dom对象，点击按钮隐藏当前活动流程dom对象，显示下一流程dom对象如下图(代码就不上了，上了就篇文章就没了..)</p>
+<p><img src="https://camo.githubusercontent.com/c697600963b00a57784ea01bca27731e9b778eaf9a0ed4c3c8604bb7fd9136af/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f36356638396536302d336163362d313165622d383566362d3666616337376330633962332e706e67"></p>
+<p>用<code>vue</code>来实现，我们知道<code>vue</code>基本不操作<code>dom</code>节点， 双向绑定使<code>dom</code>节点跟视图绑定后，通过修改变量的值控制<code>dom</code>节点的各类属性。所以其实现思路为：视图层使用一变量控制dom节点显示与否，点击按钮则改变该变量，如下图</p>
+<p><img src="https://camo.githubusercontent.com/8ba79bc3991fea023daf2aad4300b3ec7447c0e863cc27284c3e60574ec1083d/68747470733a2f2f7374617469632e7675652d6a732e636f6d2f36663931366662302d336163362d313165622d616239302d6439616538313462323430642e706e67"></p>
+<p>总结就是：</p>
+<ul>
+<li>Vue所有的界面事件，都是只去操作数据的，Jquery操作DOM</li>
+<li>Vue所有界面的变动，都是根据数据自动绑定出来的，Jquery操作DOM</li>
+</ul>
+<h2 id="五、Vue和React对比"><a href="#五、Vue和React对比" class="headerlink" title="五、Vue和React对比"></a>五、Vue和React对比</h2><p>这里就做几个简单的类比吧，当然没有好坏之分，只是使用场景不同</p>
+<h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ul>
+<li>都有组件化思想</li>
+<li>都支持服务器端渲染</li>
+<li>都有Virtual DOM（虚拟dom）</li>
+<li>数据驱动视图</li>
+<li>都有支持native的方案：<code>Vue</code>的<code>weex</code>、<code>React</code>的<code>React native</code></li>
+<li>都有自己的构建工具：<code>Vue</code>的<code>vue-cli</code>、<code>React</code>的<code>Create React App</code></li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li>数据变化的实现原理不同。<code>react</code>使用的是不可变数据，而<code>Vue</code>使用的是可变的数据</li>
+<li>组件化通信的不同。<code>react</code>中我们通过使用回调函数来进行通信的，而<code>Vue</code>中子组件向父组件传递消息有两种方式：事件和回调函数</li>
+<li>diff算法不同。<code>react</code>主要使用diff队列保存需要更新哪些DOM，得到patch树，再统一操作批量更新DOM。<code>Vue</code> 使用双向指针，边对比，边更新DOM</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/febobo/web-interview/issues/1">https://github.com/febobo/web-interview/issues/1</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016269636">https://segmentfault.com/a/1190000016269636</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/Vue.js">https://zh.wikipedia.org/zh-cn/Vue.js</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20197803">https://zhuanlan.zhihu.com/p/20197803</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38296857">https://zhuanlan.zhihu.com/p/38296857</a></li>
+</ul>
+
+                                                                            
+                                                        </div>
+                                                        <footer class="entry-meta entry-footer">
+                                                            
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+
+                                                                
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue2/" rel="tag">Vue2</a></li></ul>
+
+                                                                
+                                                                
+                                                                
+                                                        </footer>
+                                        </div>
+                                        
+                                            
+<nav id="article-nav">
+  
+    <a href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Vue双向数据绑定
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/07/11/%E5%89%8D%E7%AB%AF/%E8%83%BD%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%B0%91%E7%A7%8D%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B1%80%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">能实现多少种水平垂直居中的布局？</div>
+    </a>
+  
+</nav>
+
+                                        
+</article>
+
+<!-- Table of Contents -->
+
+    <aside id="sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+                文章目录
+            </strong>
+            
+                <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%8E%E5%8E%86%E5%8F%B2%E8%AF%B4%E8%B5%B7"><span class="nav-number">1.</span> <span class="nav-text">一、从历史说起</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%B3%E5%99%A8%E6%97%B6%E4%BB%A3"><span class="nav-number">1.1.</span> <span class="nav-text">石器时代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%98%8E%E6%97%B6%E4%BB%A3"><span class="nav-number">1.2.</span> <span class="nav-text">文明时代</span></a></li></ol></li></ol>
+                    
+        </div>
+    </aside>
+    </section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+        <div class="clearfix container footCon">
+          <!-- <div class="cup-wrap">
+      <div class="cup">
+        <div class="cup__mouse"></div>
+        <div class="cup__eyes"></div>
+      </div>
+      <div class="cup-shadow"></div>
+    </div> -->
+          <!-- 小耳朵 All Rights Reserved.  -->
+          <!-- <div class="footText">Work Hard, Play Hard</div> -->
+          <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
+          <!-- <div class="footText"></div> -->
+
+          <div class="site-info">
+            2020 - <span id="bootm-date"></span> ©小耳朵
+            <!-- All rights reserved.  -->
+            
+          </div>
+          <!-- <div class="site-credit">
+                        Theme by
+                            <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+                    </div> -->
+        </div>
+</footer>
+
+<!-- min height -->
+
+<script>
+  var contentdiv = document.getElementById("content")
+
+  contentdiv.style.minHeight =
+    document.body.offsetHeight -
+    document.getElementById("allheader").offsetHeight -
+    document.getElementById("footer").offsetHeight +
+    "px"
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+     <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+ 
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<script src="/js/scripts.js"></script>
+ 
+<script src="/js/bootstrap.js"></script>
+ 
+<script src="/js/main.js"></script>
+ 
+<script src="/js/cursor-effects.js"></script>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<!-- 左下角动态小猫注释开始 -->
+<!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  // https://github.com/stevenjoezhang/live2d-widget
+  // https://blog.csdn.net/wang_123_zy/article/details/87181892
+  L2Dwidget.init({
+    model: {
+      jsonPath:
+        "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+      scale: 1
+    },
+    display: {
+      position: "left",
+      width: 100,
+      height: 200,
+      hOffset: 30, // 水平
+      vOffset: -108 // 垂直
+    },
+    mobile: {
+      show: false,
+      scale: 0.5
+    },
+    react: {
+      opacityDefault: 0.9,
+      opacityOnHover: 0.2
+    }
+  })
+</script> -->
+<!-- 左下角动态及小猫注释结束 -->
+
+<!-- 文章被访问时页面URL会自动推送给百度 -->
+<!-- <script>
+    (function(){
+        var bp = document.createElement('script');
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> -->
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+  <!-- 飞鸟动画背景 -->
+  <!-- <script src="/js/three.min.js"></script>
+  <script src="/js/vanta.birds.min.js"></script>
+  <script>
+    const effect = VANTA.BIRDS({
+      el: "#container",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xffffff,
+      birdSize: 0.50,
+      wingSpan: 15.00,
+      speedLimit: 2.00,
+      separation: 100.00,
+      alignment: 48.00,
+      cohesion: 41.00,
+      quantity: 3.00
+    })
+  </script> -->
+  <!-- 获取日期星期 实时时间 -->
+  <script>
+    var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var weekDay = now.getDay();
+    $("#dateTxt").text(year + "年" + month + "月" + day + "日");
+    $("#weekTxt").text( week[weekDay]);
+    
+    var timeArr = [
+      "早起的鸟儿有虫吃", // 早晨6：00-7：00
+      "早上好",// 早上7:00—9:00、
+      "上午好",// 上午9:00—12:00、
+      "中午好",// 中午12:00—14:00、
+      "下午好",// 下午14:00—18:00、
+      "傍晚好",// 傍晚18:00—19:00、
+      "晚上好",// 晚上19:00—24:00
+      "夜深了，早点休息",  // 凌晨24：00-6：00
+      ];
+    var greeting = '';
+    
+    function getNowTime(){
+      var curDate = new Date();
+      var hour = curDate.getHours();
+      var minute = curDate.getMinutes();
+      var second = curDate.getSeconds();
+      switch(true){
+        case hour >= 6 && hour < 7:
+          greeting = timeArr[0];
+          break;
+        case hour >= 7 && hour < 9:
+          greeting = timeArr[1];
+          break;
+        case hour >= 9 && hour < 12:
+          greeting = timeArr[2];
+          break;
+        case hour >= 12 && hour < 14:
+          greeting = timeArr[3];
+          break;
+        case hour >= 14 && hour < 18:
+          greeting = timeArr[4];
+          break;
+        case hour >= 18 && hour < 19:
+          greeting = timeArr[5];
+          break;
+        case hour >= 19 && hour <= 23:
+          greeting = timeArr[6];
+          break;
+        case hour >= 0 && hour < 6:
+          greeting = timeArr[7];
+          break;
+      }
+      hour =  hour<10?'0'+hour:hour;
+      minute =  minute<10?'0'+minute:minute;
+      second =  second<10?'0'+second:second;
+
+      $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
+    }
+    getNowTime();
+    setInterval(getNowTime,1000);
+  </script>
+
+  <!-- 获取位置和才是编码（有时候不准） -->
+  <!-- <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>  -->
+
+  <!-- 获根据城市编码取天气 --> 
+  <!-- <script type="text/javascript">
+    if(returnCitySN && returnCitySN['cid']){
+      $.ajax({
+        url: "https://restapi.amap.com/v3/weather/weatherInfo",
+        type: 'get',
+        data: {
+          key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+          city: returnCitySN['cid'],
+        },
+        dataType: 'json',
+        success:function(data){
+          if(data &&  data.status=="1"){
+            var lives = data.lives[0];
+            $("#cityName").text(lives.city);
+            $("#weatherTxt").text(lives.weather);
+            $("#temperature").text(lives.temperature+"°");
+            $("#winddirection").text(lives.winddirection+"风");
+            $("#windpower").text(lives.windpower+"级");
+          }
+        }
+      })
+    }
+  </script> -->
+</body>
+</html>

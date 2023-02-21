@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js字符串的常用方法 | 小耳朵</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+    <meta name="keywords" content="demo" />
+  
+  
+  
+  
+  <meta name="description" content="JS字符串的常用方法常用 操作方法、转换方法、模板匹配方法 操作方法可将字符串常用的操作方法归纳为增、删、改、查，需要知道字符串的特点是一旦创建了，就不可变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS字符串的常用方法">
+<meta property="og:url" content="http://xerduo.com/2021/06/29/%E5%89%8D%E7%AB%AF/JS%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="小耳朵">
+<meta property="og:description" content="JS字符串的常用方法常用 操作方法、转换方法、模板匹配方法 操作方法可将字符串常用的操作方法归纳为增、删、改、查，需要知道字符串的特点是一旦创建了，就不可变">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-29T14:59:18.000Z">
+<meta property="article:modified_time" content="2023-02-16T14:27:44.728Z">
+<meta property="article:author" content="Duer">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css"> -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style> -->
+    
+  <!-- <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all"> -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+  <!-- <script>
+    // 随机排序数组
+    function shuffle(arr) { 
+      let i = arr.length; 
+      while (i) { 
+          let j = Math.floor(Math.random() * i--); 
+          [arr[j], arr[i]] = [arr[i], arr[j]]; 
+      } 
+      return arr;
+    }
+    window.randArr = [];
+    function getRandArr(num){
+      for(var i = 1;i<=num;i++){
+        randArr.push(i);
+      }
+      randArr = shuffle(randArr).slice();
+    }
+    getRandArr(47);
+    console.log(randArr);
+  </script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50" id="cbody">
+      <div id="iCenter"></div>
+
+  <div class="fixbackground"></div>
+  <header id="allheader" class="site-header" role="banner">
+  <!-- 顶部小猫跑动 -->
+  <!-- <div id="marco">
+    <div id="cielo"></div>
+    <div id="luna"></div>
+    <div id="gato"></div>
+    <div id="muro"></div>
+    <div id="edificios"></div>
+  </div> -->
+  <div class="clearfix container headCon">
+    <!-- <div class="site-branding">
+      <div class="site-title">
+        
+                    <a href="/" title="小耳朵" rel="home">
+                        小耳朵
+                    </a>
+                
+        <div class="titleText">小耳朵</div>
+      </div> -->
+
+      <!-- <a class="cat" href="/">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </a> -->
+      <div class="titleTextCon">
+          <div class="bgCon">
+              <div class="titleTextBg">
+                  <!-- 小耳朵 -->
+                </div>
+                <div class="titleText">
+                    <div>倾听世界的声音</div>
+                    <div>xerduo.com</div>
+                </div>
+                <div class="titleTextBg1"></div>
+          </div>
+          <div class="rTextCon"">
+            <div id="dateTxt"></div>
+            <div id="weekTxt"></div>
+            <div>
+              <span id="timeShow""></span>
+            </div>
+            <!-- <div class="bottomWeather">
+                <span id="cityName"></span>
+                <span id="weatherTxt"></span>
+                <span id="temperature"></span>
+                <span id="winddirection"></span><span id="windpower"></span>
+            </div> -->
+          </div>
+      </div>
+      <!-- 
+      <div class="site-description">
+        倾听世界的声音
+      </div>
+       -->
+      
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">
+          <i class="fa fa-align-justify open"></i>
+          <i class="fa fa-close closeIcon"></i>
+        </a>
+        <div class="clearfix sf-menu">
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/">
+                首页
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/archives">
+                归档
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/categories">
+                分类
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/tags">
+                标签
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/about">
+                关于
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--  -->
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+        
+          <section id="main" style="float:none;"><article id="post-前端/JS字符串的常用方法" style="width: 66%; float:left;"
+     class="article article-type-
+        post" itemscope itemprop="blogPost" >
+            <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+                <!--  -->
+
+                    
+                        <header class="article-header">
+                            
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JS字符串的常用方法
+    </h1>
+  
+
+                        </header>
+                        
+                            <div class="article-meta">
+                                
+    发表于
+    <a href="/2021/06/29/%E5%89%8D%E7%AB%AF/JS%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+        <time datetime="2021-06-29T14:59:18.000Z" itemprop="datePublished">
+            <!-- 2021-06-29 22:06:00 -->
+            2021-06-29 22:59:18
+        </time>
+    </a>
+    
+                                    
+                            </div>
+                            <div class="article-entry" itemprop="articleBody">
+                                
+                                                                        <h1 id="JS字符串的常用方法"><a href="#JS字符串的常用方法" class="headerlink" title="JS字符串的常用方法"></a>JS字符串的常用方法</h1><p><strong>常用 操作方法、转换方法、模板匹配方法</strong></p>
+<h1 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h1><p>可将字符串常用的操作方法归纳为增、删、改、查，需要知道字符串的特点是一旦创建了，就不可变</p>
+<span id="more"></span>
+<h2 id="增（可用-、-、concat进行字符串拼接）"><a href="#增（可用-、-、concat进行字符串拼接）" class="headerlink" title="增（可用+、${}、concat进行字符串拼接）"></a>增（可用+、${}、concat进行字符串拼接）</h2><p>这里增的意思并不是说直接增添内容，而是创建字符串的一个副本，再进行操作<br>除了常用+以及${}进行字符串拼接之外，还可通过concat</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringValue = <span class="string">&quot;hello &quot;</span>;</span><br><span class="line"><span class="keyword">let</span> result = stringValue.<span class="title function_">concat</span>(<span class="string">&quot;world&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result); <span class="comment">// &quot;hello world&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue); <span class="comment">// &quot;hello&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删（slice-、substr-、substring-）"><a href="#删（slice-、substr-、substring-）" class="headerlink" title="删（slice()、substr()、substring()）"></a>删（slice()、substr()、substring()）</h2><p>这里的删的意思并不是说删除原字符串的内容，而是创建字符串的一个副本，再进行操作<br>常见的有：<strong>slice()、substr()、substring()</strong><br>这三个方法都返回调用它们的字符串的一个子字符串，而且都接收一或两个参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringValue = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">slice</span>(<span class="number">3</span>)); <span class="comment">// &quot;lo world&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">substring</span>(<span class="number">3</span>)); <span class="comment">// &quot;lo world&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">substr</span>(<span class="number">3</span>)); <span class="comment">// &quot;lo world&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">slice</span>(<span class="number">3</span>, <span class="number">7</span>)); <span class="comment">// &quot;lo w&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">substring</span>(<span class="number">3</span>,<span class="number">7</span>)); <span class="comment">// &quot;lo w&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">substr</span>(<span class="number">3</span>, <span class="number">7</span>)); <span class="comment">// &quot;lo worl&quot; 特别：从索引3开始截取计数，直到7为止</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p>这里改的意思也不是改变原字符串，而是创建字符串的一个副本，再进行操作<br>常见的有：</p>
+<ul>
+<li><strong>trim()、trimLeft()、trimRight()</strong></li>
+<li><strong>repeat()</strong></li>
+<li><strong>padStart()、padEnd()</strong></li>
+<li><strong>toLowerCase()、 toUpperCase()</strong></li>
+</ul>
+<h3 id="trim-、trimLeft-、trimRight"><a href="#trim-、trimLeft-、trimRight" class="headerlink" title="trim()、trimLeft()、trimRight()"></a>trim()、trimLeft()、trimRight()</h3><p>删除前、后或前后所有空格符，再返回新的字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringValue = <span class="string">&quot; hello world &quot;</span>;</span><br><span class="line"><span class="keyword">let</span> trimmedStringValue = stringValue.<span class="title function_">trim</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue); <span class="comment">// &quot; hello world &quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(trimmedStringValue); <span class="comment">// &quot;hello world&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h3><p>接收一个整数参数，表示要将字符串复制多少次，然后返回拼接所有副本后的结果</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringValue = <span class="string">&quot;na &quot;</span>;</span><br><span class="line"><span class="keyword">let</span> copyResult = stringValue.<span class="title function_">repeat</span>(<span class="number">2</span>) <span class="comment">// na na </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="padStart-、padEnd"><a href="#padStart-、padEnd" class="headerlink" title="padStart()、padEnd()"></a>padStart()、padEnd()</h3><p>复制字符串，如果小于指定长度，则在相应一边填充字符，直至满足长度条件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringValue = <span class="string">&quot;foo&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">padStart</span>(<span class="number">6</span>)); <span class="comment">// &quot; foo&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">padStart</span>(<span class="number">9</span>, <span class="string">&quot;.&quot;</span>)); <span class="comment">// &quot;......foo&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="toLowerCase-、-toUpperCase"><a href="#toLowerCase-、-toUpperCase" class="headerlink" title="toLowerCase()、 toUpperCase()"></a>toLowerCase()、 toUpperCase()</h3><p>大小写转化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringValue = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">toUpperCase</span>()); <span class="comment">// &quot;HELLO WORLD&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">toLowerCase</span>()); <span class="comment">// &quot;hello world&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><p>除了通过索引的方式获取字符串的值，还可通过：<br><strong>chatAt()、indexOf()、startWith()、includes()</strong> </p>
+<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><p>返回给定索引位置的字符，由传给方法的整数参数指定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message.<span class="title function_">charAt</span>(<span class="number">2</span>)); <span class="comment">// &quot;c&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>从字符串开头去搜索传入的字符串，并返回位置（如果没找到，则返回 -1 ）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringValue = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(stringValue.<span class="title function_">indexOf</span>(<span class="string">&quot;o&quot;</span>)); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="startWith-、includes"><a href="#startWith-、includes" class="headerlink" title="startWith()、includes()"></a>startWith()、includes()</h3><p>从字符串中搜索传入的字符串，并返回一个表示是否包含的布尔值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = <span class="string">&quot;foobarbaz&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message.<span class="title function_">startsWith</span>(<span class="string">&quot;foo&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message.<span class="title function_">startsWith</span>(<span class="string">&quot;bar&quot;</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message.<span class="title function_">includes</span>(<span class="string">&quot;bar&quot;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message.<span class="title function_">includes</span>(<span class="string">&quot;qux&quot;</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h1><h2 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h2><p>把字符串按照指定的分割符，拆分成数组中的每一项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;12+23+34&quot;</span></span><br><span class="line"><span class="keyword">let</span> arr = str.<span class="title function_">split</span>(<span class="string">&quot;+&quot;</span>) <span class="comment">// [12,23,34]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="模板匹配方法"><a href="#模板匹配方法" class="headerlink" title="模板匹配方法"></a>模板匹配方法</h1><p>针对正则表达式，字符串设计了几个方法：<br><strong>match()、search()、replace()</strong></p>
+<h2 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h2><p>接收一个参数，可以是一个正则表达式字符串，也可以是一个RegExp对象，返回数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = <span class="string">&quot;cat, bat, sat, fat&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> pattern = <span class="regexp">/.at/</span>;</span><br><span class="line"><span class="keyword">let</span> matches = text.<span class="title function_">match</span>(pattern);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(matches[<span class="number">0</span>]); <span class="comment">// &quot;cat&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h2><p>接收一个参数，可以是一个正则表达式字符串，也可以是一个RegExp对象，找到则返回匹配索引，否则返回 -1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = <span class="string">&quot;cat, bat, sat, fat&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> pos = text.<span class="title function_">search</span>(<span class="regexp">/at/</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(pos); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h2><p>接收两个参数，第一个参数为匹配的内容，第二个参数为替换的元素（可用函数）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = <span class="string">&quot;cat, bat, sat, fat&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> result = text.<span class="title function_">replace</span>(<span class="string">&quot;at&quot;</span>, <span class="string">&quot;ond&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result); <span class="comment">// &quot;cond, bat, sat, fat&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+                                                                            
+                                                        </div>
+                                                        <footer class="entry-meta entry-footer">
+                                                            
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+
+                                                                
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+                                                                
+                                                                
+                                                                
+                                                        </footer>
+                                        </div>
+                                        
+                                            
+<nav id="article-nav">
+  
+    <a href="/2021/06/30/%E5%89%8D%E7%AB%AF/JS%E4%B8%AD%E4%B8%A4%E4%B8%AA%E7%AD%89%E5%8F%B7%E5%92%8C%E4%B8%89%E4%B8%AA%E7%AD%89%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          JS中两个等号和三个等号的区别
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/29/%E5%89%8D%E7%AB%AF/JS%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">JS数组的常用方法</div>
+    </a>
+  
+</nav>
+
+                                        
+</article>
+
+<!-- Table of Contents -->
+
+    <aside id="sidebar">
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">
+                文章目录
+            </strong>
+            
+                <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">JS字符串的常用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">操作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%EF%BC%88%E5%8F%AF%E7%94%A8-%E3%80%81-%E3%80%81concat%E8%BF%9B%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">增（可用+、${}、concat进行字符串拼接）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%EF%BC%88slice-%E3%80%81substr-%E3%80%81substring-%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">删（slice()、substr()、substring()）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9"><span class="nav-number">2.3.</span> <span class="nav-text">改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#trim-%E3%80%81trimLeft-%E3%80%81trimRight"><span class="nav-number">2.3.1.</span> <span class="nav-text">trim()、trimLeft()、trimRight()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repeat"><span class="nav-number">2.3.2.</span> <span class="nav-text">repeat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#padStart-%E3%80%81padEnd"><span class="nav-number">2.3.3.</span> <span class="nav-text">padStart()、padEnd()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toLowerCase-%E3%80%81-toUpperCase"><span class="nav-number">2.3.4.</span> <span class="nav-text">toLowerCase()、 toUpperCase()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5"><span class="nav-number">2.4.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#charAt"><span class="nav-number">2.4.1.</span> <span class="nav-text">charAt()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf"><span class="nav-number">2.4.2.</span> <span class="nav-text">indexOf()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#startWith-%E3%80%81includes"><span class="nav-number">2.4.3.</span> <span class="nav-text">startWith()、includes()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">转换方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#split"><span class="nav-number">3.1.</span> <span class="nav-text">split()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">模板匹配方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#match"><span class="nav-number">4.1.</span> <span class="nav-text">match()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#search"><span class="nav-number">4.2.</span> <span class="nav-text">search()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#replace"><span class="nav-number">4.3.</span> <span class="nav-text">replace()</span></a></li></ol></li></ol>
+                    
+        </div>
+    </aside>
+    </section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+        <div class="clearfix container footCon">
+          <!-- <div class="cup-wrap">
+      <div class="cup">
+        <div class="cup__mouse"></div>
+        <div class="cup__eyes"></div>
+      </div>
+      <div class="cup-shadow"></div>
+    </div> -->
+          <!-- 小耳朵 All Rights Reserved.  -->
+          <!-- <div class="footText">Work Hard, Play Hard</div> -->
+          <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
+          <!-- <div class="footText"></div> -->
+
+          <div class="site-info">
+            2020 - <span id="bootm-date"></span> ©小耳朵
+            <!-- All rights reserved.  -->
+            
+          </div>
+          <!-- <div class="site-credit">
+                        Theme by
+                            <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+                    </div> -->
+        </div>
+</footer>
+
+<!-- min height -->
+
+<script>
+  var contentdiv = document.getElementById("content")
+
+  contentdiv.style.minHeight =
+    document.body.offsetHeight -
+    document.getElementById("allheader").offsetHeight -
+    document.getElementById("footer").offsetHeight +
+    "px"
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+     <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+ 
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<script src="/js/scripts.js"></script>
+ 
+<script src="/js/bootstrap.js"></script>
+ 
+<script src="/js/main.js"></script>
+ 
+<script src="/js/cursor-effects.js"></script>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<!-- 左下角动态小猫注释开始 -->
+<!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  // https://github.com/stevenjoezhang/live2d-widget
+  // https://blog.csdn.net/wang_123_zy/article/details/87181892
+  L2Dwidget.init({
+    model: {
+      jsonPath:
+        "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+      scale: 1
+    },
+    display: {
+      position: "left",
+      width: 100,
+      height: 200,
+      hOffset: 30, // 水平
+      vOffset: -108 // 垂直
+    },
+    mobile: {
+      show: false,
+      scale: 0.5
+    },
+    react: {
+      opacityDefault: 0.9,
+      opacityOnHover: 0.2
+    }
+  })
+</script> -->
+<!-- 左下角动态及小猫注释结束 -->
+
+<!-- 文章被访问时页面URL会自动推送给百度 -->
+<!-- <script>
+    (function(){
+        var bp = document.createElement('script');
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> -->
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+  <!-- 飞鸟动画背景 -->
+  <!-- <script src="/js/three.min.js"></script>
+  <script src="/js/vanta.birds.min.js"></script>
+  <script>
+    const effect = VANTA.BIRDS({
+      el: "#container",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xffffff,
+      birdSize: 0.50,
+      wingSpan: 15.00,
+      speedLimit: 2.00,
+      separation: 100.00,
+      alignment: 48.00,
+      cohesion: 41.00,
+      quantity: 3.00
+    })
+  </script> -->
+  <!-- 获取日期星期 实时时间 -->
+  <script>
+    var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var weekDay = now.getDay();
+    $("#dateTxt").text(year + "年" + month + "月" + day + "日");
+    $("#weekTxt").text( week[weekDay]);
+    
+    var timeArr = [
+      "早起的鸟儿有虫吃", // 早晨6：00-7：00
+      "早上好",// 早上7:00—9:00、
+      "上午好",// 上午9:00—12:00、
+      "中午好",// 中午12:00—14:00、
+      "下午好",// 下午14:00—18:00、
+      "傍晚好",// 傍晚18:00—19:00、
+      "晚上好",// 晚上19:00—24:00
+      "夜深了，早点休息",  // 凌晨24：00-6：00
+      ];
+    var greeting = '';
+    
+    function getNowTime(){
+      var curDate = new Date();
+      var hour = curDate.getHours();
+      var minute = curDate.getMinutes();
+      var second = curDate.getSeconds();
+      switch(true){
+        case hour >= 6 && hour < 7:
+          greeting = timeArr[0];
+          break;
+        case hour >= 7 && hour < 9:
+          greeting = timeArr[1];
+          break;
+        case hour >= 9 && hour < 12:
+          greeting = timeArr[2];
+          break;
+        case hour >= 12 && hour < 14:
+          greeting = timeArr[3];
+          break;
+        case hour >= 14 && hour < 18:
+          greeting = timeArr[4];
+          break;
+        case hour >= 18 && hour < 19:
+          greeting = timeArr[5];
+          break;
+        case hour >= 19 && hour <= 23:
+          greeting = timeArr[6];
+          break;
+        case hour >= 0 && hour < 6:
+          greeting = timeArr[7];
+          break;
+      }
+      hour =  hour<10?'0'+hour:hour;
+      minute =  minute<10?'0'+minute:minute;
+      second =  second<10?'0'+second:second;
+
+      $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
+    }
+    getNowTime();
+    setInterval(getNowTime,1000);
+  </script>
+
+  <!-- 获取位置和才是编码（有时候不准） -->
+  <!-- <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>  -->
+
+  <!-- 获根据城市编码取天气 --> 
+  <!-- <script type="text/javascript">
+    if(returnCitySN && returnCitySN['cid']){
+      $.ajax({
+        url: "https://restapi.amap.com/v3/weather/weatherInfo",
+        type: 'get',
+        data: {
+          key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+          city: returnCitySN['cid'],
+        },
+        dataType: 'json',
+        success:function(data){
+          if(data &&  data.status=="1"){
+            var lives = data.lives[0];
+            $("#cityName").text(lives.city);
+            $("#weatherTxt").text(lives.weather);
+            $("#temperature").text(lives.temperature+"°");
+            $("#winddirection").text(lives.winddirection+"风");
+            $("#windpower").text(lives.windpower+"级");
+          }
+        }
+      })
+    }
+  </script> -->
+</body>
+</html>

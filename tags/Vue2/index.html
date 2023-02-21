@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>tag: vue2 | 小耳朵</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  
+  <meta name="description" content="倾听世界的声音">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小耳朵">
+<meta property="og:url" content="http://xerduo.com/tags/Vue2/index.html">
+<meta property="og:site_name" content="小耳朵">
+<meta property="og:description" content="倾听世界的声音">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Duer">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="小耳朵" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css"> -->
+  <link href="/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style> -->
+    
+  <!-- <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all"> -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+  <!-- <script>
+    // 随机排序数组
+    function shuffle(arr) { 
+      let i = arr.length; 
+      while (i) { 
+          let j = Math.floor(Math.random() * i--); 
+          [arr[j], arr[i]] = [arr[i], arr[j]]; 
+      } 
+      return arr;
+    }
+    window.randArr = [];
+    function getRandArr(num){
+      for(var i = 1;i<=num;i++){
+        randArr.push(i);
+      }
+      randArr = shuffle(randArr).slice();
+    }
+    getRandArr(47);
+    console.log(randArr);
+  </script> -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "首页"; 
+
+  themeMenus["/archives"] = "归档"; 
+
+  themeMenus["/categories"] = "分类"; 
+
+  themeMenus["/tags"] = "标签"; 
+
+  themeMenus["/about"] = "关于"; 
+
+</script>
+
+
+  <body>
+
+  <div class="fixbackground"></div>
+  <header id="allheader" class="site-header" role="banner">
+  <!-- 顶部小猫跑动 -->
+  <!-- <div id="marco">
+    <div id="cielo"></div>
+    <div id="luna"></div>
+    <div id="gato"></div>
+    <div id="muro"></div>
+    <div id="edificios"></div>
+  </div> -->
+  <div class="clearfix container headCon">
+    <!-- <div class="site-branding">
+      <div class="site-title">
+        
+                    <a href="/" title="小耳朵" rel="home">
+                        小耳朵
+                    </a>
+                
+        <div class="titleText">小耳朵</div>
+      </div> -->
+
+      <!-- <a class="cat" href="/">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+          <div class="eye eye--left">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="eye eye--right">
+            <div class="eye-pupil"></div>
+          </div>
+          <div class="muzzle"></div>
+        </div>
+      </a> -->
+      <div class="titleTextCon">
+          <div class="bgCon">
+              <div class="titleTextBg">
+                  <!-- 小耳朵 -->
+                </div>
+                <div class="titleText">
+                    <div>倾听世界的声音</div>
+                    <div>xerduo.com</div>
+                </div>
+                <div class="titleTextBg1"></div>
+          </div>
+          <div class="rTextCon"">
+            <div id="dateTxt"></div>
+            <div id="weekTxt"></div>
+            <div>
+              <span id="timeShow""></span>
+            </div>
+            <!-- <div class="bottomWeather">
+                <span id="cityName"></span>
+                <span id="weatherTxt"></span>
+                <span id="temperature"></span>
+                <span id="winddirection"></span><span id="windpower"></span>
+            </div> -->
+          </div>
+      </div>
+      <!-- 
+      <div class="site-description">
+        倾听世界的声音
+      </div>
+       -->
+      
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">
+          <i class="fa fa-align-justify open"></i>
+          <i class="fa fa-close closeIcon"></i>
+        </a>
+        <div class="clearfix sf-menu">
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/">
+                首页
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/archives">
+                归档
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/categories">
+                分类
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/tags">
+                标签
+              </a>
+            </li>
+            
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"
+            >
+              <a class="" href="/about">
+                关于
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--  -->
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <input type="text" class="search-mobile form-control search-form-submit" placeholder="搜索...">
+        
+        
+          <section id="main">
+  
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2021" class="archive-year">2021</a></h1>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2021/07/14/%E5%89%8D%E7%AB%AF/Vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/" class="archive-article-date">
+                <time datetime="2021-07-14T09:11:41.000Z" itemprop="datePublished">
+                    2021-07-14
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2021/07/14/%E5%89%8D%E7%AB%AF/Vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F/">
+        <span class="t1">Vue组件间通信方式都有哪些？</span>
+        <span class="t2 text-gradient">
+          <span>
+            Vue组件间通信方式都有哪些？
+          </span>
+        </span>
+      </a>
+      <!-- 2021-07-14 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2021/07/13/%E5%89%8D%E7%AB%AF/%E4%B8%BA%E4%BB%80%E4%B9%88Vue%E4%B8%AD%E7%9A%84v-if%E5%92%8Cv-for%E4%B8%8D%E5%BB%BA%E8%AE%AE%E4%B8%80%E8%B5%B7%E7%94%A8/" class="archive-article-date">
+                <time datetime="2021-07-13T15:06:05.000Z" itemprop="datePublished">
+                    2021-07-13
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2021/07/13/%E5%89%8D%E7%AB%AF/%E4%B8%BA%E4%BB%80%E4%B9%88Vue%E4%B8%AD%E7%9A%84v-if%E5%92%8Cv-for%E4%B8%8D%E5%BB%BA%E8%AE%AE%E4%B8%80%E8%B5%B7%E7%94%A8/">
+        <span class="t1">为什么Vue中的v-if和v-for不建议一起用</span>
+        <span class="t2 text-gradient">
+          <span>
+            为什么Vue中的v-if和v-for不建议一起用
+          </span>
+        </span>
+      </a>
+      <!-- 2021-07-13 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E6%B8%B2%E6%9F%93%E5%99%A8%E7%9A%84%E6%A0%B8%E5%BF%83Diff%E7%AE%97%E6%B3%95/" class="archive-article-date">
+                <time datetime="2021-07-13T14:21:53.000Z" itemprop="datePublished">
+                    2021-07-13
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E6%B8%B2%E6%9F%93%E5%99%A8%E7%9A%84%E6%A0%B8%E5%BF%83Diff%E7%AE%97%E6%B3%95/">
+        <span class="t1">Vue渲染器的核心Diff算法</span>
+        <span class="t2 text-gradient">
+          <span>
+            Vue渲染器的核心Diff算法
+          </span>
+        </span>
+      </a>
+      <!-- 2021-07-13 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
+                <time datetime="2021-07-13T14:18:19.000Z" itemprop="datePublished">
+                    2021-07-13
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E7%90%86%E8%A7%A3/">
+        <span class="t1">Vue生命周期的理解</span>
+        <span class="t2 text-gradient">
+          <span>
+            Vue生命周期的理解
+          </span>
+        </span>
+      </a>
+      <!-- 2021-07-13 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E4%B8%AD%E7%9A%84v-show%E5%92%8Cv-if%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3/" class="archive-article-date">
+                <time datetime="2021-07-13T12:53:06.000Z" itemprop="datePublished">
+                    2021-07-13
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E4%B8%AD%E7%9A%84v-show%E5%92%8Cv-if%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3/">
+        <span class="t1">Vue中的v-show和v-if怎么理解</span>
+        <span class="t2 text-gradient">
+          <span>
+            Vue中的v-show和v-if怎么理解
+          </span>
+        </span>
+      </a>
+      <!-- 2021-07-13 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/" class="archive-article-date">
+                <time datetime="2021-07-13T12:10:59.000Z" itemprop="datePublished">
+                    2021-07-13
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2021/07/13/%E5%89%8D%E7%AB%AF/Vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/">
+        <span class="t1">Vue双向数据绑定</span>
+        <span class="t2 text-gradient">
+          <span>
+            Vue双向数据绑定
+          </span>
+        </span>
+      </a>
+      <!-- 2021-07-13 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2021/07/12/%E5%89%8D%E7%AB%AF/%E5%AF%B9vue%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
+                <time datetime="2021-07-12T13:08:04.000Z" itemprop="datePublished">
+                    2021-07-12
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2021/07/12/%E5%89%8D%E7%AB%AF/%E5%AF%B9vue%E7%9A%84%E7%90%86%E8%A7%A3/">
+        <span class="t1">对vue的理解</span>
+        <span class="t2 text-gradient">
+          <span>
+            对vue的理解
+          </span>
+        </span>
+      </a>
+      <!-- 2021-07-12 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+      
+        </div></section>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2020" class="archive-year">2020</a></h1>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2020/09/26/%E5%89%8D%E7%AB%AF/vue%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E7%9A%84%E7%89%B9%E5%88%AB%E5%A4%84%E7%90%86/" class="archive-article-date">
+                <time datetime="2020-09-26T04:56:33.000Z" itemprop="datePublished">
+                    2020-09-26
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2020/09/26/%E5%89%8D%E7%AB%AF/vue%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E7%9A%84%E7%89%B9%E5%88%AB%E5%A4%84%E7%90%86/">
+        <span class="t1">vue数组操作的特别处理</span>
+        <span class="t2 text-gradient">
+          <span>
+            vue数组操作的特别处理
+          </span>
+        </span>
+      </a>
+      <!-- 2020-09-26 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+
+            <a href="/2020/03/04/%E5%89%8D%E7%AB%AF/Vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" class="archive-article-date">
+                <time datetime="2020-03-04T13:04:56.000Z" itemprop="datePublished">
+                    2020-03-04
+                </time>
+            </a>
+            
+  
+    <h1 class="thumb bb" itemprop="name">
+      <a class="text-gradient-a archive-article-title" href="/2020/03/04/%E5%89%8D%E7%AB%AF/Vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/">
+        <span class="t1">Vue父子组件生命周期执行顺序</span>
+        <span class="t2 text-gradient">
+          <span>
+            Vue父子组件生命周期执行顺序
+          </span>
+        </span>
+      </a>
+      <!-- 2020-03-04 -->
+    </h1>
+  
+
+        </header>
+    </div>
+</article>
+  
+  
+    </div></section>
+  
+
+
+</section>
+          <aside id="sidebar">
+  
+    <div class="widget-wrap" style="margin: 20px 0;">
+	<div id="search-form-wrap">
+    
+        <form class="search-form">
+            <label style="width: 75%;">
+                <span class="screen-reader-text">Search for:</span>
+                <input type="search" class="search-field" style="height: 42px;" placeholder=" 搜索…" value="" name="s" title="">
+            </label>
+            <input type="submit" class="search-form-submit" value="搜索">
+        </form>
+        <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input
+        type="text"
+        class="ins-search-input"
+        placeholder="请输入关键词..."
+      />
+      <span class="ins-close ins-selectable"
+        ><i class="fa fa-times-circle"></i
+      ></span>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+<script>
+  // 搜索配置
+  ;(function(window) {
+    var INSIGHT_CONFIG = {
+      TRANSLATION: {
+        POSTS: '文章',
+        PAGES: '页面',
+        CATEGORIES: '分类',
+        TAGS: '标签',
+        UNTITLED: '(无标题)'
+      },
+      ROOT_URL: "/",
+      CONTENT_URL: '/content.json'
+    }
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG
+  })(window)
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+            
+</div>
+</div>
+  
+    
+
+  
+    
+    <div class="widget_athemes_tabs">
+        <ul id="widget-tab" class="clearfix widget-tab-nav">
+            <li class="active">
+                <a>
+                    最新文章
+                </a>
+            </li>
+        </ul>
+        <div class="widget">
+            <ul>
+                
+                    <li class="clearfix">
+                        <div class="widget-entry-item">
+                          
+                            <div class="widget-entry-thumbnail">
+                                <a href="/2021/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%9F/" title="">
+                                    <img width="50" height="50" src="../../css/images/artarticleImg/img(16).jpg" class="attachment-thumb-small size-thumb-small wp-post-image"
+                                        alt="preview-16" title="">
+                                </a>
+                            </div>
+                            <div class="widget-entry-summary">
+                                
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2021/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%9F/">
+                                                    TCP为什么需要三次握手和四次挥手？
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2021-07-18
+                                            </span>
+                                    </div>
+                          </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        <div class="widget-entry-item">
+                          
+                                    <div class="widget-entry-summary" style="margin: 0;">
+                                        
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2021/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%BE%93%E5%85%A5URL%EF%BC%8C%E6%95%B2%E4%B8%8B%E5%9B%9E%E8%BD%A6%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/">
+                                                    地址栏输入URL，敲下回车后发生了什么？
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2021-07-18
+                                            </span>
+                                    </div>
+                          </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        <div class="widget-entry-item">
+                          
+                                    <div class="widget-entry-summary" style="margin: 0;">
+                                        
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2021/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E4%BD%9C%E7%94%A8%EF%BC%9F/">
+                                                    HTTP常见的请求头有哪些？作用？
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2021-07-18
+                                            </span>
+                                    </div>
+                          </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        <div class="widget-entry-item">
+                          
+                                    <div class="widget-entry-summary" style="margin: 0;">
+                                        
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2021/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/GET%E5%92%8CPOST%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                                                    GET和POST的区别
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2021-07-18
+                                            </span>
+                                    </div>
+                          </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        <div class="widget-entry-item">
+                          
+                                    <div class="widget-entry-summary" style="margin: 0;">
+                                        
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2021/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%8C%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF/">
+                                                    HTTP常见的状态码有哪些，适用场景
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2021-07-18
+                                            </span>
+                                    </div>
+                          </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        <div class="widget-entry-item">
+                          
+                                    <div class="widget-entry-summary" style="margin: 0;">
+                                        
+
+                                            <h6 style="margin: 0;">
+                                                <a href="/2021/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP1.0%EF%BC%8C1.1%EF%BC%8C2.0%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                                                    HTTP1.0，1.1，2.0的区别
+                                                </a>
+                                            </h6>
+                                            <span>
+                                                2021-07-18
+                                            </span>
+                                    </div>
+                          </div>
+                    </li>
+                    
+            </ul>
+            </div>
+        </div>
+        
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">46</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><span class="category-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title aa">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue2/" rel="tag">Vue2</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue3/" rel="tag">Vue3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A9%BE%E9%A9%B6/" rel="tag">驾驶</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/ES6/" style="font-size: 12px;">ES6</a> <a href="/tags/HTTP/" style="font-size: 16px;">HTTP</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Vue2/" style="font-size: 18px;">Vue2</a> <a href="/tags/Vue3/" style="font-size: 10px;">Vue3</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E9%A9%BE%E9%A9%B6/" style="font-size: 10px;">驾驶</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+        <div class="clearfix container footCon">
+          <!-- <div class="cup-wrap">
+      <div class="cup">
+        <div class="cup__mouse"></div>
+        <div class="cup__eyes"></div>
+      </div>
+      <div class="cup-shadow"></div>
+    </div> -->
+          <!-- 小耳朵 All Rights Reserved.  -->
+          <!-- <div class="footText">Work Hard, Play Hard</div> -->
+          <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
+          <!-- <div class="footText"></div> -->
+
+          <div class="site-info">
+            2020 - <span id="bootm-date"></span> ©小耳朵
+            <!-- All rights reserved.  -->
+            
+          </div>
+          <!-- <div class="site-credit">
+                        Theme by
+                            <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+                    </div> -->
+        </div>
+</footer>
+
+<!-- min height -->
+
+<script>
+  var contentdiv = document.getElementById("content")
+
+  contentdiv.style.minHeight =
+    document.body.offsetHeight -
+    document.getElementById("allheader").offsetHeight -
+    document.getElementById("footer").offsetHeight +
+    "px"
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+     <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+ 
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<script src="/js/scripts.js"></script>
+ 
+<script src="/js/bootstrap.js"></script>
+ 
+<script src="/js/main.js"></script>
+ 
+<script src="/js/cursor-effects.js"></script>
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<!-- 左下角动态小猫注释开始 -->
+<!-- <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+  // https://github.com/stevenjoezhang/live2d-widget
+  // https://blog.csdn.net/wang_123_zy/article/details/87181892
+  L2Dwidget.init({
+    model: {
+      jsonPath:
+        "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+      scale: 1
+    },
+    display: {
+      position: "left",
+      width: 100,
+      height: 200,
+      hOffset: 30, // 水平
+      vOffset: -108 // 垂直
+    },
+    mobile: {
+      show: false,
+      scale: 0.5
+    },
+    react: {
+      opacityDefault: 0.9,
+      opacityOnHover: 0.2
+    }
+  })
+</script> -->
+<!-- 左下角动态及小猫注释结束 -->
+
+<!-- 文章被访问时页面URL会自动推送给百度 -->
+<!-- <script>
+    (function(){
+        var bp = document.createElement('script');
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> -->
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+  <!-- 飞鸟动画背景 -->
+  <!-- <script src="/js/three.min.js"></script>
+  <script src="/js/vanta.birds.min.js"></script>
+  <script>
+    const effect = VANTA.BIRDS({
+      el: "#container",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xffffff,
+      birdSize: 0.50,
+      wingSpan: 15.00,
+      speedLimit: 2.00,
+      separation: 100.00,
+      alignment: 48.00,
+      cohesion: 41.00,
+      quantity: 3.00
+    })
+  </script> -->
+  <!-- 获取日期星期 实时时间 -->
+  <script>
+    var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var weekDay = now.getDay();
+    $("#dateTxt").text(year + "年" + month + "月" + day + "日");
+    $("#weekTxt").text( week[weekDay]);
+    
+    var timeArr = [
+      "早起的鸟儿有虫吃", // 早晨6：00-7：00
+      "早上好",// 早上7:00—9:00、
+      "上午好",// 上午9:00—12:00、
+      "中午好",// 中午12:00—14:00、
+      "下午好",// 下午14:00—18:00、
+      "傍晚好",// 傍晚18:00—19:00、
+      "晚上好",// 晚上19:00—24:00
+      "夜深了，早点休息",  // 凌晨24：00-6：00
+      ];
+    var greeting = '';
+    
+    function getNowTime(){
+      var curDate = new Date();
+      var hour = curDate.getHours();
+      var minute = curDate.getMinutes();
+      var second = curDate.getSeconds();
+      switch(true){
+        case hour >= 6 && hour < 7:
+          greeting = timeArr[0];
+          break;
+        case hour >= 7 && hour < 9:
+          greeting = timeArr[1];
+          break;
+        case hour >= 9 && hour < 12:
+          greeting = timeArr[2];
+          break;
+        case hour >= 12 && hour < 14:
+          greeting = timeArr[3];
+          break;
+        case hour >= 14 && hour < 18:
+          greeting = timeArr[4];
+          break;
+        case hour >= 18 && hour < 19:
+          greeting = timeArr[5];
+          break;
+        case hour >= 19 && hour <= 23:
+          greeting = timeArr[6];
+          break;
+        case hour >= 0 && hour < 6:
+          greeting = timeArr[7];
+          break;
+      }
+      hour =  hour<10?'0'+hour:hour;
+      minute =  minute<10?'0'+minute:minute;
+      second =  second<10?'0'+second:second;
+
+      $("#timeShow").text(greeting+" "+hour+":"+minute+":"+second);
+    }
+    getNowTime();
+    setInterval(getNowTime,1000);
+  </script>
+
+  <!-- 获取位置和才是编码（有时候不准） -->
+  <!-- <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>  -->
+
+  <!-- 获根据城市编码取天气 --> 
+  <!-- <script type="text/javascript">
+    if(returnCitySN && returnCitySN['cid']){
+      $.ajax({
+        url: "https://restapi.amap.com/v3/weather/weatherInfo",
+        type: 'get',
+        data: {
+          key: '36f8f876aea61ff0f4a7fc18fada0ab8',
+          city: returnCitySN['cid'],
+        },
+        dataType: 'json',
+        success:function(data){
+          if(data &&  data.status=="1"){
+            var lives = data.lives[0];
+            $("#cityName").text(lives.city);
+            $("#weatherTxt").text(lives.weather);
+            $("#temperature").text(lives.temperature+"°");
+            $("#winddirection").text(lives.winddirection+"风");
+            $("#windpower").text(lives.windpower+"级");
+          }
+        }
+      })
+    }
+  </script> -->
+</body>
+</html>
