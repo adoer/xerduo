@@ -1,4 +1,4 @@
-;(function() {
+; (function () {
   // Highlight current nav item
   var hasCurrent = false
 
@@ -12,7 +12,7 @@
   }
 
   //移出所有的菜单的选中样式
-  $("#main-nav > li").each(function() {
+  $("#main-nav > li").each(function () {
     $(this).removeClass("current-menu-item current_page_item")
   })
   var links = $("#main-nav > li > a")
@@ -56,7 +56,7 @@ if (toc != null) {
   }
 }
 
-$("#main-navigation").on("click", function() {
+$("#main-navigation").on("click", function () {
   if ($("#main-navigation").hasClass("main-navigation-open")) {
     $("#main-navigation").removeClass("main-navigation-open")
   } else {
@@ -64,8 +64,10 @@ $("#main-navigation").on("click", function() {
   }
 })
 
-$("#content").on("click", function() {
+$("#content").on("click", function () {
   if ($("#main-navigation").hasClass("main-navigation-open")) {
     $("#main-navigation").removeClass("main-navigation-open")
   }
 })
+
+$("#bootm-date").text(new Date().getFullYear())

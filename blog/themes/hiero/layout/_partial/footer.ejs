@@ -1,35 +1,35 @@
 <footer id="footer" class="site-footer">
-  <% if (theme.sidebar === 'bottom'){ %> <%- partial('_partial/sidebar') %> <% }
-  %>
-  <div class="clearfix container footCon">
-    <!-- <div class="cup-wrap">
+  <% if (theme.sidebar==='bottom' ){ %> <%- partial('_partial/sidebar') %>
+      <% } %>
+        <div class="clearfix container footCon">
+          <!-- <div class="cup-wrap">
       <div class="cup">
         <div class="cup__mouse"></div>
         <div class="cup__eyes"></div>
       </div>
       <div class="cup-shadow"></div>
     </div> -->
-    <!-- <%= config.title || config.author %> All Rights Reserved. %> -->
-    <!-- <div class="footText">Work Hard, Play Hard</div> -->
-    <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
-    <!-- <div class="footText"></div> -->
+          <!-- <%= config.title || config.author %> All Rights Reserved. %> -->
+          <!-- <div class="footText">Work Hard, Play Hard</div> -->
+          <!-- <div class="footText">小耳朵，让世界听见我们的声音。</div> -->
+          <!-- <div class="footText"></div> -->
 
-    <div class="site-info">
-      2020 - <%= date(new Date(), 'YYYY') %> ©小耳朵
-      <!-- All rights reserved.  -->
-      <% if (theme.busuanzi_analytics){ %>
-      <span id="busuanzi_container_site_uv">
-        本站访客数
-        <span id="busuanzi_value_site_uv"></span>人次 本站总访问量
-        <span id="busuanzi_value_site_pv"></span>次
-      </span>
-      <% } %>
-    </div>
-    <!-- <div class="site-credit">
+          <div class="site-info">
+            2020 - <span id="bootm-date"></span> ©小耳朵
+            <!-- All rights reserved.  -->
+            <% if (theme.busuanzi_analytics){ %>
+              <span id="busuanzi_container_site_uv">
+                本站访客数
+                <span id="busuanzi_value_site_uv"></span>人次 本站总访问量
+                <span id="busuanzi_value_site_pv"></span>次
+              </span>
+              <% } %>
+          </div>
+          <!-- <div class="site-credit">
                         <%= __('theme_by') %>
                             <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
                     </div> -->
-  </div>
+        </div>
 </footer>
 
 <!-- min height -->
