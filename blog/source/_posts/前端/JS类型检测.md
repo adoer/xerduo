@@ -1,6 +1,6 @@
 ---
 title: JS类型检测
-date: 2021-03-08 16:51:08
+date: 2021-03-08 22:51:08
 comments: true
 tags: 
     - JavaScript

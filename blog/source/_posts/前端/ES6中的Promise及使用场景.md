@@ -1,6 +1,6 @@
 ---
 title: ES6中的Promise及使用场景
-date: 2021-07-16 07:45:00
+date: 2021-07-16 23:45:00
 tags: 
     - ES6
 categories: [前端]

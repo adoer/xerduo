@@ -1,6 +1,7 @@
 ---
 title: 地址栏输入URL，敲下回车后发生了什么？
-date: 2021-07-18 22:17:44
+date: 2022-11-18 22:17:44
+photos: "img(26).jpg"
 tags: 
     - HTTP
 categories: [计算机网络]

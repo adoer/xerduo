@@ -1,6 +1,7 @@
 ---
 title: HTTP常见的请求头有哪些？作用？
-date: 2021-07-18 21:25:13
+date: 2022-09-18 21:25:13
+photos: "img(6).jpg"
 tags: 
     - HTTP
 categories: [计算机网络]

@@ -1,6 +1,6 @@
 ---
 title: Vue双向数据绑定
-date: 2021-07-13 20:10:59
+date: 2021-08-13 20:10:59
 tags: 
     - Vue2
 categories: [前端]

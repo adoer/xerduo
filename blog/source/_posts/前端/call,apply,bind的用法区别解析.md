@@ -1,6 +1,6 @@
 ---
 title: call,apply,bind的用法区别解析
-date: 2021-06-26 17:05:46
+date: 2021-06-26 20:05:46
 comments: true
 tags:
   - JavaScript

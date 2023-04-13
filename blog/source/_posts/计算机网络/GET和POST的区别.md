@@ -1,6 +1,6 @@
 ---
 title: GET和POST的区别
-date: 2021-07-18 17:34:31
+date: 2021-07-18 20:34:31
 tags:
   - HTTP
 categories: [计算机网络]

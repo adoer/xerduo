@@ -1,6 +1,6 @@
 ---
 title: HTTP1.0，1.1，2.0的区别
-date: 2021-07-18 13:28:30
+date: 2021-07-18 21:28:30
 tags: 
     - HTTP
 categories: [计算机网络]
